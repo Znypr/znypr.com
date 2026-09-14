@@ -11,14 +11,14 @@ const accounts = {
     facebook: { handle: 'znypr', unit: 'followers', fetcher: fetchFacebook },
     twitch: { handle: 'znypr_', unit: 'followers', fetcher: fetchTwitch },
     snapchat: { handle: 'znyprgaming', unit: 'followers', fetcher: fetchSnapchat },
-    instagram: { handle: 'znyprrblx', unit: 'followers', fetcher: fetchInstagram }
+    instagram: { handle: 'znypr_', unit: 'followers', fetcher: fetchInstagram }
   },
   fitness: {
     youtube: { handle: 'znyprfit', unit: 'subscribers', fetcher: fetchYouTube, min: 0, max: 10000 },
     tiktok: { handle: 'znyprfit', unit: 'followers', fetcher: fetchTikTok },
-    instagram: { handle: 'znypr', unit: 'followers', fetcher: fetchInstagram },
+    instagram: { handle: 'znyprfit', unit: 'followers', fetcher: fetchInstagram },
     facebook: { handle: 'znyprfit', unit: 'followers', fetcher: fetchFacebook },
-    snapchat: { handle: 'znypr', unit: 'followers', fetcher: fetchSnapchat },
+    snapchat: { handle: 'znyprf', unit: 'followers', fetcher: fetchSnapchat },
     twitter: { handle: 'znypr_', unit: 'followers', fetcher: fetchX }
   }
 };
