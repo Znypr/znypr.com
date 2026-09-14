@@ -1,15 +1,14 @@
 {
-  "version": 2,
+  "version": 3,
   "updatedAt": "2026-09-14T14:04:54.673Z",
   "metrics": {
     "gaming": {
       "youtube": {
-        "value": 100000,
-        "display": "100K",
-        "source": "YouTube public channel",
+        "value": null,
+        "display": null,
         "unit": "subscribers",
         "checkedAt": "2026-09-14T14:04:54.673Z",
-        "status": "live"
+        "status": "unavailable"
       },
       "tiktok": {
         "value": 51700,
@@ -51,12 +50,11 @@
     },
     "fitness": {
       "youtube": {
-        "value": 115,
-        "display": "115",
-        "source": "YouTube public channel",
+        "value": null,
+        "display": null,
         "unit": "subscribers",
         "checkedAt": "2026-09-14T14:04:54.673Z",
-        "status": "live"
+        "status": "unavailable"
       },
       "tiktok": {
         "value": 68,
