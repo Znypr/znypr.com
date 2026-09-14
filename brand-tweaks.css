@@ -1,0 +1,50 @@
+/* Readability pass: keep the Znypr visual system, but avoid micro-text. */
+body { font-size: 16px; }
+
+.brand-copy small { font-size: 11px; }
+.nav-btn { font-size: 14px; padding: 11px 15px; }
+.eyebrow { font-size: 13px; }
+.lead { font-size: clamp(18px, 2vw, 22px); line-height: 1.55; }
+.button, .btn { font-size: 14px; }
+
+.hero-stat span { font-size: 11px; }
+.visual-badge { font-size: 11px; }
+.brand-rail { font-size: 12px; }
+
+.lane-label { font-size: 12px; }
+.lane-copy { font-size: 16px; line-height: 1.55; }
+.profile-total strong { font-size: 22px; }
+.profile-total small { font-size: 10px; }
+.social-card { min-height: 72px; }
+.social-copy strong { font-size: 15px; }
+.social-copy span { font-size: 13px; }
+.social-metric strong { font-size: 16px; }
+.social-metric span { font-size: 10px; }
+.stats-note { font-size: 12px; }
+
+.section-heading > p { font-size: 15px; line-height: 1.55; }
+.category-header { font-size: 14px; }
+.setup-image-container::after { font-size: 10px; }
+.spec-label { font-size: 11px; }
+.spec-value { font-size: 14px; }
+.partner-name { font-size: 19px; }
+.partner-desc { font-size: 14px; line-height: 1.5; }
+.code-badge, .offer-badge, .ad-tag { font-size: 10px; }
+
+.top-legal { font-size: 13px; }
+.info-title { font-size: 20px; }
+.info-text { font-size: 15px; line-height: 1.55; }
+.service-item { font-size: 13px; }
+.contact-label { font-size: 10px; }
+.contact-value { font-size: 15px; }
+
+.footer-brand p { font-size: 12px; }
+.footer-links a { font-size: 12px; }
+.footer-copy { font-size: 11px; }
+
+@media (max-width: 760px) {
+  .nav-btn { font-size: 13px; }
+  .brand-rail { font-size: 11px; }
+  .lane-copy { font-size: 15px; }
+  .section-heading > p { font-size: 14px; }
+}
