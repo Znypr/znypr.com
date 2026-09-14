@@ -63,7 +63,9 @@ async function loadStats() {
 
         const totalNode = document.querySelector('[data-total-audience]');
         if (totalNode) {
-            const coreReady = coreMetricsAvailable(data, 'gaming', datasetFresh) && coreMetricsAvailable(data, 'fitness', datasetFresh);
+            // The creator-wide number is a verified lower bound. It is shown only when
+            // the three core gaming accounts are available, and never guesses missing platforms.
+            const coreReady = coreMetricsAvailable(data, 'gaming', datasetFresh);
             const total = coreReady
                 ? Object.values(data.metrics || {})
                     .flatMap((group) => Object.values(group || {}))
