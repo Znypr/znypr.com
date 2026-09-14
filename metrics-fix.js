@@ -20,6 +20,11 @@ function verifiedCompact(value) {
     return new Intl.NumberFormat('en', { notation: 'compact', maximumFractionDigits: 1 }).format(value);
 }
 
+function coreMetricsAvailable(data, group, datasetFresh) {
+    const required = group === 'gaming' ? ['youtube', 'tiktok', 'twitch'] : ['youtube', 'tiktok'];
+    return required.every((platform) => verifiedMetricValue(data.metrics?.[group]?.[platform], datasetFresh) > 0);
+}
+
 async function loadStats() {
     const metricNodes = document.querySelectorAll('[data-stat]');
     if (!metricNodes.length) return;
@@ -45,20 +50,25 @@ async function loadStats() {
 
         document.querySelectorAll('[data-group-total]').forEach((node) => {
             const group = node.dataset.groupTotal;
-            const total = Object.values(data.metrics?.[group] || {})
-                .reduce((sum, metric) => sum + verifiedMetricValue(metric, datasetFresh), 0);
+            const completeEnough = coreMetricsAvailable(data, group, datasetFresh);
+            const total = completeEnough
+                ? Object.values(data.metrics?.[group] || {}).reduce((sum, metric) => sum + verifiedMetricValue(metric, datasetFresh), 0)
+                : 0;
             const valueNode = node.querySelector('strong');
             if (valueNode) valueNode.textContent = total ? verifiedCompact(total) : '—';
             node.title = total
-                ? `${new Intl.NumberFormat('en-US').format(total)} verified public followers and subscribers`
-                : 'No fresh verified public audience metrics available';
+                ? `${new Intl.NumberFormat('en-US').format(total)} verified tracked followers and subscribers`
+                : 'Core live metrics are not currently available';
         });
 
         const totalNode = document.querySelector('[data-total-audience]');
         if (totalNode) {
-            const total = Object.values(data.metrics || {})
-                .flatMap((group) => Object.values(group || {}))
-                .reduce((sum, metric) => sum + verifiedMetricValue(metric, datasetFresh), 0);
+            const coreReady = coreMetricsAvailable(data, 'gaming', datasetFresh) && coreMetricsAvailable(data, 'fitness', datasetFresh);
+            const total = coreReady
+                ? Object.values(data.metrics || {})
+                    .flatMap((group) => Object.values(group || {}))
+                    .reduce((sum, metric) => sum + verifiedMetricValue(metric, datasetFresh), 0)
+                : 0;
             totalNode.textContent = total ? `${verifiedCompact(total)}+` : 'Live metrics';
         }
 
