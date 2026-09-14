@@ -25,6 +25,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -35,8 +37,6 @@ jobs:
         run: node scripts/update-stats-v2.mjs
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
-          TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
-          TWITCH_CLIENT_SECRET: ${{ secrets.TWITCH_CLIENT_SECRET }}
           META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
 
       - name: Commit refreshed metrics
@@ -45,8 +45,20 @@ jobs:
             echo "No metric changes"
             exit 0
           fi
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets/stats.json
           git commit -m "chore: refresh verified social metrics"
-          git push
+
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Remote changed while metrics were refreshing; rebasing (attempt $attempt)..."
+            git fetch origin main
+            git rebase origin/main
+          done
+
+          echo "Could not publish refreshed metrics after retries"
+          exit 1
