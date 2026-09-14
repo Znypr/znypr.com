@@ -108,13 +108,52 @@ function candidatesFromText(value, words = ['followers?']) {
   return values;
 }
 
+function collectStrings(node, output = []) {
+  if (typeof node === 'string') output.push(node);
+  else if (Array.isArray(node)) node.forEach((value) => collectStrings(value, output));
+  else if (node && typeof node === 'object') Object.values(node).forEach((value) => collectStrings(value, output));
+  return output;
+}
+
 async function resolveYouTubeChannel(handle, suppliedHtml) {
-  const html = suppliedHtml || await text(`https://www.youtube.com/@${handle}/about?hl=en&gl=US`);
+  const html = suppliedHtml || await text(`https://www.youtube.com/@${handle}?hl=en&gl=US`);
   const marker = html.indexOf('"channelMetadataRenderer"');
-  const scoped = marker >= 0 ? html.slice(marker, marker + 50000) : html.slice(0, 250000);
+  const scoped = marker >= 0 ? html.slice(marker, marker + 80000) : html.slice(0, 300000);
   const id = scoped.match(/"externalId"\s*:\s*"(UC[A-Za-z0-9_-]{22})"/)?.[1]
     || scoped.match(/"channelId"\s*:\s*"(UC[A-Za-z0-9_-]{22})"/)?.[1];
   return { id: id || null, html };
+}
+
+async function fetchYouTubeViaInnertube(channelId, html, config) {
+  const key = html.match(/"INNERTUBE_API_KEY"\s*:\s*"([^"]+)"/)?.[1];
+  const version = html.match(/"INNERTUBE_CLIENT_VERSION"\s*:\s*"([^"]+)"/)?.[1];
+  if (!key || !version || !channelId) return null;
+
+  const json = await (await request(`https://www.youtube.com/youtubei/v1/browse?key=${encodeURIComponent(key)}&prettyPrint=false`, {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+      origin: 'https://www.youtube.com',
+      referer: `https://www.youtube.com/channel/${channelId}`
+    },
+    body: JSON.stringify({
+      context: {
+        client: {
+          clientName: 'WEB',
+          clientVersion: version,
+          hl: 'en',
+          gl: 'US'
+        }
+      },
+      browseId: channelId
+    })
+  })).json();
+
+  // Only inspect the target channel's header/metadata, never recommendations.
+  const scope = { header: json.header, metadata: json.metadata };
+  const values = collectStrings(scope)
+    .flatMap((value) => candidatesFromText(value, ['subscribers?']));
+  return firstValid(values, config);
 }
 
 async function fetchYouTube(handle, config) {
@@ -135,22 +174,28 @@ async function fetchYouTube(handle, config) {
   let html = null;
   let channelId = config.channelId || null;
 
-  if (!channelId) {
+  try {
+    html = await text(`https://www.youtube.com/@${handle}?hl=en&gl=US`);
+    if (!channelId) channelId = (await resolveYouTubeChannel(handle, html)).id;
+  } catch (error) {
+    console.warn(`Could not load YouTube profile for @${handle}: ${error.message}`);
+  }
+
+  if (html && channelId) {
     try {
-      const resolved = await resolveYouTubeChannel(handle);
-      channelId = resolved.id;
-      html = resolved.html;
+      const value = await fetchYouTubeViaInnertube(channelId, html, config);
+      if (value !== null) return result(value, 'YouTube public channel metadata');
     } catch (error) {
-      console.warn(`Could not resolve YouTube channel ID for @${handle}: ${error.message}`);
+      console.warn(`YouTube metadata fallback for @${handle}: ${error.message}`);
     }
   }
 
-  // SocialCounts exposes API_sub, which mirrors YouTube's public API count.
-  // Do not use est_sub: it is an estimate and should not appear as a factual site metric.
+  // Secondary public-API fallback. API_sub mirrors the public YouTube API count;
+  // est_sub is intentionally ignored because it is an estimate.
   if (channelId) {
     try {
       const json = await (await request(`https://api.socialcounts.org/youtube-live-subscriber-count/${channelId}`, {
-        headers: { accept: 'application/json' }
+        headers: { accept: 'application/json', referer: 'https://socialcounts.org/' }
       })).json();
       const value = validValue(json.API_sub, config);
       if (value !== null) return result(value, 'YouTube public API');
@@ -159,17 +204,19 @@ async function fetchYouTube(handle, config) {
     }
   }
 
-  // Final fallback: only inspect the current channel header. Never scan the whole page,
-  // because recommended channels can inject unrelated subscriber counts.
-  if (!html) html = await text(`https://www.youtube.com/@${handle}/about?hl=en&gl=US`);
-  const headerMarker = html.indexOf('"pageHeaderRenderer"');
-  const scoped = headerMarker >= 0 ? html.slice(headerMarker, headerMarker + 70000) : html.slice(0, 180000);
-  const candidates = [];
-  for (const match of scoped.matchAll(/"subscriberCountText"[\s\S]{0,900}?"(?:simpleText|label)"\s*:\s*"([^"]*subscribers?[^"]*)"/gi)) {
-    candidates.push(...candidatesFromText(match[1], ['subscribers?']));
+  // Last fallback is restricted to target-channel metadata only.
+  if (html) {
+    const marker = html.indexOf('"pageHeaderRenderer"');
+    const scoped = marker >= 0 ? html.slice(marker, marker + 100000) : '';
+    const candidates = [];
+    for (const match of scoped.matchAll(/"subscriberCountText"[\s\S]{0,1200}?"(?:simpleText|label|content)"\s*:\s*"([^"]*subscribers?[^"]*)"/gi)) {
+      candidates.push(...candidatesFromText(match[1], ['subscribers?']));
+    }
+    const value = firstValid(candidates, config);
+    if (value !== null) return result(value, 'YouTube channel header');
   }
-  const value = firstValid(candidates, config);
-  return result(value, 'YouTube channel header');
+
+  throw new Error('No verified public YouTube count found');
 }
 
 async function fetchTikTok(handle) {
@@ -302,8 +349,7 @@ async function main() {
     }
   }
 
-  // Keep only structural compatibility with the previous file; never carry a failed
-  // old count forward as "stale". An unavailable metric is safer than a wrong one.
+  // Never carry a failed previous count forward as factual data.
   void previous;
   await writeFile(STATS_PATH, `${JSON.stringify(stats, null, 2)}\n`);
 }
