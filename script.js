@@ -1,5 +1,5 @@
-const VALID_TABS = new Set(['home', 'gear', 'partners', 'merch', 'contact', 'hns']);
-const SWIPE_TABS = ['home', 'gear', 'partners', 'merch', 'contact'];
+const VALID_TABS = new Set(['home', 'gear', 'merch', 'contact', 'hns']);
+const SWIPE_TABS = ['home', 'gear', 'merch', 'contact'];
 const MOBILE_QUERY = window.matchMedia('(max-width: 900px)');
 const contentArea = document.getElementById('content-area');
 
@@ -24,6 +24,10 @@ function setActiveTab(tabName) {
 }
 
 async function switchTab(tabName = 'home', updateHistory = true) {
+    if (tabName === 'partners') {
+        tabName = 'gear';
+        if (!updateHistory) history.replaceState({ tab: 'gear' }, '', '/gear');
+    }
     const target = VALID_TABS.has(tabName) ? tabName : 'home';
     activePageTab = target;
     setActiveTab(target);
@@ -44,7 +48,7 @@ async function switchTab(tabName = 'home', updateHistory = true) {
         contentArea.focus({ preventScroll: true });
         document.title = target === 'home'
             ? 'ZNYPR — Gaming & Fitness Creator'
-            : `${target.charAt(0).toUpperCase()}${target.slice(1)} — ZNYPR`;
+            : target === 'gear' ? 'Gear & deals — Znypr' : `${target.charAt(0).toUpperCase()}${target.slice(1)} — ZNYPR`;
     } catch (error) {
         console.error(error);
         contentArea.innerHTML = `
