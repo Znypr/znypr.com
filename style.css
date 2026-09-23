@@ -354,89 +354,64 @@ h3 { letter-spacing: -.025em; }
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
 }
 
-/* Combined setup and recommendations */
-.gear-legend, .gear-deals { display: flex; flex-wrap: wrap; gap: 9px; align-items: center; }
-.gear-legend { position: relative; margin: 12px 0; }
-.usage-pill, .deal-pill { display: inline-flex; align-items: center; gap: 6px; width: fit-content; border: 1px solid; border-radius: 999px; padding: 6px 11px; font-size: 12px; line-height: 1.5; font-weight: 750; }
-.is-current { color: #84efb7; background: rgba(86,227,159,.09); border-color: rgba(86,227,159,.3); }
-.is-suggested { color: #c5b5ff; background: rgba(121,93,255,.12); border-color: rgba(170,147,255,.35); }
-.affiliate-disclosure { position: relative; color: var(--muted-strong); font-size: 13px; line-height: 1.65; margin: 10px 0 0; }
-.gear-link-key { color: var(--cyan); font-size: 12px; }
-.gear-reference { color: var(--muted-strong); font-size: 12px; line-height: 1.5; }
-.gear-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
-.gear-card { min-width: 0; display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--line); border-radius: 16px; background: rgba(255,255,255,.025); }
-.gear-media { height: 174px; background: #fff; display: grid; place-items: center; padding: 18px; }
-.gear-media img { width: 100%; height: 138px; object-fit: contain; }
-.gear-media:has(.gear-wordmark) { background: linear-gradient(130deg,#152838,#1d1636); }
-.gear-wordmark { color: var(--text); font-family: var(--display); font-size: 32px; letter-spacing: .06em; }
-.gear-body { display: flex; flex-direction: column; align-items: flex-start; padding: 21px; flex: 1; }
-.gear-body h3 { font-size: 20px; line-height: 1.3; margin: 14px 0 8px; overflow-wrap: anywhere; }
-.gear-body p { color: var(--muted-strong); font-size: 14px; line-height: 1.65; margin: 0 0 14px; }
-.gear-body .gear-note { font-size: 12px; }
-.gear-deals { margin-top: auto; }
-.deal-pill { color: #ffd2a2; background: rgba(255,123,33,.09); border-color: rgba(255,165,83,.3); flex-wrap: wrap; }
-.gear-shop { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; color: var(--cyan); background: var(--cyan-soft); border: 1px solid rgba(66,220,255,.35); border-radius: 999px; padding: 9px 13px; margin-top: 16px; text-decoration: none; font-size: 14px; font-weight: 800; }
-.gear-shop:hover { background: rgba(66,220,255,.23); border-color: var(--cyan); }
-.gear-shop:focus-visible { outline: 3px solid var(--cyan); outline-offset: 4px; }
-.shop-icon { font-size: 20px; line-height: 1; }
-.gear-ad { font-size: 10px; color: var(--muted-strong); font-weight: 600; }
-.gear-body > .gear-reference { margin-top: 16px; }
-@media (max-width: 620px) { .gear-grid { grid-template-columns: 1fr; } .gear-media { height: 155px; } .gear-media img { height: 119px; } .gear-body { padding: 18px; } }
-.gear-page .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
-
-/* Compact image-first gear cards, with glass details over the lower image. */
+/* Gear catalog: contained products, translucent glass and consistent controls. */
 .gear-page { gap: 18px; }
 .gear-page .page-hero { min-height: 0; padding: 26px 30px; }
-.gear-page .page-hero h1 { font-size: clamp(26px,4vw,44px); margin: 10px 0; }
-.gear-page .lead { font-size: 15px; }
+.gear-page .page-hero h1 { font-size: clamp(28px,4vw,44px); margin: 10px 0; }
+.gear-page .lead { font-size: 17px; }
 .gear-page .content-section { padding: 24px; }
 .gear-page .section-heading { margin-bottom: 16px; padding-bottom: 14px; gap: 14px; }
 .gear-page .section-heading h2 { font-size: 25px; }
 .gear-page .category-header { margin: 22px 0 12px; }
-.workspace-preview { color: var(--muted-strong); font-size: 13px; }
+.gear-legend { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; position: relative; margin: 14px 0; }
+.gear-reference, .gear-link-key, .affiliate-disclosure { color: #c2cfda; font-size: 13px; line-height: 1.6; }
+.gear-link-key { color: var(--cyan); }
+.affiliate-disclosure { position: relative; margin: 10px 0 0; }
+.workspace-preview { color: var(--muted-strong); font-size: 14px; }
 .workspace-preview summary { cursor: pointer; padding: 8px 0; }
-.workspace-preview .setup-image-container { margin-top: 10px; max-height: 420px; }
-.workspace-preview img { height: 420px; object-fit: cover; }
-.gear-grid { grid-template-columns: repeat(4,minmax(0,1fr)); gap: 12px; }
-.gear-card { position: relative; display: block; isolation: isolate; aspect-ratio: 1; border-radius: 14px; background: #151e29; }
-.gear-media { position: absolute; inset: 0; height: 100%; padding: 0; background: #e7e9ec; }
-.gear-media img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.gear-photo .gear-media img { object-position: center 40%; }
-.gear-body { position: absolute; bottom: 0; left: 0; right: 0; min-height: 49%; padding: 11px; gap: 6px; background: linear-gradient(155deg,rgba(10,17,26,.76),rgba(7,12,20,.94)); backdrop-filter: blur(16px) saturate(130%); -webkit-backdrop-filter: blur(16px) saturate(130%); border-top: 1px solid rgba(255,255,255,.22); }
-.gear-body h3 { font-size: 14px; line-height: 1.2; margin: 0; font-weight: 800; }
-.gear-card > .usage-pill { position: absolute; top: 9px; left: 9px; z-index: 1; font-size: 10px; padding: 4px 7px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
-.gear-card > .is-current { background: rgba(7,34,24,.9); }
-.gear-card > .is-suggested { background: rgba(30,19,53,.9); }
-.gear-body .gear-deals { margin: 0; }
-.gear-body .gear-deals:empty { display: none; }
-.gear-body .deal-pill { font-size: 10px; padding: 3px 7px; line-height: 1.2; color: #ffddb7; }
-.gear-shop { margin: auto 0 0; padding: 5px 9px; min-height: 30px; font-size: 12px; gap: 6px; }
-.gear-ad { font-size: 9px; }
-.shop-icon { font-size: 17px; }
-.gear-body > .gear-reference { margin-top: auto; font-size: 10px; color: #ccd5de; }
-.gear-info { position: absolute; top: 8px; right: 8px; width: 30px; height: 30px; border-radius: 50%; border: 1px solid rgba(255,255,255,.4); background: rgba(10,17,26,.85); color: white; font-size: 15px; font-weight: 800; cursor: pointer; }
-.gear-info:focus-visible, .gear-detail-close:focus-visible { outline: 3px solid var(--cyan); outline-offset: 2px; }
+.workspace-preview .setup-image-container { margin-top: 10px; }
+.workspace-preview img { display: block; width: 100%; max-height: 560px; object-fit: contain; }
+.gear-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 14px; }
+.gear-card { position: relative; min-width: 0; aspect-ratio: 1; isolation: isolate; overflow: hidden; border: 0; border-radius: 16px; clip-path: inset(0 round 16px); background: #162330; }
+.gear-media { position: absolute; inset: 0; overflow: hidden; border-radius: inherit; }
+.gear-media::before { content: ''; position: absolute; inset: -24px; background-image: var(--gear-image); background-position: center; background-size: cover; filter: blur(22px) brightness(.62) saturate(.85); }
+.gear-product-frame { position: absolute; top: 40px; left: 18px; right: 18px; height: calc(56% - 40px); }
+.gear-product-frame img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
+.gear-photo .gear-product-frame { left: 10px; right: 10px; }
+.gear-mousepad .gear-product-frame img { object-fit: cover; object-position: center bottom; }
+.gear-keyboard-poster .gear-product-frame img { object-fit: cover; object-position: center 25%; }
+.gear-body { position: absolute; inset: auto 0 0; min-height: 44%; display: flex; flex-direction: column; align-items: flex-start; gap: 7px; padding: 13px; background: linear-gradient(150deg,rgba(15,24,36,.34),rgba(5,11,19,.60)); backdrop-filter: blur(10px) saturate(130%); -webkit-backdrop-filter: blur(10px) saturate(130%); border: 0; border-radius: 0 0 16px 16px; color: #fff; }
+.gear-body h3 { font-family: var(--body); font-size: 18px; line-height: 1.2; font-weight: 800; margin: 0; overflow-wrap: anywhere; text-shadow: 0 1px 5px #0008; }
+.gear-body .gear-summary { font-size: 14px; line-height: 1.3; font-weight: 500; color: #f0f5fa; margin: 0; text-shadow: 0 1px 5px #0009; }
+.gear-actions, .gear-deals { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; }
+.gear-actions { margin-top: auto; padding-top: 2px; }
+.gear-deals:empty { display: none; }
+.gear-page .usage-pill, .gear-page .deal-pill, .gear-page .gear-shop { display: inline-flex; align-items: center; justify-content: center; gap: 5px; width: fit-content; height: 30px; padding: 0 9px; border: 1px solid transparent; border-radius: 999px; font-family: var(--body); font-size: 12px; line-height: 1; font-weight: 700; white-space: nowrap; text-decoration: none; }
+.gear-card > .usage-pill { position: absolute; z-index: 1; top: 8px; left: 8px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.gear-page .is-current { color: #a3f3c6; background: rgba(8,43,31,.82); border-color: rgba(86,227,159,.3); }
+.gear-page .is-suggested { color: #ddceff; background: rgba(38,24,65,.82); border-color: rgba(170,147,255,.35); }
+.gear-page .deal-pill { color: #ffddb7; background: rgba(72,39,18,.58); border-color: rgba(255,165,83,.35); }
+.gear-page .gear-shop { color: #7be8ff; background: rgba(10,68,91,.58); border-color: rgba(66,220,255,.4); }
+.gear-page .gear-shop:hover { background: rgba(10,100,130,.75); }
+.pill-icon { display: inline-grid; place-items: center; width: 14px; height: 14px; font-size: 13px; line-height: 1; }
+.gear-info { position: absolute; top: 8px; right: 8px; width: 30px; height: 30px; border-radius: 50%; border: 1px solid #8595a577; background: #111d2ac9; color: white; font: 700 14px var(--body); cursor: pointer; }
+.gear-shop:focus-visible, .gear-info:focus-visible, .gear-detail-close:focus-visible { outline: 3px solid var(--cyan); outline-offset: 2px; }
 .gear-detail-popover { position: fixed; inset: 0; width: min(380px,calc(100vw - 32px)); max-height: 80dvh; margin: auto; padding: 24px; color: var(--text); background: #101a26; border: 1px solid #476078; border-radius: 18px; box-shadow: 0 24px 90px #0009; overflow: auto; }
-.gear-detail-popover::backdrop { background: rgba(0,0,0,.5); backdrop-filter: blur(4px); }
+.gear-detail-popover::backdrop { background: #0008; backdrop-filter: blur(4px); }
 .gear-detail-popover h3 { margin: 0 0 16px; font-size: 21px; }
-.gear-detail-popover p { font-size: 14px; line-height: 1.6; color: #cbd6e0; }
+.gear-detail-popover p { font-size: 15px; line-height: 1.6; color: #cbd6e0; }
 .gear-detail-close { border: 1px solid var(--cyan); color: var(--cyan); background: var(--cyan-soft); border-radius: 999px; padding: 10px 18px; cursor: pointer; }
-@media (max-width: 1050px) { .gear-grid { grid-template-columns: repeat(3,minmax(0,1fr)); } }
-@media (max-width: 650px) {
- .gear-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 9px; }
- .gear-page .content-section { padding: 12px; }
+.gear-page .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+@media (max-width: 1179px) { .gear-grid { grid-template-columns: repeat(3,minmax(0,1fr)); } }
+@media (max-width: 899px) { .gear-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width: 599px) {
+ .gear-grid { grid-template-columns: 1fr; gap: 14px; }
+ .gear-page .content-section { padding: 14px; }
  .gear-page .page-hero { padding: 20px; }
  .gear-page .section-heading { align-items: start; }
  .gear-page .section-heading > p { display: none; }
- .gear-page .section-heading h2 { font-size: 22px; }
- .gear-legend { gap: 6px; }
- .gear-legend > .usage-pill { padding: 4px 8px; font-size: 10px; }
- .gear-body { padding: 8px; gap: 4px; }
- .gear-body h3 { font-size: 12px; }
- .gear-card > .usage-pill { top: 6px; left: 6px; font-size: 9px; padding: 3px 6px; }
- .gear-info { top: 4px; right: 4px; width: 28px; height: 28px; }
- .gear-shop { font-size: 11px; min-height: 28px; padding: 4px 8px; }
- .gear-body .deal-pill { font-size: 9px; padding: 3px 5px; }
- .gear-body > .gear-reference { font-size: 9px; }
+ .gear-body { padding: 16px; gap: 9px; }
+ .gear-body h3 { font-size: 20px; }
+ .gear-body .gear-summary { font-size: 15px; }
+ .gear-product-frame { left: 24px; right: 24px; top: 46px; height: calc(56% - 46px); }
 }
-@media (max-width: 359px) { .gear-grid { grid-template-columns: 1fr; } .gear-body h3 { font-size: 16px; } .gear-body { padding: 14px; gap: 9px; } }
