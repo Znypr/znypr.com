@@ -1,5 +1,5 @@
-const VALID_TABS = new Set(['home', 'gear', 'merch', 'contact', 'hns']);
-const SWIPE_TABS = ['home', 'gear', 'merch', 'contact'];
+const VALID_TABS = new Set(['home', 'gear', 'fitness', 'merch', 'contact', 'hns']);
+const SWIPE_TABS = ['home', 'gear', 'fitness', 'merch', 'contact'];
 const MOBILE_QUERY = window.matchMedia('(max-width: 900px)');
 const contentArea = document.getElementById('content-area');
 
@@ -48,7 +48,7 @@ async function switchTab(tabName = 'home', updateHistory = true) {
         contentArea.focus({ preventScroll: true });
         document.title = target === 'home'
             ? 'ZNYPR — Gaming & Fitness Creator'
-            : target === 'gear' ? 'Gear & deals — Znypr' : `${target.charAt(0).toUpperCase()}${target.slice(1)} — ZNYPR`;
+            : target === 'gear' ? 'Gear & deals — Znypr' : target === 'fitness' ? 'Fitness — Znypr' : `${target.charAt(0).toUpperCase()}${target.slice(1)} — ZNYPR`;
     } catch (error) {
         console.error(error);
         contentArea.innerHTML = `
