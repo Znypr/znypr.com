@@ -249,8 +249,58 @@ function bindMobilePageSwipe() {
     }, { passive: true });
 }
 
+async function downloadFitnessPdf(button) {
+    const parts = [
+        '/assets/fitness/znyprs-bulking-diet.part1.b64',
+        '/assets/fitness/znyprs-bulking-diet.part2.b64',
+        '/assets/fitness/znyprs-bulking-diet.part3.b64',
+        '/assets/fitness/znyprs-bulking-diet.part4.b64'
+    ];
+
+    const originalText = button.textContent;
+    button.disabled = true;
+    button.textContent = 'Preparing…';
+
+    try {
+        const responses = await Promise.all(parts.map((path) => fetch(path, { cache: 'force-cache' })));
+        if (responses.some((response) => !response.ok)) throw new Error('PDF data could not be loaded.');
+
+        const base64 = (await Promise.all(responses.map((response) => response.text()))).join('').replace(/\s+/g, '');
+        const binary = atob(base64);
+        const bytes = new Uint8Array(binary.length);
+        for (let index = 0; index < binary.length; index += 1) {
+            bytes[index] = binary.charCodeAt(index);
+        }
+
+        const url = URL.createObjectURL(new Blob([bytes], { type: 'application/pdf' }));
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'Znyprs-Bulking-Diet.pdf';
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 1500);
+    } catch (error) {
+        console.error('Fitness PDF download failed:', error);
+        button.textContent = 'Try again';
+        setTimeout(() => { button.textContent = originalText; }, 1800);
+        return;
+    } finally {
+        button.disabled = false;
+    }
+
+    button.textContent = originalText;
+}
+
 function bindInteractions() {
     document.addEventListener('click', (event) => {
+        const pdfDownload = event.target.closest('[data-fitness-pdf-download]');
+        if (pdfDownload) {
+            event.preventDefault();
+            downloadFitnessPdf(pdfDownload);
+            return;
+        }
+
         const fitnessScroll = event.target.closest('[data-fitness-scroll]');
         if (fitnessScroll) {
             event.preventDefault();
