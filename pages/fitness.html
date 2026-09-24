@@ -3,33 +3,39 @@
     <div class="fitness-hero-copy">
       <span class="eyebrow fitness-eyebrow">Znypr Fitness</span>
       <h1>Train with intent.<br>Eat for the goal.</h1>
-      <p class="lead">My current training split, current diet and the simple rules I use to keep fitness practical.</p>
+      <p class="lead">My current training split, current bulking diet and the simple rules I use to keep fitness practical.</p>
+
       <div class="fitness-status-row">
         <span class="fitness-status is-live"><span></span>Current phase: Bulk</span>
         <span class="fitness-status">Push · Pull · Legs</span>
         <span class="fitness-status">3 days on · 1 day off</span>
       </div>
+
       <div class="hero-actions">
-        <a class="button fitness-primary" href="#current-diet">See current diet</a>
-        <a class="button" href="#training">Training split</a>
+        <button class="button fitness-primary" type="button" data-fitness-scroll="current-diet">See my diet</button>
+        <button class="button" type="button" data-fitness-scroll="training">Training split</button>
       </div>
+
+      <p class="fitness-personal-note">This page documents what I personally do. It is not a one-size-fits-all program.</p>
     </div>
-    <div class="fitness-hero-orbit" aria-hidden="true">
-      <div class="fitness-ring ring-one"></div>
-      <div class="fitness-ring ring-two"></div>
-      <div class="fitness-core">
-        <strong>PPL</strong>
-        <span>3 ON / 1 OFF</span>
+
+    <div class="fitness-photo-stage">
+      <div class="fitness-photo-main">
+        <img src="/assets/fitness/znypr-front.webp" alt="Znypr physique progress in the gym" loading="eager">
+      </div>
+      <div class="fitness-photo-tag">
+        <span>Current journey</span>
+        <strong>Training + nutrition</strong>
       </div>
     </div>
   </section>
 
   <nav class="fitness-jumpbar" aria-label="Fitness page sections">
-    <a href="#training">Training</a>
-    <a href="#current-diet">Diet</a>
-    <a href="#basics">Nutrition basics</a>
-    <a href="#downloads">Downloads</a>
-    <a href="#recipes">Recipes</a>
+    <button type="button" data-fitness-scroll="training">Training</button>
+    <button type="button" data-fitness-scroll="current-diet">Diet</button>
+    <button type="button" data-fitness-scroll="basics">Nutrition basics</button>
+    <button type="button" data-fitness-scroll="downloads">Downloads</button>
+    <button type="button" data-fitness-scroll="recipes">Recipes</button>
   </nav>
 
   <section class="surface fitness-section" id="training">
@@ -64,11 +70,14 @@
       </article>
     </div>
 
-    <div class="fitness-unknown">
-      <span class="fitness-unknown-icon">+</span>
-      <div>
-        <strong>Exercise list</strong>
-        <p>I have not published my exact exercises here yet, so this page does not guess them.</p>
+    <div class="fitness-training-proof">
+      <div class="fitness-proof-image">
+        <img src="/assets/fitness/znypr-back.webp" alt="Znypr back physique progress" loading="lazy">
+      </div>
+      <div class="fitness-proof-copy">
+        <span class="eyebrow fitness-eyebrow">My routine</span>
+        <h3>I only publish what I actually do.</h3>
+        <p>The split above is current. I have not published the exact exercise list yet, so the site does not fill it with made-up movements.</p>
       </div>
     </div>
   </section>
@@ -76,44 +85,63 @@
   <section class="surface fitness-section" id="current-diet">
     <div class="fitness-section-head">
       <div>
-        <span class="eyebrow fitness-eyebrow">Current diet</span>
-        <h2>What I am eating right now.</h2>
+        <span class="eyebrow fitness-eyebrow">Current bulk</span>
+        <h2>Znyprs Bulking Diet.</h2>
       </div>
-      <p>This is my current bulking diet, not a generic meal plan for everyone to copy.</p>
+      <p>This is my current diet specifically. The nutrition numbers are estimates based on standard food values and can vary by brand and preparation.</p>
+    </div>
+
+    <div class="diet-total-card">
+      <div class="diet-total-title">
+        <span>Daily total</span>
+        <strong>3 meals</strong>
+      </div>
+      <div class="diet-total-macros">
+        <div><strong>2,916</strong><span>kcal</span></div>
+        <div><strong>161 g</strong><span>protein</span></div>
+        <div><strong>444 g</strong><span>carbs</span></div>
+        <div><strong>49 g</strong><span>fat</span></div>
+      </div>
     </div>
 
     <div class="meal-grid">
       <article class="meal-card">
         <div class="meal-top"><span>Meal 1</span><strong>Morning</strong></div>
+        <div class="meal-calories">1,368 kcal</div>
         <ul>
           <li><b>150 g</b> oatmeal</li>
           <li><b>4</b> whole eggs</li>
           <li><b>30 g</b> protein powder</li>
           <li><b>2</b> bananas</li>
-          <li><b>500 ml</b> beetroot juice</li>
+          <li><b>2 cups</b> beetroot juice</li>
         </ul>
+        <div class="meal-macros"><span>P <b>75 g</b></span><span>C <b>191 g</b></span><span>F <b>33 g</b></span></div>
       </article>
 
       <article class="meal-card">
         <div class="meal-top"><span>Meal 2</span><strong>After workout</strong></div>
+        <div class="meal-calories">680 kcal</div>
         <ul>
           <li><b>500 g</b> cooked rice</li>
           <li><b>30 g</b> sriracha</li>
         </ul>
+        <div class="meal-macros"><span>P <b>14 g</b></span><span>C <b>148 g</b></span><span>F <b>2 g</b></span></div>
       </article>
 
       <article class="meal-card">
         <div class="meal-top"><span>Meal 3</span><strong>Evening</strong></div>
+        <div class="meal-calories">868 kcal</div>
         <ul>
           <li><b>400 g</b> potatoes</li>
           <li><b>500 g</b> cottage cheese</li>
           <li><b>15 g</b> flaxseed</li>
           <li><b>30 g</b> sriracha</li>
         </ul>
+        <div class="meal-macros"><span>P <b>73 g</b></span><span>C <b>106 g</b></span><span>F <b>14 g</b></span></div>
       </article>
     </div>
 
-    <p class="fitness-footnote">Exact calories and macros are intentionally not shown until the nutrition labels for the specific products are known.</p>
+    <p class="fitness-footnote">Estimated macros using standard food values. Actual values vary by brand, preparation and serving size.</p>
   </section>
 
   <section class="surface fitness-section" id="basics">
@@ -152,10 +180,7 @@
 
     <div class="fitness-evidence">
       <strong>Evidence notes</strong>
-      <p>
-        Protein range: Morton et al., 2018 systematic review/meta-analysis.
-        Energy balance principles: International Society of Sports Nutrition position stand on diets and body composition.
-      </p>
+      <p>Protein range: Morton et al., 2018 systematic review/meta-analysis. Energy balance principles: International Society of Sports Nutrition position stand on diets and body composition.</p>
       <div>
         <a href="https://bjsm.bmj.com/content/52/6/376" target="_blank" rel="noopener noreferrer">Protein meta-analysis ↗</a>
         <a href="https://jissn.biomedcentral.com/articles/10.1186/s12970-017-0174-y" target="_blank" rel="noopener noreferrer">ISSN position stand ↗</a>
@@ -179,10 +204,10 @@
         <div class="download-icon">PDF</div>
         <div class="download-copy">
           <span class="download-kicker">Current plan</span>
-          <h3>Bulking Diet</h3>
-          <p>One-page version of my current three-meal diet.</p>
+          <h3>Znyprs Bulking Diet</h3>
+          <p>My current three-meal bulk with estimated calories and macros.</p>
         </div>
-        <a class="download-button" href="/assets/fitness/bulking-diet.pdf" download>Download <span>↓</span></a>
+        <a class="download-button" href="/assets/fitness/znyprs-bulking-diet.pdf" download>Download <span>↓</span></a>
       </article>
     </div>
   </section>
@@ -193,7 +218,7 @@
         <span class="eyebrow fitness-eyebrow">Recipes</span>
         <h2>Quick meals, later.</h2>
       </div>
-      <p>The layout is ready for image cards with a tap-to-reveal recipe, but no meals are being invented just to fill the section.</p>
+      <p>The layout is ready for image cards with a tap-to-reveal recipe, but I am not adding fake recipes just to fill the page.</p>
     </div>
 
     <div class="recipe-empty">
