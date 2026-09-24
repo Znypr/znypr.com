@@ -10,7 +10,7 @@ let profileVisibilityObserver = null;
 let touchStart = null;
 
 function cleanPath(pathname = window.location.pathname) {
-    return pathname.replace(/^\/+|\/+$/g, '') || 'home';
+    return pathname.split(/[?#]/)[0].replace(/^\/+|\/+$/g, '') || 'home';
 }
 
 function setActiveTab(tabName) {
@@ -46,6 +46,14 @@ async function switchTab(tabName = 'home', updateHistory = true) {
         initializeMobileProfileObserver();
         await loadStats();
         contentArea.focus({ preventScroll: true });
+
+        const hashTarget = window.location.hash.slice(1);
+        if (target === 'fitness' && hashTarget) {
+            requestAnimationFrame(() => {
+                document.getElementById(hashTarget)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        }
+
         document.title = target === 'home'
             ? 'ZNYPR — Gaming & Fitness Creator'
             : target === 'gear' ? 'Gear & deals — Znypr' : target === 'fitness' ? 'Fitness — Znypr' : `${target.charAt(0).toUpperCase()}${target.slice(1)} — ZNYPR`;
@@ -243,6 +251,18 @@ function bindMobilePageSwipe() {
 
 function bindInteractions() {
     document.addEventListener('click', (event) => {
+        const fitnessScroll = event.target.closest('[data-fitness-scroll]');
+        if (fitnessScroll) {
+            event.preventDefault();
+            const sectionId = fitnessScroll.dataset.fitnessScroll;
+            const section = document.getElementById(sectionId);
+            if (section) {
+                history.replaceState({ tab: 'fitness' }, '', `/fitness#${sectionId}`);
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+            return;
+        }
+
         const tabButton = event.target.closest('[data-tab]');
         if (tabButton) {
             event.preventDefault();
@@ -315,7 +335,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const redirectedPath = sessionStorage.getItem('redirectPath');
     if (redirectedPath) sessionStorage.removeItem('redirectPath');
-    const initialTab = cleanPath(redirectedPath || window.location.pathname);
+
+    const initialRoute = redirectedPath || `${window.location.pathname}${window.location.hash}`;
+    const initialTab = cleanPath(initialRoute);
+
+    if (redirectedPath) {
+        history.replaceState({ tab: initialTab }, '', redirectedPath);
+    }
+
     switchTab(initialTab, false);
 });
 
