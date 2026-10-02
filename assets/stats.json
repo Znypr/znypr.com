@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-10-01T23:21:24.213Z",
+  "updatedAt": "2026-10-02T02:29:03.538Z",
   "metrics": {
     "gaming": {
       "youtube": {
@@ -8,7 +8,7 @@
         "display": "91.8K",
         "source": "YouTube public channel metadata",
         "unit": "subscribers",
-        "checkedAt": "2026-10-01T23:21:24.213Z",
+        "checkedAt": "2026-10-02T02:29:03.538Z",
         "status": "live"
       },
       "tiktok": {
@@ -16,14 +16,14 @@
         "display": "53.3K",
         "source": "TikTok public profile",
         "unit": "followers",
-        "checkedAt": "2026-10-01T23:21:24.213Z",
+        "checkedAt": "2026-10-02T02:29:03.538Z",
         "status": "live"
       },
       "facebook": {
         "value": null,
         "display": null,
         "unit": "followers",
-        "checkedAt": "2026-10-01T23:21:24.213Z",
+        "checkedAt": "2026-10-02T02:29:03.538Z",
         "status": "unavailable"
       },
       "twitch": {
@@ -31,21 +31,21 @@
         "display": "23.1K",
         "source": "Twitch public GraphQL",
         "unit": "followers",
-        "checkedAt": "2026-10-01T23:21:24.213Z",
+        "checkedAt": "2026-10-02T02:29:03.538Z",
         "status": "live"
       },
       "snapchat": {
         "value": null,
         "display": null,
         "unit": "followers",
-        "checkedAt": "2026-10-01T23:21:24.213Z",
+        "checkedAt": "2026-10-02T02:29:03.538Z",
         "status": "unavailable"
       },
       "instagram": {
         "value": null,
         "display": null,
         "unit": "followers",
-        "checkedAt": "2026-10-01T23:21:24.213Z",
+        "checkedAt": "2026-10-02T02:29:03.538Z",
         "status": "unavailable"
       }
     },
@@ -54,7 +54,7 @@
         "value": null,
         "display": null,
         "unit": "subscribers",
-        "checkedAt": "2026-10-01T23:21:24.213Z",
+        "checkedAt": "2026-10-02T02:29:03.538Z",
         "status": "unavailable"
       },
       "tiktok": {
@@ -62,35 +62,35 @@
         "display": "69",
         "source": "TikTok public profile",
         "unit": "followers",
-        "checkedAt": "2026-10-01T23:21:24.213Z",
+        "checkedAt": "2026-10-02T02:29:03.538Z",
         "status": "live"
       },
       "instagram": {
         "value": null,
         "display": null,
         "unit": "followers",
-        "checkedAt": "2026-10-01T23:21:24.213Z",
+        "checkedAt": "2026-10-02T02:29:03.538Z",
         "status": "unavailable"
       },
       "facebook": {
         "value": null,
         "display": null,
         "unit": "followers",
-        "checkedAt": "2026-10-01T23:21:24.213Z",
+        "checkedAt": "2026-10-02T02:29:03.538Z",
         "status": "unavailable"
       },
       "snapchat": {
         "value": null,
         "display": null,
         "unit": "followers",
-        "checkedAt": "2026-10-01T23:21:24.213Z",
+        "checkedAt": "2026-10-02T02:29:03.538Z",
         "status": "unavailable"
       },
       "twitter": {
         "value": null,
         "display": null,
         "unit": "followers",
-        "checkedAt": "2026-10-01T23:21:24.213Z",
+        "checkedAt": "2026-10-02T02:29:03.538Z",
         "status": "unavailable"
       }
     }
