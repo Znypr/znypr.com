@@ -28,7 +28,7 @@ body.is-scrolled .navbar { min-height: 58px; background: rgba(4,7,12,.94); borde
 .story-media { z-index: -1; overflow: hidden; }
 .story-media img { width: 100%; height: 112%; object-fit: cover; object-position: center; transform: translate3d(0,var(--media-shift,-4%),0) scale(1.04); will-change: transform; }
 .story-media::after { content: ""; background: linear-gradient(90deg,rgba(2,5,10,.9) 0%,rgba(2,5,10,.55) 48%,rgba(2,5,10,.08) 100%),linear-gradient(0deg,rgba(2,5,10,.74),transparent 60%); }
-.story-panel-video .story-media img { object-position: 55% center; }
+.story-panel-video .story-media img { height: 145%; object-position: center bottom; transform: translate3d(0,calc(var(--media-shift,-4%) - 27%),0) scale(1.12); }
 .story-panel-live .story-media img { object-fit: contain; object-position: 79% center; filter: saturate(.85); background: radial-gradient(circle at 75% 40%,#243745,#080d14 65%); }
 .story-panel-live .story-media::after { background: linear-gradient(90deg,rgba(2,5,10,.95) 0%,rgba(2,5,10,.58) 55%,rgba(2,5,10,.12) 100%); }
 .story-panel-setup .story-media::after { background: linear-gradient(90deg,rgba(2,5,10,.9),rgba(2,5,10,.45) 52%,rgba(2,5,10,.16)),linear-gradient(0deg,rgba(2,5,10,.65),transparent 60%); }
