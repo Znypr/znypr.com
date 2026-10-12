@@ -11,7 +11,7 @@ const accounts = {
     facebook: { handle: 'znypr', unit: 'followers', fetcher: fetchFacebook },
     twitch: { handle: 'znypr_', unit: 'followers', fetcher: fetchTwitch },
     snapchat: { handle: 'znyprgaming', unit: 'followers', fetcher: fetchSnapchat },
-    instagram: { handle: 'znypr_', unit: 'followers', fetcher: fetchInstagram }
+    instagram: { handle: 'znypr', unit: 'followers', fetcher: fetchInstagram }
   },
   fitness: {
     youtube: { handle: 'znyprfit', unit: 'subscribers', fetcher: fetchYouTube, min: 0, max: 100000 },
