@@ -202,3 +202,142 @@ a:focus-visible,button:focus-visible,summary:focus-visible { outline:2px solid #
  .motion-ready [data-motion-reveal]:not(.is-visible) { opacity:1; transform:none; }
  [data-motion-reveal],.button,.nav-btn { transition:none !important; animation:none !important; }
 }
+
+/* Layered brand treatment. Accent colors distinguish the main destinations. */
+:root {
+ --bg:#10121e; --bg-2:#151927; --panel:#202638; --panel-2:#242b3f;
+ --text:#f5f4fa; --muted:#b5b7c8; --line:#ffffff29; --line-strong:#ffffff54;
+ --cyan:#a893ff; --cyan-2:#a893ff;
+}
+body {
+ background:
+  radial-gradient(ellipse 55% 42% at 10% 10%,#6d48b642,transparent 80%),
+  radial-gradient(ellipse 53% 40% at 88% 45%,#3c579d37,transparent 82%),
+  radial-gradient(ellipse 60% 40% at 30% 90%,#a95d3b21,transparent 85%),
+  linear-gradient(145deg,#151726,#0f1421 56%,#1b2031);
+ background-attachment:fixed;
+}
+body:has(.fitness-page) { background:radial-gradient(ellipse 70% 55% at 80% 12%,#267bd14d,transparent 75%),linear-gradient(145deg,#111e34,#0f1626 65%,#172a39); }
+body:has(.merch-page) { background:radial-gradient(ellipse 70% 55% at 80% 12%,#d7793345,transparent 75%),linear-gradient(145deg,#251d20,#151721 65%,#33251e); }
+body:has(.contact-page) { background:radial-gradient(ellipse 70% 55% at 80% 12%,#d7b3403d,transparent 75%),linear-gradient(145deg,#222329,#151923 65%,#302c22); }
+main img { display:block !important; }
+.site-header { background:rgba(18,21,33,.68); border-color:#ffffff24; }
+.navbar { min-height:72px; }
+.brand-mark { background:#111420; border-color:#ffffff48; }
+.nav-btn.active { color:#f9f7ff; background:#7956b6; }
+body:has(.fitness-page) .nav-btn.active { background:#236db2; }
+body:has(.merch-page) .nav-btn.active { background:#a85624; }
+body:has(.contact-page) .nav-btn.active { color:#222; background:#e7bf49; }
+.site-main { padding-top:20px; }
+.surface,.profile-card,.profile-card.is-active,.profile-card:not(.is-active) {
+ border:1px solid #ffffff30; border-radius:16px;
+ background:linear-gradient(145deg,rgba(40,45,65,.72),rgba(20,25,40,.66));
+ box-shadow:0 18px 52px #080a192e,inset 0 1px #ffffff13;
+ backdrop-filter:blur(20px) saturate(125%);
+}
+.page-stack { gap:18px; }
+.page-hero { min-height:300px; padding:clamp(30px,5vw,58px); }
+.page-hero h1,.fitness-hero h1 { font-size:clamp(38px,5vw,64px); line-height:1.04; letter-spacing:-.045em; }
+.section-heading h2,.fitness-section h2 { font-size:clamp(30px,3.5vw,43px); line-height:1.07; }
+.lead { font-size:clamp(16px,1.45vw,19px); }
+.eyebrow { color:#bca9ff; }
+.button-primary { color:#fff; background:#7655ad; border-color:#9e83cf; }
+.button-primary:hover { color:#fff; background:#8e6ac8; border-color:#b99ce6; }
+.button,.btn { border-radius:8px; }
+.content-section,.fitness-section { padding:clamp(22px,3.5vw,42px); }
+.footer-inner { background:rgba(16,19,31,.42); }
+
+/* A compact homepage puts the channels directly after the identity. */
+.clean-hero {
+ min-height:370px; padding:clamp(28px,4vw,55px);
+ border:1px solid #ffffff32; border-radius:16px;
+ background:radial-gradient(ellipse 65% 110% at 90% 5%,#7657b350,transparent 85%),
+            linear-gradient(120deg,rgba(43,36,70,.85),rgba(20,27,46,.78));
+ box-shadow:0 20px 70px #05091a48,inset 0 1px #ffffff1c;
+ backdrop-filter:blur(20px);
+}
+.clean-hero .hero-copy { width:min(740px,100%); }
+.hero-logo {
+ width:min(660px,100%); height:clamp(100px,15vw,180px); margin:12px 0 0;
+ background:url('/assets/brand/znypr-wordmark.png') center 65% / 185% auto no-repeat;
+}
+.hero-statement { margin:0 0 10px; font-size:clamp(23px,2.8vw,35px); line-height:1.15; letter-spacing:-.035em; }
+.clean-hero .lead { max-width:600px; margin-bottom:0; }
+.clean-hero-mark { right:2%; bottom:-23%; color:#c3a6ff0c; }
+.clean-social-heading { display:flex; align-items:end; justify-content:space-between; gap:15px; padding:33px 10px 14px; }
+.clean-social-heading .eyebrow { display:none; }
+.clean-social-heading h2 { margin:0; font-size:clamp(28px,3vw,38px); letter-spacing:-.045em; }
+.clean-social-heading p { margin:0 0 3px; font-size:15px; }
+.profile-switcher { padding-bottom:55px; }
+.profile-duo,.profile-switcher[data-active-profile="fitness"] .profile-duo { gap:16px; }
+.profile-card,.profile-card.is-active,.profile-card:not(.is-active) { padding:clamp(18px,2.3vw,28px); }
+.profile-card.is-active { border-color:#a28bde88; }
+.lane-gaming { box-shadow:inset 0 3px #9a79ec,0 18px 52px #080a192e; }
+.lane-fitness { box-shadow:inset 0 3px #59aff4,0 18px 52px #080a192e; }
+.lane-gaming .lane-label,.lane-gaming .profile-total strong { color:#c4adff; }
+.lane-fitness .lane-label,.lane-fitness .profile-total strong { color:#89caff; }
+.lane h2 { font-size:clamp(25px,2.5vw,34px); }
+.social-card { min-height:51px; padding:8px 0; }
+.social-card:hover { color:#fff; background:#ffffff0e; }
+.stats-note { font-size:11px; }
+
+/* Product images stay in the gear cards, with copy in a glass panel below. */
+.gear-page .eyebrow { color:#bca9ff; }
+.gear-page .gear-grid { grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+.gear-card { min-height:350px; padding:0; gap:0; overflow:hidden; border-radius:13px; background:rgba(24,29,48,.74); }
+.gear-card:hover { border-color:#a28bd077; background:rgba(35,39,61,.8); }
+.gear-media { display:block; position:relative; inset:auto; height:190px; flex:none; border-radius:0; background:#25283b; }
+.gear-media::before { filter:blur(24px) brightness(.55) saturate(.8); }
+.gear-product-frame,.gear-photo .gear-product-frame { top:15px; bottom:15px; left:15px; right:15px; height:auto; }
+.gear-product-frame img { width:100%; height:100%; object-fit:contain; }
+.gear-mousepad .gear-product-frame img { object-fit:cover; }
+.gear-body { flex:1; padding:18px; background:rgba(25,30,49,.67); }
+.gear-body h3 { font-size:18px; }
+.gear-card > .usage-pill { position:absolute; z-index:2; top:10px; left:10px; order:unset; backdrop-filter:blur(10px); }
+.gear-info { top:10px; right:10px; }
+.gear-page .gear-shop { background:#7655ad !important; color:#fff !important; border-color:#9e83cf !important; }
+.gear-page .gear-shop:hover { background:#916fc4 !important; }
+.workspace-preview { margin-bottom:25px; }
+.workspace-preview .img-wrap { max-height:480px; background:#161a2b; }
+.workspace-preview img { width:100%; max-height:480px; object-fit:cover; }
+
+.fitness-page .surface { border-radius:16px; }
+.fitness-page .eyebrow,.fitness-page .fitness-eyebrow { color:#83c9ff; }
+.fitness-hero { min-height:360px; background:radial-gradient(ellipse at 95% 0%,#2775ba43,transparent 70%),rgba(25,38,58,.72); }
+.fitness-primary { background:#317bbd !important; border-color:#5ca4df !important; color:#fff !important; }
+.fitness-status.is-live span { background:#78bded; }
+.cycle-card,.meal-card,.principle-card,.principle-featured,.diet-total-card,.fitness-proof-copy,.recipe-empty { background:rgba(37,52,75,.55); }
+
+.merch-page .eyebrow { color:#ffb979; }
+.merch-page .page-hero { background:radial-gradient(ellipse at 100% 0%,#c76b3240,transparent 75%),rgba(48,35,35,.68); }
+.merch-page .button-primary { background:#ac5d2c; border-color:#d48952; }
+.merch-page .button-primary:hover { background:#c27640; }
+.merch-page .merch-preview { max-width:640px; margin:0 auto; border:1px solid #ffb97944; border-radius:12px; background:rgba(32,24,27,.7); }
+.merch-page .merch-preview img { width:100%; height:auto; }
+.contact-page .eyebrow { color:#f7d471; }
+.contact-page .page-hero { background:radial-gradient(ellipse at 100% 0%,#caa53836,transparent 75%),rgba(41,39,35,.68); }
+.contact-page .button-primary { color:#27251c; background:#eac657; border-color:#f7df8b; }
+.contact-page .button-primary:hover { color:#27251c; background:#ffe18d; }
+.contact-page .pitch-card,.contact-page .info-card,.contact-page .service-item,.contact-page .contact-link { background:rgba(56,52,43,.55); }
+
+@media (max-width:980px) { .gear-page .gear-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:760px) {
+ .site-main { padding-top:12px; }
+ .clean-hero { min-height:310px; padding:30px 25px; }
+ .hero-logo { height:clamp(95px,26vw,150px); }
+ .clean-social-heading { padding:27px 2px 13px; }
+ .clean-social-heading p { display:none; }
+ .profile-duo,.profile-switcher[data-active-profile="fitness"] .profile-duo { grid-template-columns:1fr; }
+ .gear-page .gear-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ .gear-media { height:160px; }
+ .gear-card { min-height:320px; }
+}
+@media (max-width:560px) {
+ .clean-hero { min-height:280px; padding:25px 20px; }
+ .hero-logo { height:clamp(80px,26vw,112px); }
+ .hero-statement { font-size:24px; }
+ .page-hero h1,.fitness-hero h1 { font-size:clamp(35px,10vw,48px); }
+ .gear-page .gear-grid { grid-template-columns:1fr; }
+ .gear-card { min-height:320px; }
+ .gear-media { height:190px; }
+}
