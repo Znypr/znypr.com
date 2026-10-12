@@ -1,6 +1,6 @@
-# Znypr visual system · draft 02
+# Znypr visual system · directions 03
 
-Status: **exploration, not an approved sitewide specification**. Compare all five reference boards before applying these rules to znypr.com.
+Status: **exploration, not an approved sitewide specification**. Compare the two foundation boards and four distinct design directions before applying these rules to znypr.com.
 
 Private preview: https://znypr-design-lab.rockypark2.chatgpt.site/
 
@@ -42,17 +42,20 @@ The first screen should show the identity and begin the social links. Avoid repe
 
 Neutral base: `#111827` ink, `#202638` elevated surface, `#F7F7F5` off-white text/background counterpart. Use one accent in each section, not four colors on the same card. Keep long copy on an opaque or nearly opaque panel. Frosted glass is reserved for the navigation, hero, and occasional highlighted group. Use real supplied media only where it adds context; gear and merch retain their actual product imagery.
 
-## Boards 03–05: light-glass comparisons
+## Boards 03–06: distinct design directions
 
-These boards use larger text and light translucent panels. They are alternatives to compare, not cumulative layers to combine.
+These are alternative page compositions, not color variants. The same creator content is deliberately expressed through different typography, structure, shape, and visual rhythm. All are mockups for comparison.
 
-| Board | Direction | Distinguishing choice | Watch for |
-| --- | --- | --- | --- |
-| 03 / Cloud | Cool, bright, restrained | Portrait in a milky hero; simple 12–16px corners; two social panels | Cleanest and most readable, possibly less gaming identity |
-| 04 / Arc | Branded light glass | Purple/blue mist, Roblox avatar, selective asymmetric 3px/22px corners | Stronger Znypr identity without putting an angle on every card |
-| 05 / Gallery | Warm creator portfolio | Larger portrait, horizontal destination rows, subtle warmth | More editorial but less compact for many social links |
+| Board | Design language | Layout and type | Surface and motion | Tradeoff |
+| --- | --- | --- | --- | --- |
+| 03 / Lumen | Personal light glass | Plainspoken large sans headline, split hero with real portrait, four direct social tiles | Cool daylight gradient, translucent white panels, soft corners and quiet fades | Most approachable; less distinctive if applied without the real brand assets |
+| 04 / Journal | Creator editorial | Oversized serif headline, portrait column, underlined two-column social index | Warm paper, thin rules, nearly square edges and image reveal | Strongest personal story; may be less natural for dense gear specifications |
+| 05 / Index | Graphic utility | Heavy sans display, numbered directory and strict asymmetrical grid | Black and white, 2px dividers, square panels and immediate fills | Fastest scanning; most severe and least atmospheric |
+| 06 / Velocity | Gaming energy | Compressed italic headline, Roblox avatar, three large horizontal channel routes | Pale violet field, one blade cut, dark utility strip and short directional movement | Strong gaming character; can overpower fitness and merch without restrained section treatment |
 
-All three show a hero followed immediately by useful destinations. Light glass means a translucent white surface over a faint gradient with readable dark text; avoid overblurring or placing text directly on a busy photo. The interactive examples are mockups, not a production page.
+**Type comparison matters.** Board 01 remains a neutral foundation study, but no universal UI font is approved. Lumen uses a friendly sans, Journal pairs serif display with sans utility text, Index uses an assertive sans, and Velocity uses compressed italic display type with plain body text. We should judge the designs on desktop and phone, then choose actual font files or a proven web-safe stack.
+
+**Color comparison remains separate.** Board 02 maps purple to gaming, blue to fitness, orange to merch, and yellow to contact. The four directions show possible base treatments; the final accent mapping can be applied after a direction is chosen. Avoid treating every concept's mockup color as a new brand rule.
 
 ## Example component behavior
 
@@ -67,10 +70,10 @@ All three show a hero followed immediately by useful destinations. Light glass m
 ## Decisions still open
 
 1. Which wordmark variant should become the primary website identity: custom `logo_2.2_w` or simpler `logo_3_w`?
-2. Which foundation is strongest: monochrome, Cloud, Arc, or Gallery? The color board tests the accent mapping separately.
+2. Which direction is strongest: Lumen, Journal, Index, or Velocity? Board 01 tests basic geometry, and Board 02 tests accent mapping separately.
 3. Is the 12px card radius the right balance, or should panels be sharper?
 4. Confirm accent shades and glass contrast on a phone and against real product photos.
-5. Choose the final UI font after comparing legibility with the real wordmark; the preview uses system sans to avoid premature font commitment.
+5. Choose the final UI font and licensed font files after comparing the four distinct type treatments beside the real wordmark.
 
 ## Rollout rule
 
