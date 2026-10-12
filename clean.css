@@ -257,7 +257,7 @@ body:has(.contact-page) .nav-btn.active { color:#222; background:#e7bf49; }
  backdrop-filter:blur(20px);
 }
 .clean-hero .hero-copy { width:min(740px,100%); }
-.hero-logo {
+.brand-wordmark {
  width:min(660px,100%); height:clamp(100px,15vw,180px); margin:12px 0 0;
  background:url('/assets/brand/znypr-wordmark.png') center 65% / 185% auto no-repeat;
 }
@@ -324,7 +324,7 @@ body:has(.contact-page) .nav-btn.active { color:#222; background:#e7bf49; }
 @media (max-width:760px) {
  .site-main { padding-top:12px; }
  .clean-hero { min-height:310px; padding:30px 25px; }
- .hero-logo { height:clamp(95px,26vw,150px); }
+ .brand-wordmark { height:clamp(95px,26vw,150px); }
  .clean-social-heading { padding:27px 2px 13px; }
  .clean-social-heading p { display:none; }
  .profile-duo,.profile-switcher[data-active-profile="fitness"] .profile-duo { grid-template-columns:1fr; }
@@ -334,7 +334,7 @@ body:has(.contact-page) .nav-btn.active { color:#222; background:#e7bf49; }
 }
 @media (max-width:560px) {
  .clean-hero { min-height:280px; padding:25px 20px; }
- .hero-logo { height:clamp(80px,26vw,112px); }
+ .brand-wordmark { height:clamp(80px,26vw,112px); }
  .hero-statement { font-size:24px; }
  .page-hero h1,.fitness-hero h1 { font-size:clamp(35px,10vw,48px); }
  .gear-page .gear-grid { grid-template-columns:1fr; }
