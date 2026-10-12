@@ -44,6 +44,7 @@ async function switchTab(tabName = 'home', updateHistory = true) {
         contentArea.innerHTML = await response.text();
         initializeProfileCards();
         initializeMobileProfileObserver();
+        window.dispatchEvent(new CustomEvent("znypr:page-ready", { detail: { tab: target } }));
         await loadStats();
         contentArea.focus({ preventScroll: true });
 
