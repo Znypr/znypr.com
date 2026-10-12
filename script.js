@@ -36,6 +36,7 @@ async function switchTab(tabName = 'home', updateHistory = true) {
 
     if (updateHistory) {
         history.pushState({ tab: target }, '', target === 'home' ? '/' : `/${target}`);
+        window.scrollTo({ top: 0, behavior: 'instant' });
     }
 
     try {
