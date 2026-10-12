@@ -1,6 +1,6 @@
-# Znypr visual system · draft 01
+# Znypr visual system · draft 02
 
-Status: **exploration, not an approved sitewide specification**. Review the two reference boards before applying these rules to znypr.com.
+Status: **exploration, not an approved sitewide specification**. Compare all five reference boards before applying these rules to znypr.com.
 
 Private preview: https://znypr-design-lab.rockypark2.chatgpt.site/
 
@@ -18,10 +18,10 @@ The custom Z carries the distinctive shape. The interface should be minimal so t
 | Element | Draft rule | Why |
 | --- | --- | --- |
 | Logo | Use the actual supplied wordmark or mark asset | Recreating it with a font loses the custom Z |
-| Main heading | System sans, 700–800; desktop up to 64px; mobile 34–44px | Strong but readable, with less oversized copy |
-| Section heading | 30–42px | Keeps hierarchy below the brand |
-| Body | 16px, line-height about 1.5; 14px minimum for dense cards | Comfortable scan length |
-| Eyebrow | 11px uppercase, 0.12–0.16em tracking | A small navigation cue |
+| Main heading | System sans, 700–800; desktop 64–72px; mobile 38–48px | Strong, legible display without filling the viewport |
+| Section heading | 34–50px | Clear hierarchy with larger type |
+| Body | 17–19px, line-height about 1.5; 16px minimum in cards | User prefers comfortable, larger text |
+| Eyebrow | 12px uppercase, 0.12–0.16em tracking | Small navigation cue, still readable |
 | Large panel | 16px radius | Soft field behind sharp logo |
 | Card | 12px radius | Repeatable default |
 | Button | 8px radius | Clear and compact |
@@ -42,6 +42,18 @@ The first screen should show the identity and begin the social links. Avoid repe
 
 Neutral base: `#111827` ink, `#202638` elevated surface, `#F7F7F5` off-white text/background counterpart. Use one accent in each section, not four colors on the same card. Keep long copy on an opaque or nearly opaque panel. Frosted glass is reserved for the navigation, hero, and occasional highlighted group. Use real supplied media only where it adds context; gear and merch retain their actual product imagery.
 
+## Boards 03–05: light-glass comparisons
+
+These boards use larger text and light translucent panels. They are alternatives to compare, not cumulative layers to combine.
+
+| Board | Direction | Distinguishing choice | Watch for |
+| --- | --- | --- | --- |
+| 03 / Cloud | Cool, bright, restrained | Portrait in a milky hero; simple 12–16px corners; two social panels | Cleanest and most readable, possibly less gaming identity |
+| 04 / Arc | Branded light glass | Purple/blue mist, Roblox avatar, selective asymmetric 3px/22px corners | Stronger Znypr identity without putting an angle on every card |
+| 05 / Gallery | Warm creator portfolio | Larger portrait, horizontal destination rows, subtle warmth | More editorial but less compact for many social links |
+
+All three show a hero followed immediately by useful destinations. Light glass means a translucent white surface over a faint gradient with readable dark text; avoid overblurring or placing text directly on a busy photo. The interactive examples are mockups, not a production page.
+
 ## Example component behavior
 
 - One primary action per section. Link copy should name the destination or action.
@@ -55,9 +67,9 @@ Neutral base: `#111827` ink, `#202638` elevated surface, `#F7F7F5` off-white tex
 ## Decisions still open
 
 1. Which wordmark variant should become the primary website identity: custom `logo_2.2_w` or simpler `logo_3_w`?
-2. Should the site remain dark with translucent panels, or use the high-contrast monochrome board as the main interface?
+2. Which foundation is strongest: monochrome, Cloud, Arc, or Gallery? The color board tests the accent mapping separately.
 3. Is the 12px card radius the right balance, or should panels be sharper?
-4. Confirm accent shades on a phone and against real product photos.
+4. Confirm accent shades and glass contrast on a phone and against real product photos.
 5. Choose the final UI font after comparing legibility with the real wordmark; the preview uses system sans to avoid premature font commitment.
 
 ## Rollout rule
