@@ -1,80 +1,56 @@
-# Znypr visual system · directions 03
+# Znypr design lab · dark directions 04
 
-Status: **exploration, not an approved sitewide specification**. Compare the two foundation boards and four distinct design directions before applying these rules to znypr.com.
+Status: **exploration**. These four full-page reference dashboards are not an approved production style. Review the [private design lab](https://znypr-design-lab.rockypark2.chatgpt.site/) before applying a direction to znypr.com.
 
-Private preview: https://znypr-design-lab.rockypark2.chatgpt.site/
+## Source assets and reference
 
-## Source of the direction
+- Actual supplied Znypr wordmark and marks: `logo_2.2_w.png`, `logo_3_w(2).png`, `znypr-logo-white-512(3).png` and related variants.
+- Actual supplied portrait and Roblox avatar: `w(1).png`, `avatarpfppurple.png` and Roblox screenshots.
+- [ATK Phantom page](https://www.atk.store/en-de/products/atk-blazing-sky-phantom-hollow-carbon-fiber-composite-wireless-gaming-mouse): deliberate page pacing, clear product emphasis and motion reference.
+- [Znypr Fourthwall store](https://znypr-shop.fourthwall.com/): restrained store layout reference.
 
-- Primary supplied mark: `logo_2.2_w.png` (custom angular Z with a curved stroke and clean italic wordmark).
-- Supporting supplied variants: `logo_3_w(2).png`, `znypr-logo-white-512(3).png`, `znypr-logo-black-512.png`, and the circular marks.
-- Real creator assets: `avatarpfppurple.png`, `Screenshot 2026-08-21 192419(2).png`, `w(1).png`.
-- External references: [ATK Phantom product page](https://www.atk.store/en-de/products/atk-blazing-sky-phantom-hollow-carbon-fiber-composite-wireless-gaming-mouse) for deliberate section pacing and product emphasis; [Znypr Fourthwall store](https://znypr-shop.fourthwall.com/) for a simple merchandise destination. These are references, not templates to copy.
+No generated portrait or product artwork is used. The preview's gear text is a component example; add original product photos when adapting a chosen style to production. Do not substitute avatar art for a gear product photo.
 
-The custom Z carries the distinctive shape. The interface should be minimal so the mark, products, avatar, and portrait have space. Use a tapered or diagonal detail sparingly. Do not skew every card or repeat a huge decorative Z behind every section.
+## Four distinct dark systems
 
-## Board 01: black and white foundation
+| Direction | Composition | Typography | Geometry / surface | Image role | Best fit / risk |
+| --- | --- | --- | --- | --- | --- |
+| **01 Vapor** | Floating glass navigation, split hero, immediate social group and two feature panes | Large clean sans, softer body hierarchy | 22px hero, 13px cards, pill actions; translucent dark surfaces over faint purple and blue depth | Real portrait in one controlled frame | Personal and welcoming; too much glass would hurt clarity |
+| **02 Slate** | Flat store-like header, 50/50 hero, numbered content section, fixed product frames | Medium-weight sans, large calm headings | Square sections, 1px dividers, 2–8px controls; matte charcoal without glow | Rectangular portrait and catalog-style visuals | Most restrained for gear and merch; can feel severe if copy is sparse |
+| **03 Vector** | Logo rail, gaming-first hero, channel strip, contrasting fitness/merch halves | Heavy compressed-feel display with plain body copy | Mostly straight edges, one 10px cut on primary action, controlled purple | Isolated Roblox avatar on gaming hero | Strongest gaming signature; needs restraint on fitness and contact pages |
+| **04 Flux** | Narrow nav, full-bleed portrait hero, chapters, social row and image-led gallery | Very large quiet sans, few labels | Square imagery, subtle rules, minimal overlays | Real portrait and avatar carry the structure | Strongest creator presence; requires good source photography and careful mobile crops |
 
-| Element | Draft rule | Why |
+The previous Index and Journal directions were removed. Light variants are out of scope for this comparison. Every dashboard includes navigation, a homepage hero, immediate social routes, secondary destinations, imagery, gear/merch/contact examples, and a component shelf with headings, buttons, badges, an input, a gear detail, image treatment, corner samples and color swatches.
+
+## Shared content and hierarchy
+
+- The first screen establishes Znypr and leads into direct platform links. Avoid extra "connect" calls to action that merely repeat the links beneath them.
+- Use the real logo file. The UI font should support the custom Z, not approximate the wordmark in text.
+- Keep body text around 17–21px and controls at least 15–17px. Headline sizes vary by system and must compress on narrow viewports.
+- Gaming is purple, fitness blue, merch orange and contact yellow. Use the color as a small directional cue, not an equal four-color wash across every section.
+- Product cards need the real product image, exact name, short descriptor, current-use or recommendation state, and a distinct shop/details link. Keep affiliate disclosures beside the relevant gear group.
+- Portrait belongs to creator context, avatar to gaming. Crop responsively rather than stretching or replacing assets.
+- Every contact action must describe its actual destination. If a form is implemented later, include labels, validation and a successful-submission state; the preview input is only a visual specimen.
+
+## Motion proposals
+
+| Direction | Entrance | Interaction |
 | --- | --- | --- |
-| Logo | Use the actual supplied wordmark or mark asset | Recreating it with a font loses the custom Z |
-| Main heading | System sans, 700–800; desktop 64–72px; mobile 38–48px | Strong, legible display without filling the viewport |
-| Section heading | 34–50px | Clear hierarchy with larger type |
-| Body | 17–19px, line-height about 1.5; 16px minimum in cards | User prefers comfortable, larger text |
-| Eyebrow | 12px uppercase, 0.12–0.16em tracking | Small navigation cue, still readable |
-| Large panel | 16px radius | Soft field behind sharp logo |
-| Card | 12px radius | Repeatable default |
-| Button | 8px radius | Clear and compact |
-| Edge | 1px low-contrast border | Definition without white outlines |
-| Special shape | 2px/18px asymmetric corner or a short diagonal cut | Echoes the Z in one focal component |
-| Spacing | 8px base; 16–24px within cards; 48–72px between sections | Lets content breathe without an empty first screen |
+| Vapor | Opacity and 12px rise over about 450ms | Border/brightness shift and up to 2px lift |
+| Slate | Minimal reveal, 250–350ms | Underline or matte fill, about 180ms |
+| Vector | Short directional reveal along a cut edge | Immediate state and 180–220ms position/color change |
+| Flux | Image reveal as chapter enters, 450–650ms | Restrained underline and opacity shift |
 
-The first screen should show the identity and begin the social links. Avoid repeated "watch live" and "watch videos" calls to action when the corresponding platform links are already directly below.
+Motion must not hide content until a script runs. Respect `prefers-reduced-motion`; avoid sticky scroll traps, large parallax travel and long loading sequences. The preview demonstrates structure and simple hover treatment, not the final entrance animations.
 
-## Board 02: color and depth
+## Decisions before rollout
 
-| Destination | Draft accent | Use |
-| --- | --- | --- |
-| Gaming | `#8052E8` purple | Roblox avatar, active navigation, selected button, restrained glow |
-| Fitness | `#3E95DD` blue | Training and diet section cues |
-| Merch | `#CF7837` orange | Product/store action |
-| Contact | `#DEC056` yellow | Business contact action, with dark text for contrast |
+1. Choose one of Vapor, Slate, Vector or Flux as the base. Combining all four would remove their clarity.
+2. Decide whether the primary logo is the full wordmark or the compact Z at desktop and mobile sizes.
+3. Check the selected system with the real gear and merch product photos, long product names, and actual link destinations.
+4. Review desktop and phone crops, text contrast and interaction focus states.
+5. Choose a final licensed font or a stable system stack after comparing it beside the supplied wordmark. The preview uses browser-safe sans stacks, so font selection remains open.
 
-Neutral base: `#111827` ink, `#202638` elevated surface, `#F7F7F5` off-white text/background counterpart. Use one accent in each section, not four colors on the same card. Keep long copy on an opaque or nearly opaque panel. Frosted glass is reserved for the navigation, hero, and occasional highlighted group. Use real supplied media only where it adds context; gear and merch retain their actual product imagery.
+## Rollout
 
-## Boards 03–06: distinct design directions
-
-These are alternative page compositions, not color variants. The same creator content is deliberately expressed through different typography, structure, shape, and visual rhythm. All are mockups for comparison.
-
-| Board | Design language | Layout and type | Surface and motion | Tradeoff |
-| --- | --- | --- | --- | --- |
-| 03 / Lumen | Personal light glass | Plainspoken large sans headline, split hero with real portrait, four direct social tiles | Cool daylight gradient, translucent white panels, soft corners and quiet fades | Most approachable; less distinctive if applied without the real brand assets |
-| 04 / Journal | Creator editorial | Oversized serif headline, portrait column, underlined two-column social index | Warm paper, thin rules, nearly square edges and image reveal | Strongest personal story; may be less natural for dense gear specifications |
-| 05 / Index | Graphic utility | Heavy sans display, numbered directory and strict asymmetrical grid | Black and white, 2px dividers, square panels and immediate fills | Fastest scanning; most severe and least atmospheric |
-| 06 / Velocity | Gaming energy | Compressed italic headline, Roblox avatar, three large horizontal channel routes | Pale violet field, one blade cut, dark utility strip and short directional movement | Strong gaming character; can overpower fitness and merch without restrained section treatment |
-
-**Type comparison matters.** Board 01 remains a neutral foundation study, but no universal UI font is approved. Lumen uses a friendly sans, Journal pairs serif display with sans utility text, Index uses an assertive sans, and Velocity uses compressed italic display type with plain body text. We should judge the designs on desktop and phone, then choose actual font files or a proven web-safe stack.
-
-**Color comparison remains separate.** Board 02 maps purple to gaming, blue to fitness, orange to merch, and yellow to contact. The four directions show possible base treatments; the final accent mapping can be applied after a direction is chosen. Avoid treating every concept's mockup color as a new brand rule.
-
-## Example component behavior
-
-- One primary action per section. Link copy should name the destination or action.
-- Social cards should show platform and handle clearly, with optional verified metrics. Missing metrics must not leave a misleading placeholder claim.
-- Product cards include the image, product name, short descriptor, offer if relevant, and a distinct shop link. Keep affiliate disclosure near the group.
-- Use the portrait for creator context and the Roblox avatar for gaming context. Do not substitute generated portraits or product photos.
-- Entrance: opacity and up to 16px vertical movement over 450–650ms, once as content enters view.
-- Hover: border/background transition around 180–240ms; button lift no more than 2px.
-- Respect `prefers-reduced-motion`. No long loader or animation that hides content until a script completes.
-
-## Decisions still open
-
-1. Which wordmark variant should become the primary website identity: custom `logo_2.2_w` or simpler `logo_3_w`?
-2. Which direction is strongest: Lumen, Journal, Index, or Velocity? Board 01 tests basic geometry, and Board 02 tests accent mapping separately.
-3. Is the 12px card radius the right balance, or should panels be sharper?
-4. Confirm accent shades and glass contrast on a phone and against real product photos.
-5. Choose the final UI font and licensed font files after comparing the four distinct type treatments beside the real wordmark.
-
-## Rollout rule
-
-The design lab is a separate private preview. This document is a draft reference. After the direction is chosen, translate approved tokens into the production stylesheet, update one representative page, review desktop and mobile, then apply consistently to the remaining pages. Preserve the functioning social, gear, fitness, merch, and contact content.
+Keep the design lab separate from the production website. After selecting a direction, translate its tokens and components into one representative znypr.com page, review at desktop and phone sizes, then apply to the remaining pages while preserving functioning links and content. This document remains a draft until a direction is chosen.
