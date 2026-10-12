@@ -1,0 +1,203 @@
+/* Znypr editorial system: typography first, real brand mark, no content photography. */
+:root {
+  color-scheme: dark;
+  --bg:#0a0a0a; --bg-2:#0f0f0f; --panel:#141414; --panel-2:#181818;
+  --text:#f5f5f1; --muted:#999995; --muted-strong:#c6c6c1;
+  --line:#2b2b2b; --line-strong:#555550; --cyan:#f2f2ed; --cyan-2:#f2f2ed;
+  --orange:#eeeae3; --fitness:#eeeae3; --max:1220px;
+  --display:Arial,Helvetica,sans-serif;
+}
+html { scroll-behavior:smooth; }
+body { background:#0a0a0a; color:var(--text); font-size:16px; }
+body::before,.ambient { display:none; }
+main img { display:none !important; }
+h1,h2,h3 { font-family:var(--display); font-weight:850; }
+a:focus-visible,button:focus-visible,summary:focus-visible { outline:2px solid #fff; outline-offset:4px; }
+.site-header { padding:0 20px; background:rgba(10,10,10,.94); border-bottom:1px solid #252525; backdrop-filter:blur(16px); }
+.navbar { width:min(var(--max),100%); min-height:78px; padding:10px 0; border:0; border-radius:0; box-shadow:none; background:none; backdrop-filter:none; }
+.brand { gap:11px; }
+.brand-mark { width:42px; height:42px; border:1px solid #353535; border-radius:50%; overflow:hidden; box-shadow:none; background:#000; }
+.brand-mark img { width:100%; height:100%; object-fit:cover; }
+.brand-copy strong { font-size:18px; letter-spacing:.06em; }
+.brand-copy small { margin-top:5px; color:#8f8f8b; font-size:9px; letter-spacing:.12em; }
+.nav-links { gap:3px; }
+.nav-btn { color:#a8a8a4; font-size:13px; font-weight:750; padding:10px 14px; border:0; border-radius:3px; background:transparent; }
+.nav-btn:hover { color:#fff; border:0; background:#242424; }
+.nav-btn.active { color:#111; border:0; background:#f0f0eb; box-shadow:none; }
+.site-main { margin:0 auto; width:min(var(--max),calc(100% - 40px)); }
+.site-main.is-loading { opacity:.65; transform:none; }
+.page-stack { gap:18px; }
+.surface { overflow:visible; border:1px solid #292929; border-radius:5px; background:#111; box-shadow:none; }
+.surface::after,.page-hero::before { display:none; }
+.eyebrow { color:#b6b6b0; font-size:11px; font-weight:800; letter-spacing:.17em; }
+.eyebrow::before { width:18px; height:1px; }
+.lead { color:#babbb8; font-size:clamp(17px,1.8vw,21px); line-height:1.55; }
+.button,.btn { min-height:46px; padding:0 20px; border:1px solid #555; border-radius:3px; background:transparent; color:#eee; font-size:13px; font-weight:750; box-shadow:none; }
+.button:hover,.btn:hover { color:#101010; background:#e8e8e3; border-color:#e8e8e3; transform:translateY(-2px); }
+.button-primary { color:#111; background:#efefea; border-color:#efefea; }
+.button-primary:hover { background:#fff; }
+.button-ghost { color:#ddd; }
+.hero-actions { margin-top:28px; }
+.page-hero { min-height:410px; padding:clamp(38px,6vw,76px); }
+.page-hero h1 { max-width:980px; margin:20px 0; font-size:clamp(48px,7.5vw,100px); letter-spacing:-.065em; line-height:.98; }
+.content-section,.fitness-section { padding:clamp(25px,4vw,50px); }
+.section-heading { border-color:#333; }
+.section-heading h2 { letter-spacing:-.045em; }
+.section-heading > p { color:#a8a8a2; }
+.category-header { color:#b9b9b3; border-bottom:1px solid #303030; padding-bottom:10px; }
+.site-footer { margin-top:24px; }
+.footer-inner { border:0; border-top:1px solid #303030; border-radius:0; background:none; box-shadow:none; padding:22px 0; }
+.footer-brand img { width:32px; height:32px; border-radius:50%; }
+.footer-links a:hover { color:#fff; }
+
+/* Home */
+.clean-home { gap:0; }
+.clean-hero { position:relative; min-height:min(820px,calc(100svh - 78px)); padding:clamp(40px,6vw,82px); display:flex; align-items:center; overflow:hidden; border:0; border-bottom:1px solid #303030; border-radius:0; background:#0a0a0a; }
+.clean-hero::before,.clean-hero::after { display:none; }
+.clean-hero .hero-copy { width:min(880px,100%); padding:0; }
+.clean-hero .hero-copy h1 { margin:22px 0 8px; line-height:.85; }
+.clean-hero .hero-name { font-size:clamp(88px,17vw,236px); letter-spacing:-.09em; color:#f5f5f1; text-shadow:none; }
+.hero-dot { color:#6f706c; }
+.hero-statement { margin:22px 0; font-size:clamp(30px,4.2vw,58px); font-weight:750; letter-spacing:-.055em; line-height:1.03; }
+.clean-hero .lead { max-width:540px; }
+.clean-hero-mark { position:absolute; right:-4%; bottom:-22%; font:900 min(65vw,850px)/1 var(--display); color:rgba(255,255,255,.018); pointer-events:none; }
+.hero-scroll { position:absolute; right:14px; bottom:26px; color:#777; font-size:10px; font-weight:800; letter-spacing:.15em; }
+.hero-meta { gap:0; margin-top:52px; border-top:1px solid #343434; width:min(580px,100%); }
+.hero-stat { min-width:0; flex:1; padding:17px 18px 0 0; border:0; border-radius:0; background:none; }
+.hero-stat + .hero-stat { padding-left:20px; border-left:1px solid #343434; }
+.hero-stat strong { color:#fff; font-size:clamp(20px,2.3vw,29px); }
+.hero-stat span { font-size:10px; }
+.clean-intro { display:grid; grid-template-columns:1.2fr .8fr; gap:22px 40px; align-items:end; padding:clamp(85px,12vw,160px) clamp(20px,6vw,80px) clamp(55px,8vw,95px); }
+.clean-intro .eyebrow { grid-column:1/-1; }
+.clean-intro h2,.clean-social-heading h2 { margin:0; font-size:clamp(48px,8.5vw,112px); letter-spacing:-.07em; line-height:.9; }
+.clean-intro h2 span { color:#777; }
+.clean-intro p,.clean-social-heading p { max-width:380px; margin:0 0 8px; color:#aaa; font-size:clamp(17px,1.8vw,21px); line-height:1.5; }
+.clean-chapters { border-top:1px solid #343434; }
+.clean-chapter { min-height:280px; display:grid; grid-template-columns:70px minmax(0,1fr) auto; gap:36px; align-items:center; padding:48px clamp(20px,5vw,64px); border-bottom:1px solid #343434; transition:background .3s ease; }
+.clean-chapter:hover { background:#151515; }
+.chapter-number,.chapter-kicker { color:#888; font-size:11px; font-weight:850; letter-spacing:.16em; }
+.clean-chapter h3 { margin:12px 0 12px; font-size:clamp(30px,4vw,56px); letter-spacing:-.055em; line-height:1; }
+.clean-chapter p { max-width:480px; margin:0; color:#aaa; font-size:16px; }
+.clean-chapter a,.clean-chapter button { justify-self:end; min-width:145px; padding:12px 0; border:0; border-bottom:1px solid #888; border-radius:0; background:none; color:#f0f0eb; font:750 14px var(--body); text-decoration:none; text-align:left; cursor:pointer; transition:color .2s,border-color .2s,transform .2s; }
+.clean-chapter a:hover,.clean-chapter button:hover { color:#fff; border-color:#fff; transform:translateX(4px); }
+.clean-social-heading { padding:clamp(85px,11vw,135px) clamp(20px,6vw,80px) 50px; }
+.clean-social-heading h2 { margin:22px 0; }
+.profile-switcher { padding-bottom:70px; }
+.profile-duo,.profile-switcher[data-active-profile="fitness"] .profile-duo { grid-template-columns:1fr 1fr; gap:14px; }
+.profile-card,.profile-card.is-active,.profile-card:not(.is-active) { opacity:1; filter:none; transform:none; padding:clamp(22px,3vw,38px); border:1px solid #303030; border-radius:4px; background:#121212; box-shadow:none; }
+.profile-card::before,.profile-card::after { display:none; }
+.profile-card.is-active { border-color:#62625f; }
+.lane-head { align-items:start; }
+.lane-label,.lane-fitness .lane-label { color:#aaa; }
+.lane h2 { font-size:clamp(32px,4vw,50px); }
+.lane-copy { color:#a9a9a4; }
+.profile-total { border:0; background:none; padding:0; }
+.profile-total strong,.profile-card.is-active .profile-total strong { color:#fff; }
+.social-grid { gap:0; }
+.social-card { min-height:59px; grid-template-columns:minmax(0,1fr) auto; padding:11px 0; border:0; border-bottom:1px solid #2d2d2d; border-radius:0; background:none; }
+.social-card:hover,.lane-fitness .social-card:hover { transform:none; border-color:#686868; background:none; }
+.social-copy strong { font-size:15px; }
+.social-copy span,.social-metric span { color:#8e8e8a; }
+.social-metric strong { font-size:15px; }
+.stats-note { margin-top:14px; color:#888; }
+
+/* Gear */
+.gear-legend { color:#aaa; }
+.gear-page .usage-pill,.gear-page .deal-pill { border-color:#424242 !important; background:#202020 !important; color:#d8d8d2 !important; }
+.gear-page .gear-shop { border-color:#eee !important; background:#eee !important; color:#111 !important; }
+.gear-grid { grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+.gear-card { min-height:210px; aspect-ratio:auto; display:flex; flex-direction:column; gap:17px; padding:22px; overflow:visible; clip-path:none; border:1px solid #313131; border-radius:4px; background:#151515; }
+.gear-card:hover { border-color:#676767; background:#1b1b1b; }
+.gear-media { display:none; }
+.gear-card > .usage-pill { position:static; order:-1; align-self:flex-start; backdrop-filter:none; }
+.gear-info { top:18px; right:18px; border-color:#666; background:#222; }
+.gear-body { position:static; flex:1; min-height:0; display:flex; flex-direction:column; gap:9px; padding:0; border:0; border-radius:0; background:none; backdrop-filter:none; box-shadow:none; }
+.gear-body h3 { font-size:21px; text-shadow:none; }
+.gear-body .gear-summary { color:#aaa; font-size:14px; text-shadow:none; }
+.gear-actions { margin-top:auto; padding-top:10px; }
+.gear-info { z-index:2; }
+.gear-detail-popover { color:#eee; background:#181818; border:1px solid #555; }
+.affiliate-disclosure { color:#9d9d99; }
+
+/* Fitness */
+.fitness-hero { min-height:520px; grid-template-columns:1fr; background:#111; border-color:#2d2d2d; }
+.fitness-hero::after { display:none; }
+.fitness-hero h1 { max-width:900px; }
+.fitness-status,.fitness-status.is-live { background:#1e1e1e; border-color:#444; color:#d1d1cb; }
+.fitness-status.is-live span { background:#e7e7e1; box-shadow:none; }
+.fitness-primary { color:#111 !important; border-color:#eee !important; background:#eee !important; }
+.fitness-jumpbar { border-color:#333; background:#141414; }
+.fitness-jumpbar button:hover,.fitness-jumpbar button:focus-visible { color:#111; background:#eee; }
+.fitness-section { border-color:#2d2d2d; }
+.fitness-cycle,.meal-grid,.fitness-principles { gap:11px; }
+.cycle-card,.cycle-card:nth-child(2),.cycle-card:nth-child(3),.meal-card,.principle-card,.principle-featured,.diet-total-card,.fitness-proof-copy,.recipe-empty { background:#191919; border:1px solid #353535; border-radius:4px; }
+.cycle-card { min-height:185px; }
+.cycle-rest { background:#151515 !important; }
+.fitness-training-proof { display:block; }
+.fitness-proof-copy { min-height:230px; }
+.meal-top strong,.principle-number,.meal-macros span { color:#e4e4df; }
+.meal-macros span { border-color:#494949; background:#222; }
+.diet-total-card { background:#1a1a1a; }
+.download-card,.fitness-checklist > div { border-color:#3a3a3a; background:#1a1a1a; }
+.download-icon { border-color:#444; background:#222; color:#ddd; }
+.download-button { border-color:#666; background:#222; color:#eee; }
+
+/* Contact and merch */
+.pitch-card,.info-card,.service-item,.contact-link { border-color:#353535; border-radius:4px; background:#191919; }
+.contact-link:hover { border-color:#999; }
+.arrow-icon { color:#fff; }
+.merch-typographic { min-height:420px; display:flex; flex-direction:column; justify-content:space-between; align-items:flex-start; padding:clamp(28px,5vw,62px); border:1px solid #363636; background:#171717; }
+.merch-typographic > span { color:#9a9a95; font-size:11px; font-weight:800; letter-spacing:.18em; }
+.merch-typographic strong { font-size:clamp(54px,9vw,120px); letter-spacing:-.075em; line-height:.87; }
+.merch-typographic strong span { color:#777; }
+.merch-typographic a { padding:12px 0; border-bottom:1px solid #999; text-decoration:none; font-weight:800; }
+.merch-typographic a:hover { border-color:#fff; }
+
+/* A short entrance, only for elements entering the viewport. */
+.motion-ready [data-motion-reveal]:not(.is-visible) { opacity:0; transform:translateY(22px); }
+[data-motion-reveal] { transition:opacity .65s ease,transform .75s cubic-bezier(.2,.7,.2,1); }
+@media (max-width:980px) {
+ .clean-hero { min-height:680px; }
+ .clean-intro { grid-template-columns:1fr; }
+ .clean-intro .eyebrow { grid-column:auto; }
+ .clean-chapter { grid-template-columns:50px minmax(0,1fr); }
+ .clean-chapter a,.clean-chapter button { grid-column:2; justify-self:start; }
+ .gear-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (max-width:760px) {
+ .site-header { padding:0 14px; }
+ .navbar { min-height:0; padding:12px 0 8px; }
+ .nav-links { gap:4px; }
+ .nav-btn { font-size:12px; padding:9px 11px; }
+ .site-main,.site-footer { width:calc(100% - 28px); }
+ .clean-hero { min-height:calc(100svh - 110px); padding:54px 12px 42px; }
+ .clean-hero .hero-name { font-size:clamp(72px,20vw,130px); }
+ .hero-statement { font-size:clamp(29px,7vw,46px); }
+ .hero-scroll { display:none; }
+ .hero-meta { margin-top:38px; }
+ .clean-intro { padding:84px 10px 55px; }
+ .clean-chapter { gap:14px; padding:34px 10px; min-height:0; }
+ .clean-chapter h3 { font-size:clamp(29px,8vw,42px); }
+ .clean-social-heading { padding:85px 10px 35px; }
+ .profile-duo,.profile-switcher[data-active-profile="fitness"] .profile-duo { grid-template-columns:1fr; }
+ .gear-grid { grid-template-columns:1fr; }
+ .gear-card { min-height:170px; }
+ .fitness-hero { min-height:0; padding:55px 24px; }
+ .fitness-cycle,.fitness-checklist { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ .meal-grid,.fitness-principles { grid-template-columns:1fr; }
+ .merch-typographic { min-height:330px; }
+}
+@media (max-width:520px) {
+ .clean-hero .hero-name { font-size:clamp(68px,21vw,105px); }
+ .hero-meta { flex-direction:column; }
+ .hero-stat + .hero-stat { border-left:0; border-top:1px solid #343434; padding-left:0; }
+ .lane-head { flex-wrap:wrap; }
+ .profile-total { text-align:left; }
+ .fitness-cycle,.fitness-checklist { grid-template-columns:1fr; }
+ .diet-total-macros { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (prefers-reduced-motion:reduce) {
+ html { scroll-behavior:auto; }
+ .motion-ready [data-motion-reveal]:not(.is-visible) { opacity:1; transform:none; }
+ [data-motion-reveal],.button,.nav-btn { transition:none !important; animation:none !important; }
+}
