@@ -113,7 +113,7 @@ img{display:block;max-width:100%}
   .nav{top:8px;padding:7px 7px 7px 16px;border-radius:16px;margin-bottom:16px}
   .brand{font-size:24px}
 }
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-property:color,background-color,border-color,box-shadow!important}}
 
 /* Home page sections */
 .page-head{max-width:1400px;margin:0 auto 18px;display:flex;align-items:end;justify-content:space-between;gap:18px}
@@ -661,6 +661,19 @@ img{display:block;max-width:100%}
     });
 
     return function () { lenis.destroy(); };
+  });
+
+  // Reduced motion: nothing moves (no wipe, smooth scroll, parallax or tilt); content only fades in gently.
+  mm.add('(prefers-reduced-motion: reduce)', function () {
+    var soft = 'h1.display, h2.display, h3.brush, .copy-card h2, .setup-copy h3, .more-row .mcard, .scard, .setup, .feature-card, .zs-band, .stat, .pcard, .icard, .fb, .dl, .mailcard, .panel, .section-heading p, .setup-photo, .mthumb, .pphoto, .photo-card, .banner .frames';
+    var items = gsap.utils.toArray(soft).filter(function (el) { return !el.parentElement.closest(soft); });
+    gsap.set(items, { opacity: 0 });
+    ScrollTrigger.batch(items, {
+      start: 'top 95%', once: true,
+      onEnter: function (batch) {
+        gsap.to(batch, { opacity: 1, duration: 0.6, ease: 'power1.out', stagger: 0.06, overwrite: 'auto' });
+      }
+    });
   });
 
   if (manual) { // recording harness: freeze the real clock, step by hand, show a visible cursor
