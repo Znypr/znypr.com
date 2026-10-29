@@ -7,7 +7,8 @@ description and thumbnail - once per video; summaries are kept in the JSON and r
 Runs without an API key too: new videos then simply have no summary until one is set.
 
 usage: python scripts/update_youtube.py assets/youtube-latest.json [--feed FILE]
-env:   ANTHROPIC_API_KEY (optional) - enables summaries for new videos
+env:   ANTHROPIC_API_KEY (optional) - Claude summaries; GITHUB_TOKEN (set by Actions) - free GitHub Models;
+       with neither, a clean description sentence is used, otherwise no summary
 """
 import argparse
 import json
@@ -151,37 +152,91 @@ Using only the title, the description and the thumbnail image, write one or two 
 Reply with the blurb only."""
 
 
-def summarize(client, video):
-    import anthropic
+BANNED = re.compile(r"facecam|face cam|gameplay footage|footage|camera|reaction|\bshorts?\b|subscribe|like and|#|\*\*", re.I)
 
-    prompt = SUMMARY_PROMPT.format(kind="Short" if video["type"] == "short" else "video or stream",
-                                   title=video["title"], description=video.get("description") or "(none)")
+
+def acceptable(text):
+    """Guard for any generated or derived blurb: plain, short, no format talk, no markup."""
+    if not text:
+        return None
+    text = text.strip().strip('"').strip()
+    words = text.split()
+    if not (5 <= len(words) <= 45) or len(text) > 260 or BANNED.search(text) or "\n" in text:
+        return None
+    return text
+
+
+def prompt_for(video):
+    return SUMMARY_PROMPT.format(kind="Short" if video["type"] == "short" else "video or stream",
+                                 title=video["title"], description=video.get("description") or "(none)")
+
+
+def summarize_claude(video):
+    """Provider 1: Claude, when ANTHROPIC_API_KEY is set. Reads the thumbnail too."""
+    if not os.environ.get("ANTHROPIC_API_KEY"):
+        return None
+    import anthropic
     try:
-        response = client.beta.messages.create(
-            model=MODEL,
-            max_tokens=4000,
-            output_config={"effort": "low"},
-            betas=["server-side-fallback-2026-07-01"],
-            fallbacks="default",
+        response = anthropic.Anthropic().beta.messages.create(
+            model=MODEL, max_tokens=4000, output_config={"effort": "low"},
+            betas=["server-side-fallback-2026-07-01"], fallbacks="default",
             messages=[{"role": "user", "content": [
                 {"type": "image", "source": {"type": "url", "url": video["thumb"]}},
-                {"type": "text", "text": prompt},
-            ]}],
-        )
-    except anthropic.RateLimitError:
-        print(f"rate limited, skipping summary for {video['id']}", file=sys.stderr)
-        return None
-    except anthropic.APIStatusError as e:
-        print(f"API error {e.status_code} for {video['id']}: {e.message}", file=sys.stderr)
-        return None
-    except anthropic.APIConnectionError:
-        print(f"network error, skipping summary for {video['id']}", file=sys.stderr)
+                {"type": "text", "text": prompt_for(video)}]}])
+    except (anthropic.APIStatusError, anthropic.APIConnectionError) as e:
+        print(f"claude summary failed for {video['id']}: {e}", file=sys.stderr)
         return None
     if response.stop_reason == "refusal":
-        print(f"summary declined for {video['id']}", file=sys.stderr)
         return None
-    text = " ".join(b.text for b in response.content if b.type == "text").strip()
-    return text.strip('"') or None
+    return " ".join(b.text for b in response.content if b.type == "text")
+
+
+def summarize_github_models(video):
+    """Provider 2: GitHub Models (free for repos). Uses the workflow's own GITHUB_TOKEN,
+    no extra key. Text only: title and description."""
+    token = os.environ.get("GITHUB_TOKEN")
+    if not token:
+        return None
+    body = json.dumps({"model": "openai/gpt-4.1-mini", "max_tokens": 120, "temperature": 0.2,
+                       "messages": [{"role": "user", "content": prompt_for(video)}]}).encode()
+    req = urllib.request.Request("https://models.github.ai/inference/chat/completions", data=body, method="POST",
+                                 headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json",
+                                          "X-GitHub-Api-Version": "2022-11-28"})
+    try:
+        with urllib.request.urlopen(req, timeout=40) as resp:
+            return json.load(resp)["choices"][0]["message"]["content"]
+    except Exception as e:  # rate limit, permissions, outage: fall through to the next provider
+        print(f"github models summary failed for {video['id']}: {e}", file=sys.stderr)
+        return None
+
+
+def summarize_from_description(video):
+    """Provider 3, no AI: the video's own description, if it opens with a clean sentence.
+    First-person words become Znypr; anything else first-person is rejected."""
+    text = video.get("description") or ""
+    sentences = re.split(r"(?<=[.!?])\s+", text)
+    picked = []
+    for sentence in sentences:
+        if len(" ".join(picked + [sentence]).split()) > 30:
+            break
+        picked.append(sentence)
+        if len(picked) == 2:
+            break
+    blurb = " ".join(picked).strip()
+    blurb = re.sub(r"^\s*i\b", "Znypr", blurb, flags=re.I)
+    blurb = re.sub(r"\bmy\b", "Znypr's", blurb, flags=re.I)
+    if re.search(r"\b(i|me|we|our|us|you|your)\b", blurb, re.I):
+        return None
+    return blurb[:1].upper() + blurb[1:] if blurb else None
+
+
+def generate_summary(video):
+    for provider in (summarize_claude, summarize_github_models, summarize_from_description):
+        text = acceptable(provider(video))
+        if text:
+            print(f"summary for {video['id']} from {provider.__name__}")
+            return text
+    return None
 
 
 def main():
@@ -215,14 +270,10 @@ def main():
     if not feature or not shorts:
         sys.exit("no regular upload or no Shorts found; keeping the previous file")
 
-    client = None
-    if os.environ.get("ANTHROPIC_API_KEY"):
-        import anthropic
-        client = anthropic.Anthropic()
     shown = [feature, *more, *shorts]
     for video in shown:
-        if video["id"] not in summaries and client is not None:
-            summary = summarize(client, video)
+        if video["id"] not in summaries:
+            summary = generate_summary(video)
             if summary:
                 summaries[video["id"]] = summary
         video["summary"] = summaries.get(video["id"])

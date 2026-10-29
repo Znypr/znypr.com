@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  models: read
 
 concurrency:
   group: update-youtube
@@ -29,6 +30,7 @@ jobs:
       - name: Refresh assets/youtube-latest.json
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/update_youtube.py assets/youtube-latest.json
 
       - name: Commit if changed
