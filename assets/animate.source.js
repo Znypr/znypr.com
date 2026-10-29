@@ -72,7 +72,7 @@
     });
 
     // ---- Panels fade up in staggered rows; media wipes open ----------------------------------------
-    var cards = '.feature, .more-row .mcard, .scard, .setup, .feature-card, .zs-band, .stat, .pcard, .icard, .fb, .dl, .mailcard, .panel, .section-heading p, .page-head p';
+    var cards = '.more-row .mcard, .scard, .setup, .feature-card, .zs-band, .stat, .pcard, .icard, .fb, .dl, .mailcard, .panel, .section-heading p';
     gsap.set(cards, { opacity: 0, y: 60 });
     ScrollTrigger.batch(cards, {
       start: 'top 93%', once: true,
@@ -80,7 +80,7 @@
         gsap.to(batch, { opacity: 1, y: 0, duration: 1, ease: 'power3.out', stagger: 0.11, overwrite: 'auto', delay: booting ? 1.15 : 0 });
       }
     });
-    gsap.utils.toArray('.feature-shot, .setup-photo, .mthumb, .pphoto, .photo-card, .banner .frames').forEach(function (el) {
+    gsap.utils.toArray('.setup-photo, .mthumb, .pphoto, .photo-card, .banner .frames').forEach(function (el) {
       gsap.fromTo(el, { clipPath: 'inset(0 100% 0 0 round 18px)' }, {
         clipPath: 'inset(0 0% 0 0 round 18px)', duration: 1.3, ease: 'expo.inOut', delay: booting ? 1.2 : 0,
         scrollTrigger: { trigger: el, start: 'top 90%', once: true }
@@ -88,7 +88,8 @@
     });
 
     // ---- Parallax: images drift against their frames ----------------------------------------------
-    document.querySelectorAll('.feature-shot img, .setup-photo img, .scard > img, .feature-card > img, .mthumb img, .photo-card img').forEach(function (img) {
+    var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches || manual;
+    (finePointer ? document.querySelectorAll('.feature-shot img, .setup-photo img, .scard > img, .feature-card > img, .mthumb img, .photo-card img') : []).forEach(function (img) {
       var frame = img.closest('.feature-shot, .setup-photo, .scard, .feature-card, .mthumb, .photo-card') || img.parentElement;
       gsap.fromTo(img, { yPercent: -7, scale: 1.16 }, {
         yPercent: 7, scale: 1.16, ease: 'none',
@@ -111,6 +112,7 @@
     }
 
     // ---- Count-up numbers -------------------------------------------------------------------------
+    (window.ZnyprStats || Promise.resolve()).then(function () {
     document.querySelectorAll('.stat .num, .rows .num').forEach(function (el) {
       var m = el.textContent.trim().match(/^([\d.]+)(.*)$/);
       if (!m) return;
@@ -121,6 +123,7 @@
         onUpdate: function () { el.textContent = o.v.toFixed(dec) + suffix; },
         scrollTrigger: { trigger: el, start: 'top 92%', once: true }
       });
+    });
     });
 
     // ---- Cursor effects: glass spotlight, 3D tilt, magnetic buttons -------------------------------
@@ -159,6 +162,19 @@
     });
 
     return function () { lenis.destroy(); };
+  });
+
+  // Reduced motion: nothing moves (no wipe, smooth scroll, parallax or tilt); content only fades in gently.
+  mm.add('(prefers-reduced-motion: reduce)', function () {
+    var soft = 'h1.display, h2.display, h3.brush, .copy-card h2, .setup-copy h3, .more-row .mcard, .scard, .setup, .feature-card, .zs-band, .stat, .pcard, .icard, .fb, .dl, .mailcard, .panel, .section-heading p, .setup-photo, .mthumb, .pphoto, .photo-card, .banner .frames';
+    var items = gsap.utils.toArray(soft).filter(function (el) { return !el.parentElement.closest(soft); });
+    gsap.set(items, { opacity: 0 });
+    ScrollTrigger.batch(items, {
+      start: 'top 95%', once: true,
+      onEnter: function (batch) {
+        gsap.to(batch, { opacity: 1, duration: 0.6, ease: 'power1.out', stagger: 0.06, overwrite: 'auto' });
+      }
+    });
   });
 
   if (manual) { // recording harness: freeze the real clock, step by hand, show a visible cursor
