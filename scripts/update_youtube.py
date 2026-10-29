@@ -239,6 +239,38 @@ def generate_summary(video):
     return None
 
 
+def localize_thumbs(videos, base_dir):
+    """Host thumbnails on the site itself so visitors never contact YouTube's image servers.
+    Downloads each thumbnail once, shrinks it, and points the video at the local file."""
+    thumbs_dir = os.path.join(base_dir, "thumbs")
+    os.makedirs(thumbs_dir, exist_ok=True)
+    keep = set()
+    for v in videos:
+        name = f"{v['id']}.jpg"
+        keep.add(name)
+        target = os.path.join(thumbs_dir, name)
+        if not os.path.exists(target) and v["thumb"].startswith("http"):
+            try:
+                data = fetch(v["thumb"], {"User-Agent": "znypr-site-updater"})
+                try:
+                    import io
+                    from PIL import Image
+                    img = Image.open(io.BytesIO(data)).convert("RGB")
+                    img.thumbnail((960, 960))
+                    img.save(target, "JPEG", quality=80, optimize=True)
+                except ImportError:
+                    with open(target, "wb") as f:
+                        f.write(data)
+            except Exception as e:
+                print(f"thumbnail download failed for {v['id']}: {e}", file=sys.stderr)
+                continue
+        if os.path.exists(target):
+            v["thumb"] = f"assets/thumbs/{name}"
+    for name in os.listdir(thumbs_dir):  # drop thumbnails of videos no longer shown
+        if name.endswith(".jpg") and name not in keep:
+            os.remove(os.path.join(thumbs_dir, name))
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("out")
@@ -279,6 +311,8 @@ def main():
         video["summary"] = summaries.get(video["id"])
         video.pop("description", None)
 
+    localize_thumbs(shown, os.path.dirname(os.path.abspath(args.out)))
+
     keep = [v["id"] for v in shown]
     trimmed = {k: summaries[k] for k in list(summaries)[-MAX_CACHED_SUMMARIES:]}
     trimmed.update({k: summaries[k] for k in keep if k in summaries})
@@ -291,7 +325,9 @@ def main():
         return json.dumps([pick(d["feature"]), [pick(v) for v in d.get("more", [])], [pick(s) for s in d["shorts"]]], sort_keys=True)
     def views(d):
         return [v["viewsDisplay"] for v in [d["feature"], *d.get("more", []), *d["shorts"]]]
-    if previous.get("feature") and content(previous) == content(data):
+    def thumbs(d):
+        return [v["thumb"] for v in [d["feature"], *d.get("more", []), *d["shorts"]]]
+    if previous.get("feature") and content(previous) == content(data) and thumbs(previous) == thumbs(data):
         last = datetime.fromisoformat(previous.get("updatedAt", "1970-01-01T00:00:00Z").replace("Z", "+00:00"))
         age_hours = (datetime.now(timezone.utc) - last).total_seconds() / 3600
         if views(previous) == views(data) or age_hours < VIEWS_REFRESH_HOURS:

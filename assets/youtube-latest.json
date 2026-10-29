@@ -5,12 +5,12 @@
   "title": "My Dream Gaming Setup Just Got Better",
   "published": "2026-10-11",
   "date": "11 Oct 2026",
-  "views": 1511,
+  "views": 1512,
   "viewsDisplay": "1.5K",
   "length": "7:52",
   "type": "video",
   "url": "https://www.youtube.com/watch?v=q3cqiYoBct0",
-  "thumb": "https://i.ytimg.com/vi/q3cqiYoBct0/maxresdefault.jpg",
+  "thumb": "assets/thumbs/q3cqiYoBct0.jpg",
   "summary": "Znypr's gaming setup gets an upgrade: a new gaming mouse and mechanical keyboard, and why each one was picked for competitive play."
  },
  "more": [
@@ -24,7 +24,7 @@
    "length": "9:12",
    "type": "video",
    "url": "https://www.youtube.com/watch?v=AGJV_Oq-CmU",
-   "thumb": "https://i.ytimg.com/vi/AGJV_Oq-CmU/maxresdefault.jpg",
+   "thumb": "assets/thumbs/AGJV_Oq-CmU.jpg",
    "summary": "After the Wildcat buff, Znypr grinds the kills for its Gold wrap in Roblox Rivals and shares the best Wildcat loadout."
   },
   {
@@ -37,7 +37,7 @@
    "length": "4:57",
    "type": "video",
    "url": "https://www.youtube.com/watch?v=HOkYbTqoNHk",
-   "thumb": "https://i.ytimg.com/vi/HOkYbTqoNHk/maxresdefault.jpg",
+   "thumb": "assets/thumbs/HOkYbTqoNHk.jpg",
    "summary": "Znypr tests Raul's viral modded copy of Roblox Rivals, where items like the Keyper can be unlocked, though only in the modded copy."
   }
  ],
@@ -51,7 +51,7 @@
    "viewsDisplay": "537",
    "type": "short",
    "url": "https://www.youtube.com/shorts/Kd4zRN2zarg",
-   "thumb": "https://i.ytimg.com/vi/Kd4zRN2zarg/oardefault.jpg",
+   "thumb": "assets/thumbs/Kd4zRN2zarg.jpg",
    "summary": "A Roblox Rivals opponent tries to rob Znypr blind."
   },
   {
@@ -63,7 +63,7 @@
    "viewsDisplay": "1.2K",
    "type": "short",
    "url": "https://www.youtube.com/shorts/x5DgMNcSK6Y",
-   "thumb": "https://i.ytimg.com/vi/x5DgMNcSK6Y/oardefault.jpg",
+   "thumb": "assets/thumbs/x5DgMNcSK6Y.jpg",
    "summary": "Znypr is now on Instagram, and this points you to the new account."
   },
   {
@@ -75,7 +75,7 @@
    "viewsDisplay": "1.1K",
    "type": "short",
    "url": "https://www.youtube.com/shorts/wyWX6YTaOF8",
-   "thumb": "https://i.ytimg.com/vi/wyWX6YTaOF8/oardefault.jpg",
+   "thumb": "assets/thumbs/wyWX6YTaOF8.jpg",
    "summary": "Znypr's setup gets a new Ethernet cable."
   },
   {
@@ -87,7 +87,7 @@
    "viewsDisplay": "25.7K",
    "type": "short",
    "url": "https://www.youtube.com/shorts/OirdodUQjYk",
-   "thumb": "https://i.ytimg.com/vi/OirdodUQjYk/oardefault.jpg",
+   "thumb": "assets/thumbs/OirdodUQjYk.jpg",
    "summary": "In Roblox Rivals zombie mode, zombies can now chain the katana and the RPG, and Znypr runs into it."
   }
  ],
@@ -100,5 +100,5 @@
   "AGJV_Oq-CmU": "After the Wildcat buff, Znypr grinds the kills for its Gold wrap in Roblox Rivals and shares the best Wildcat loadout.",
   "HOkYbTqoNHk": "Znypr tests Raul's viral modded copy of Roblox Rivals, where items like the Keyper can be unlocked, though only in the modded copy."
  },
- "updatedAt": "2026-10-29T00:36:47Z"
+ "updatedAt": "2026-10-29T03:06:06Z"
 }

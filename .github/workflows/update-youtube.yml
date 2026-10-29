@@ -25,7 +25,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: pip install anthropic defusedxml
+        run: pip install anthropic defusedxml pillow
 
       - name: Refresh assets/youtube-latest.json
         env:
@@ -37,7 +37,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/youtube-latest.json
+          git add -A assets/youtube-latest.json assets/thumbs
           if git diff --cached --quiet; then
             echo "No changes"
           else
