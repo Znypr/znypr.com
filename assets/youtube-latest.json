@@ -5,7 +5,7 @@
   "title": "My Dream Gaming Setup Just Got Better",
   "published": "2026-10-11",
   "date": "11 Oct 2026",
-  "views": 1512,
+  "views": 1514,
   "viewsDisplay": "1.5K",
   "length": "7:52",
   "type": "video",
@@ -19,8 +19,8 @@
    "title": "I got GOLD for WILDCAT in Roblox Rivals!",
    "published": "2026-10-08",
    "date": "8 Oct 2026",
-   "views": 338,
-   "viewsDisplay": "338",
+   "views": 343,
+   "viewsDisplay": "343",
    "length": "9:12",
    "type": "video",
    "url": "https://www.youtube.com/watch?v=AGJV_Oq-CmU",
@@ -32,8 +32,8 @@
    "title": "I unlocked EVERYTHING in Roblox Rivals! (sort of)",
    "published": "2026-10-04",
    "date": "4 Oct 2026",
-   "views": 816,
-   "viewsDisplay": "816",
+   "views": 817,
+   "viewsDisplay": "817",
    "length": "4:57",
    "type": "video",
    "url": "https://www.youtube.com/watch?v=HOkYbTqoNHk",
@@ -43,12 +43,24 @@
  ],
  "shorts": [
   {
+   "id": "5ZyiQcseS1c",
+   "title": "pro player reveals the best crosshair in Roblox rivals",
+   "published": "2026-10-29",
+   "date": "29 Oct 2026",
+   "views": 1683,
+   "viewsDisplay": "1.7K",
+   "type": "short",
+   "url": "https://www.youtube.com/shorts/5ZyiQcseS1c",
+   "thumb": "assets/thumbs/5ZyiQcseS1c.jpg",
+   "summary": null
+  },
+  {
    "id": "Kd4zRN2zarg",
    "title": "bro wanted to rob me blank",
    "published": "2026-10-28",
    "date": "28 Oct 2026",
-   "views": 537,
-   "viewsDisplay": "537",
+   "views": 11535,
+   "viewsDisplay": "11.5K",
    "type": "short",
    "url": "https://www.youtube.com/shorts/Kd4zRN2zarg",
    "thumb": "assets/thumbs/Kd4zRN2zarg.jpg",
@@ -59,8 +71,8 @@
    "title": "we are also on Instagram!",
    "published": "2026-10-28",
    "date": "28 Oct 2026",
-   "views": 1177,
-   "viewsDisplay": "1.2K",
+   "views": 1926,
+   "viewsDisplay": "1.9K",
    "type": "short",
    "url": "https://www.youtube.com/shorts/x5DgMNcSK6Y",
    "thumb": "assets/thumbs/x5DgMNcSK6Y.jpg",
@@ -71,24 +83,12 @@
    "title": "I got a new Ethernet cable crazy news",
    "published": "2026-10-28",
    "date": "28 Oct 2026",
-   "views": 1068,
-   "viewsDisplay": "1.1K",
+   "views": 1190,
+   "viewsDisplay": "1.2K",
    "type": "short",
    "url": "https://www.youtube.com/shorts/wyWX6YTaOF8",
    "thumb": "assets/thumbs/wyWX6YTaOF8.jpg",
    "summary": "Znypr's setup gets a new Ethernet cable."
-  },
-  {
-   "id": "OirdodUQjYk",
-   "title": "so zombies can katana RPG now in Roblox rivals 😭",
-   "published": "2026-10-27",
-   "date": "27 Oct 2026",
-   "views": 25687,
-   "viewsDisplay": "25.7K",
-   "type": "short",
-   "url": "https://www.youtube.com/shorts/OirdodUQjYk",
-   "thumb": "assets/thumbs/OirdodUQjYk.jpg",
-   "summary": "In Roblox Rivals zombie mode, zombies can now chain the katana and the RPG, and Znypr runs into it."
   }
  ],
  "summaries": {
@@ -100,5 +100,5 @@
   "AGJV_Oq-CmU": "After the Wildcat buff, Znypr grinds the kills for its Gold wrap in Roblox Rivals and shares the best Wildcat loadout.",
   "HOkYbTqoNHk": "Znypr tests Raul's viral modded copy of Roblox Rivals, where items like the Keyper can be unlocked, though only in the modded copy."
  },
- "updatedAt": "2026-10-29T03:06:06Z"
+ "updatedAt": "2026-10-29T18:17:33Z"
 }
