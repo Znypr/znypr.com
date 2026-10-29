@@ -49,13 +49,16 @@ def fetch_feed(path):
     if path:
         with open(path, "rb") as f:
             return f.read()
-    # YouTube's RSS endpoint answers 404/5xx now and then; retry before giving up.
-    for attempt in range(4):
+    # YouTube's RSS endpoint answers 404/5xx for stretches, more often to datacenter IPs. Retry over ~3 minutes.
+    agents = ["znypr-site-updater", PAGE_HEADERS["User-Agent"], "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/126 Safari/537.36"]
+    for attempt in range(7):
         try:
-            return fetch(FEED_URL)
+            data = fetch(FEED_URL, {"User-Agent": agents[attempt % len(agents)], "Accept": "application/atom+xml,application/xml,*/*"})
+            print(f"feed ok on attempt {attempt + 1}")
+            return data
         except (urllib.error.HTTPError, urllib.error.URLError) as e:
             print(f"feed attempt {attempt + 1} failed: {e}", file=sys.stderr)
-            time.sleep(5 * (attempt + 1))
+            time.sleep(min(60, 4 * 2 ** attempt))
     return None
 
 
@@ -65,6 +68,10 @@ def latest_uploads(count):
     page = fetch(f"https://www.youtube.com/channel/{CHANNEL_ID}/videos", PAGE_HEADERS).decode("utf8", "replace")
     ids = list(dict.fromkeys(re.findall(r'"lockupViewModel":\{"contentImage".*?"contentId":"([\w-]{11})"', page)
                              or re.findall(r'"videoRenderer":\{"videoId":"([\w-]{11})"', page)))
+    if not ids:
+        print(f"videos page gave no ids: {len(page)} bytes, consent={'consent' in page.lower()}, "
+              f"bot-check={'unusual traffic' in page.lower() or 'captcha' in page.lower()}, start={page[:160]!r}", file=sys.stderr)
+        return []
     uploads = []
     for video_id in ids[:count + 5]:
         if len(uploads) == count:
@@ -93,6 +100,19 @@ def latest_uploads(count):
             "thumb": f"https://i.ytimg.com/vi/{video_id}/maxresdefault.jpg",
         })
     return uploads
+
+
+def rss_uploads(videos, count):
+    """Fallback when the Videos page cannot be read: take regular uploads from the RSS feed.
+    The feed has no live flag, so streams are recognised by their title ("LIVE", "STREAM")."""
+    out = []
+    for v in videos:
+        if v["type"] != "video" or re.search(r"\b(live|livestream|stream)\b", v["title"], re.I):
+            continue
+        out.append(dict(v))
+        if len(out) == count:
+            break
+    return out
 
 
 def compact_views(n):
@@ -297,6 +317,14 @@ def main():
     except Exception as e:  # page layout changes, network errors
         print(f"could not read the Videos tab: {e}", file=sys.stderr)
         uploads = []
+    if not uploads and feed is not None:
+        uploads = rss_uploads(parse(feed), 1 + MORE_COUNT)
+        if uploads:
+            print("regular uploads taken from the RSS feed (Videos page unavailable)")
+        known = {v["id"]: v for v in [previous.get("feature") or {}, *previous.get("more", [])]}
+        for v in uploads:  # keep the duration we already know
+            if known.get(v["id"], {}).get("length"):
+                v["length"] = known[v["id"]]["length"]
     feature = uploads[0] if uploads else previous.get("feature")
     more = uploads[1:] if uploads else previous.get("more", [])
     if not feature or not shorts:
