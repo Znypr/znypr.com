@@ -43,12 +43,24 @@
  ],
  "shorts": [
   {
+   "id": "rTxjxclbEIU",
+   "title": "the evolution of my gaming setup",
+   "published": "2026-10-29",
+   "date": "29 Oct 2026",
+   "views": 1851,
+   "viewsDisplay": "1.9K",
+   "type": "short",
+   "url": "https://www.youtube.com/shorts/rTxjxclbEIU",
+   "thumb": "assets/thumbs/rTxjxclbEIU.jpg",
+   "summary": null
+  },
+  {
    "id": "5ZyiQcseS1c",
    "title": "pro player reveals the best crosshair in Roblox rivals",
    "published": "2026-10-29",
    "date": "29 Oct 2026",
-   "views": 1683,
-   "viewsDisplay": "1.7K",
+   "views": 32342,
+   "viewsDisplay": "32.3K",
    "type": "short",
    "url": "https://www.youtube.com/shorts/5ZyiQcseS1c",
    "thumb": "assets/thumbs/5ZyiQcseS1c.jpg",
@@ -59,8 +71,8 @@
    "title": "bro wanted to rob me blank",
    "published": "2026-10-28",
    "date": "28 Oct 2026",
-   "views": 11535,
-   "viewsDisplay": "11.5K",
+   "views": 19389,
+   "viewsDisplay": "19.4K",
    "type": "short",
    "url": "https://www.youtube.com/shorts/Kd4zRN2zarg",
    "thumb": "assets/thumbs/Kd4zRN2zarg.jpg",
@@ -71,24 +83,12 @@
    "title": "we are also on Instagram!",
    "published": "2026-10-28",
    "date": "28 Oct 2026",
-   "views": 1926,
-   "viewsDisplay": "1.9K",
+   "views": 2239,
+   "viewsDisplay": "2.2K",
    "type": "short",
    "url": "https://www.youtube.com/shorts/x5DgMNcSK6Y",
    "thumb": "assets/thumbs/x5DgMNcSK6Y.jpg",
    "summary": "Znypr is now on Instagram, and this points you to the new account."
-  },
-  {
-   "id": "wyWX6YTaOF8",
-   "title": "I got a new Ethernet cable crazy news",
-   "published": "2026-10-28",
-   "date": "28 Oct 2026",
-   "views": 1190,
-   "viewsDisplay": "1.2K",
-   "type": "short",
-   "url": "https://www.youtube.com/shorts/wyWX6YTaOF8",
-   "thumb": "assets/thumbs/wyWX6YTaOF8.jpg",
-   "summary": "Znypr's setup gets a new Ethernet cable."
   }
  ],
  "summaries": {
@@ -100,5 +100,5 @@
   "AGJV_Oq-CmU": "After the Wildcat buff, Znypr grinds the kills for its Gold wrap in Roblox Rivals and shares the best Wildcat loadout.",
   "HOkYbTqoNHk": "Znypr tests Raul's viral modded copy of Roblox Rivals, where items like the Keyper can be unlocked, though only in the modded copy."
  },
- "updatedAt": "2026-10-29T18:17:33Z"
+ "updatedAt": "2026-10-30T09:58:05Z"
 }
