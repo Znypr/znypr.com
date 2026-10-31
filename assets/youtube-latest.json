@@ -1,41 +1,44 @@
 {
  "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCdtetXHUd_nPJR2bXxOEyNw",
  "feature": {
-  "id": "G74PqtYzWZU",
-  "title": "RIVALS HALLOWEEN UPDATE!!",
-  "published": "2026-10-31",
-  "date": "31 Oct 2026",
-  "views": 774,
-  "viewsDisplay": "774",
+  "id": "q3cqiYoBct0",
+  "title": "My Dream Gaming Setup Just Got Better",
+  "published": "2026-10-11",
+  "date": "11 Oct 2026",
+  "views": 1528,
+  "viewsDisplay": "1.5K",
+  "length": "7:52",
   "type": "video",
-  "url": "https://www.youtube.com/watch?v=G74PqtYzWZU",
-  "thumb": "assets/thumbs/G74PqtYzWZU.jpg",
-  "summary": null
+  "url": "https://www.youtube.com/watch?v=q3cqiYoBct0",
+  "thumb": "assets/thumbs/q3cqiYoBct0.jpg",
+  "summary": "Znypr's gaming setup gets an upgrade: a new gaming mouse and mechanical keyboard, and why each one was picked for competitive play."
  },
  "more": [
   {
-   "id": "rNNCaEOn4NQ",
-   "title": "RIVALS HALLOWEEN UPDATE!!",
-   "published": "2026-10-31",
-   "date": "31 Oct 2026",
-   "views": 2054,
-   "viewsDisplay": "2.1K",
+   "id": "AGJV_Oq-CmU",
+   "title": "I got GOLD for WILDCAT in Roblox Rivals!",
+   "published": "2026-10-08",
+   "date": "8 Oct 2026",
+   "views": 366,
+   "viewsDisplay": "366",
+   "length": "9:12",
    "type": "video",
-   "url": "https://www.youtube.com/watch?v=rNNCaEOn4NQ",
-   "thumb": "assets/thumbs/rNNCaEOn4NQ.jpg",
-   "summary": null
+   "url": "https://www.youtube.com/watch?v=AGJV_Oq-CmU",
+   "thumb": "assets/thumbs/AGJV_Oq-CmU.jpg",
+   "summary": "After the Wildcat buff, Znypr grinds the kills for its Gold wrap in Roblox Rivals and shares the best Wildcat loadout."
   },
   {
-   "id": "U2WQmoTNTxI",
-   "title": "RIVALS HALLOWEEN UPDATE!!",
-   "published": "2026-10-31",
-   "date": "31 Oct 2026",
-   "views": 2638,
-   "viewsDisplay": "2.6K",
+   "id": "HOkYbTqoNHk",
+   "title": "I unlocked EVERYTHING in Roblox Rivals! (sort of)",
+   "published": "2026-10-04",
+   "date": "4 Oct 2026",
+   "views": 819,
+   "viewsDisplay": "819",
+   "length": "4:57",
    "type": "video",
-   "url": "https://www.youtube.com/watch?v=U2WQmoTNTxI",
-   "thumb": "assets/thumbs/U2WQmoTNTxI.jpg",
-   "summary": null
+   "url": "https://www.youtube.com/watch?v=HOkYbTqoNHk",
+   "thumb": "assets/thumbs/HOkYbTqoNHk.jpg",
+   "summary": "Znypr tests Raul's viral modded copy of Roblox Rivals, where items like the Keyper can be unlocked, though only in the modded copy."
   }
  ],
  "shorts": [
@@ -97,5 +100,5 @@
   "AGJV_Oq-CmU": "After the Wildcat buff, Znypr grinds the kills for its Gold wrap in Roblox Rivals and shares the best Wildcat loadout.",
   "HOkYbTqoNHk": "Znypr tests Raul's viral modded copy of Roblox Rivals, where items like the Keyper can be unlocked, though only in the modded copy."
  },
- "updatedAt": "2026-10-31T19:17:05Z"
+ "updatedAt": "2026-10-31T23:52:46Z"
 }

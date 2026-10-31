@@ -102,12 +102,28 @@ def latest_uploads(count):
     return uploads
 
 
+def is_livestream(video_id):
+    """True when the video's watch page says it is (or was) a livestream, False for a normal upload,
+    None when the page cannot be read or carries no such flag."""
+    try:
+        watch = fetch(f"https://www.youtube.com/watch?v={video_id}", PAGE_HEADERS).decode("utf8", "replace")
+    except Exception as e:
+        print(f"could not check {video_id} for a livestream: {e}", file=sys.stderr)
+        return None
+    flag = re.search(r'"isLiveContent":(true|false)', watch)
+    return None if not flag else flag.group(1) == "true"
+
+
 def rss_uploads(videos, count):
     """Fallback when the Videos page cannot be read: take regular uploads from the RSS feed.
-    The feed has no live flag, so streams are recognised by their title ("LIVE", "STREAM")."""
+    The feed has no live flag and stream titles are ordinary titles, so every candidate is checked on its
+    watch page: only videos confirmed as not being a livestream are used (unverifiable ones are skipped)."""
     out = []
     for v in videos:
         if v["type"] != "video" or re.search(r"\b(live|livestream|stream)\b", v["title"], re.I):
+            continue
+        if is_livestream(v["id"]) is not False:
+            print(f"skipping {v['id']}: a livestream, or not confirmed as a normal upload")
             continue
         out.append(dict(v))
         if len(out) == count:

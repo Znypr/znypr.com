@@ -1,0 +1,16 @@
+/* The Halloween tab: always first in the navigation, orange and alive so it stands out from the rest. */
+.nav .nav-links a.nav-hw{position:relative;display:inline-flex;align-items:center;gap:8px;margin-right:8px;padding:9px 16px 9px 11px;border-radius:12px;overflow:hidden;
+  color:#1a0900;font-weight:900;letter-spacing:.14em;
+  background:linear-gradient(135deg,#ffb347,#ff7a00 55%,#ff5a00);
+  box-shadow:inset 0 0 0 1px rgba(255,226,180,.65),0 0 16px rgba(255,122,0,.55),0 6px 18px rgba(255,90,0,.25);
+  animation:hw-glow 2.8s ease-in-out infinite}
+.nav .nav-links a.nav-hw:hover{color:#1a0900;background:linear-gradient(135deg,#ffc36b,#ff8a1f 55%,#ff6a00);box-shadow:inset 0 0 0 1px rgba(255,236,200,.8),0 0 24px rgba(255,138,31,.8),0 8px 22px rgba(255,90,0,.35)}
+.nav .nav-links a.nav-hw[aria-current="page"]{box-shadow:inset 0 0 0 2px #fff3da,0 0 22px rgba(255,138,31,.75)}
+.nav-hw img{width:24px;height:24px;object-fit:contain;filter:drop-shadow(0 2px 2px rgba(0,0,0,.35));animation:hw-bob 2.4s ease-in-out infinite}
+.nav .nav-links a.nav-hw:after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:36%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.6),transparent);transform:skewX(-18deg);animation:hw-sheen 4.6s ease-in-out infinite;pointer-events:none}
+@keyframes hw-glow{0%,100%{box-shadow:inset 0 0 0 1px rgba(255,226,180,.65),0 0 12px rgba(255,122,0,.45),0 6px 18px rgba(255,90,0,.2)}50%{box-shadow:inset 0 0 0 1px rgba(255,236,200,.85),0 0 24px rgba(255,138,31,.85),0 6px 22px rgba(255,90,0,.38)}}
+@keyframes hw-bob{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-2px) rotate(6deg)}}
+@keyframes hw-sheen{0%,55%{left:-60%}100%{left:130%}}
+.fb-nav a.fb-hw{background:linear-gradient(135deg,#ffb347,#ff7a00);color:#1a0900;font-weight:900;border-color:rgba(255,226,180,.65)}
+@media(max-width:900px){.nav .nav-links a.nav-hw{margin:0 0 6px;justify-content:center;padding:14px}}
+@media(prefers-reduced-motion:reduce){.nav .nav-links a.nav-hw,.nav-hw img,.nav .nav-links a.nav-hw:after{animation:none!important}}
