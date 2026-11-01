@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title>Halloween event | ZNYPR</title>
 <link rel="stylesheet" href="assets/fonts/fonts.css"/><link rel="stylesheet" href="assets/halloween-nav.css"/><link rel="preload" href="assets/fonts/Barlow-900-normal-latin.woff2" as="font" type="font/woff2" crossorigin/><link rel="preload" href="assets/fonts/Barlow-800-italic-latin.woff2" as="font" type="font/woff2" crossorigin/>
-<meta name="description" content="The Znypr Halloween event: collect nine pumpkin badges in chat on YouTube, Twitch, TikTok and Kick. How to get them, how upgrading works, the wheel, admin abuse and overdrive."/>
+<meta name="description" content="The Znypr Halloween event: collect pumpkin badges in chat on YouTube, Twitch, TikTok and Kick. How to get them, how upgrading works, the wheel, admin abuse and overdrive."/>
 <link rel="canonical" href="https://znypr.com/halloween"/>
 <link rel="icon" href="assets/img/favicon-48.png"/>
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="ZNYPR"/>
 <meta property="og:title" content="Halloween event | ZNYPR"/>
-<meta property="og:description" content="Collect nine pumpkin badges during the stream. Spin the wheel, climb from the plain pumpkin to the Diamond."/>
+<meta property="og:description" content="Collect pumpkin badges during the stream. Spin the wheel, climb from the plain pumpkin to the Diamond."/>
 <meta property="og:url" content="https://znypr.com/halloween"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:image" content="https://znypr.com/assets/og.jpg"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Halloween event | ZNYPR"/>
-<meta name="twitter:description" content="Collect nine pumpkin badges during the stream. Spin the wheel, climb from the plain pumpkin to the Diamond."/>
+<meta name="twitter:description" content="Collect pumpkin badges during the stream. Spin the wheel, climb from the plain pumpkin to the Diamond."/>
 <meta name="twitter:image" content="https://znypr.com/assets/og.jpg"/>
 <style>
 :root{color-scheme:dark;--bg:#0a0612;--text:#f4ecff;--muted:#b6a8cc;--line:rgba(255,160,70,.22);--orange:#ff8a1f;--gold:#ffca5f;--violet:#8a5cff;--card:linear-gradient(135deg,rgba(255,138,31,.10),rgba(138,92,255,.07))}
@@ -56,8 +56,7 @@ section{margin-top:clamp(42px,6vw,76px)}
 .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 code,.cmd{font-family:Consolas,Menlo,monospace;font-size:.92em;background:rgba(255,138,31,.14);border:1px solid rgba(255,160,70,.3);border-radius:7px;padding:1px 7px;color:#ffe2bd}
 /* badges */
-.ladder{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:10px;position:relative}
-.ladder:before{content:"";position:absolute;left:5%;right:5%;top:62px;height:3px;background:linear-gradient(90deg,var(--orange),var(--violet));opacity:.35;border-radius:3px}
+.ladder{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:12px;position:relative}
 .pk{position:relative;text-align:center;padding:14px 6px 12px;border-radius:18px;border:1px solid var(--line);background:rgba(20,8,34,.7);transition:transform .25s,border-color .25s}
 .pk:hover{transform:translateY(-6px) rotate(-1.5deg);border-color:rgba(255,200,120,.6)}
 .pk img{width:78%;max-width:92px;height:auto;filter:drop-shadow(0 8px 12px rgba(0,0,0,.5))}
@@ -67,7 +66,7 @@ code,.cmd{font-family:Consolas,Menlo,monospace;font-size:.92em;background:rgba(2
 .pk.last{border-color:rgba(130,220,255,.5);box-shadow:0 0 28px rgba(110,200,255,.18)}
 /* upgrade demo */
 .demo{display:flex;flex-direction:column;gap:14px}
-.mine{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:6px}
+.mine{display:grid;grid-template-columns:repeat(auto-fill,minmax(44px,1fr));gap:8px 6px}
 .mine .slot{position:relative;aspect-ratio:1;border-radius:14px;display:grid;place-items:center;background:rgba(10,4,20,.7);border:1px solid rgba(255,255,255,.1);transition:all .4s}
 .mine .slot img{width:80%;height:auto;transition:filter .4s,opacity .4s,transform .4s}
 .mine .slot.locked img{filter:grayscale(1) brightness(.45);opacity:.6}
@@ -144,8 +143,8 @@ code,.cmd{font-family:Consolas,Menlo,monospace;font-size:.92em;background:rgba(2
 .fine{color:var(--muted);font-size:13px;line-height:1.6;margin-top:16px;max-width:760px}
 footer{max-width:1240px;margin:clamp(44px,6vw,80px) auto 0;padding:20px 2px 0;border-top:1px solid rgba(255,255,255,.12);color:#9d90b3;font-size:12px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
 footer a{color:#e8dcf8;font-weight:800;border-bottom:1px solid rgba(255,255,255,.35)}
-@media(max-width:1000px){.ladder{grid-template-columns:repeat(3,minmax(0,1fr))}.ladder:before{display:none}.mine{grid-template-columns:repeat(9,minmax(0,1fr));gap:4px}.sup,.cmds{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.hero-art{opacity:.3;width:70%}}
-@media(max-width:760px){.grid2,.grid3,.feature{grid-template-columns:minmax(0,1fr)}.feature.flip>:first-child{order:0}.hero-art{opacity:.22}.nav-links a{padding:9px 8px}.sup,.cmds{grid-template-columns:minmax(0,1fr)}.wheel-title{font-size:16px}.mine .slot.worn:after{font-size:7px;padding:1px 3px;bottom:-6px}}
+@media(max-width:1000px){.sup,.cmds{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.hero-art{opacity:.3;width:70%}}
+@media(max-width:760px){.grid2,.grid3,.feature{grid-template-columns:minmax(0,1fr)}.feature.flip>:first-child{order:0}.hero-art{opacity:.22}.nav-links a{padding:9px 8px}.sup,.cmds{grid-template-columns:minmax(0,1fr)}.wheel-title{font-size:16px}.mine .slot.worn:after{font-size:6px;padding:1px 3px;bottom:-5px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
 <script src="/assets/clean-url.js"></script>
@@ -164,7 +163,7 @@ footer a{color:#e8dcf8;font-weight:800;border-bottom:1px solid rgba(255,255,255,
 <header class="hero">
 <span class="eyebrow">ZNYPR / LIVE EVENT</span>
 <h1>HALLOWEEN<span>.</span></h1>
-<p>Nine pumpkin badges. Win them in chat on YouTube, Twitch, TikTok and Kick, climb from the plain pumpkin all the way to the Diamond, and wear it next to your name.</p>
+<p>A whole ladder of pumpkin badges. Win them in chat on YouTube, Twitch, TikTok and Kick, climb from the plain pumpkin all the way to the Diamond, and wear it next to your name.</p>
 <div class="btns"><a class="btn" href="#badges">SEE THE BADGES</a><a class="btn ghost" href="#how">HOW IT WORKS</a></div>
 <div class="hero-art" aria-hidden="true">
 <img src="assets/halloween/normal.webp" alt="" width="256" height="256"/><img src="assets/halloween/wink.webp" alt="" width="256" height="256"/><img src="assets/halloween/cool.webp" alt="" width="256" height="256"/>
@@ -174,18 +173,8 @@ footer a{color:#e8dcf8;font-weight:800;border-bottom:1px solid rgba(255,255,255,
 </header>
 
 <section id="badges" aria-labelledby="badges-h">
-<div class="head"><div><span class="eyebrow">THE COLLECTION</span><h2 id="badges-h">NINE BADGES.</h2></div><p>One order, no shortcuts. The pumpkin you wear shows next to your name in every chat, and the ones you already won stay in your collection.</p></div>
-<div class="ladder" role="list">
-<div class="pk" role="listitem"><span class="no">1</span><img src="assets/halloween/normal.webp" alt="Pumpkin badge" loading="lazy" width="256" height="256"/><b>Pumpkin</b><i>THE START</i></div>
-<div class="pk" role="listitem"><span class="no">2</span><img src="assets/halloween/wink.webp" alt="Winky badge" loading="lazy" width="256" height="256"/><b>Winky</b><i>A WINK</i></div>
-<div class="pk" role="listitem"><span class="no">3</span><img src="assets/halloween/cool.webp" alt="Cool badge" loading="lazy" width="256" height="256"/><b>Cool</b><i>SHADES ON</i></div>
-<div class="pk" role="listitem"><span class="no">4</span><img src="assets/halloween/heart.webp" alt="Heart badge" loading="lazy" width="256" height="256"/><b>Heart</b><i>LOVE IT</i></div>
-<div class="pk" role="listitem"><span class="no">5</span><img src="assets/halloween/king.webp" alt="King badge" loading="lazy" width="256" height="256"/><b>King</b><i>CROWNED</i></div>
-<div class="pk" role="listitem"><span class="no">6</span><img src="assets/halloween/angel.webp" alt="Angel badge" loading="lazy" width="256" height="256"/><b>Angel</b><i>HALO</i></div>
-<div class="pk" role="listitem"><span class="no">7</span><img src="assets/halloween/wizard.webp" alt="Wizard badge" loading="lazy" width="256" height="256"/><b>Wizard</b><i>SPELLBOUND</i></div>
-<div class="pk" role="listitem"><span class="no">8</span><img src="assets/halloween/devil.webp" alt="Devil badge" loading="lazy" width="256" height="256"/><b>Devil</b><i>MISCHIEF</i></div>
-<div class="pk last" role="listitem"><span class="no">9</span><img src="assets/halloween/diamond.webp" alt="Diamond badge" loading="lazy" width="256" height="256"/><b>Diamond</b><i>THE LAST ONE</i></div>
-</div>
+<div class="head"><div><span class="eyebrow">THE COLLECTION</span><h2 id="badges-h">THE BADGES.</h2></div><p>One order, no shortcuts. The pumpkin you wear shows next to your name in every chat, and the ones you already won stay in your collection.</p></div>
+<div class="ladder" id="ladder" role="list"><noscript><p>The pumpkins, in the order they are won: Pumpkin, Winky, Cool, Heart, King, Angel, Wizard, Devil, Frost, Pirate, Knight, Toxic, Shadow, Galaxy, Diamond.</p></noscript></div>
 </section>
 
 <section id="how" aria-labelledby="how-h">
@@ -325,8 +314,13 @@ footer a{color:#e8dcf8;font-weight:800;border-bottom:1px solid rgba(255,255,255,
 (()=>{
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
-const NAMES=['Pumpkin','Winky','Cool','Heart','King','Angel','Wizard','Devil','Diamond'];
-const FILES=['normal','wink','cool','heart','king','angel','wizard','devil','diamond'];
+// THE LADDER, in the order the pumpkins are won: id (picture assets/halloween/<id>.webp), name, line under the name.
+// Adding a pumpkin to the game means adding one line here and its picture.
+const LADDER=[['normal','Pumpkin','THE START'],['wink','Winky','A WINK'],['cool','Cool','SHADES ON'],['heart','Heart','LOVE IT'],['king','King','CROWNED'],
+  ['angel','Angel','HALO'],['wizard','Wizard','SPELLBOUND'],['devil','Devil','MISCHIEF'],['frost','Frost','ICE COLD'],['pirate','Pirate','ARRR'],
+  ['knight','Knight','SHIELD UP'],['toxic','Toxic','SLIMED'],['shadow','Shadow','DARK FLAME'],['galaxy','Galaxy','STARDUST'],['diamond','Diamond','THE LAST ONE']];
+const FILES=LADDER.map(p=>p[0]),NAMES=LADDER.map(p=>p[1]);
+const L=n=>FILES.indexOf(['normal','wink','cool','heart','king','angel','wizard','devil','diamond'][n]);   // the demos below point at the original nine by number
 const img=(i,cls)=>{const e=document.createElement('img');e.src='assets/halloween/'+FILES[i]+'.webp';e.alt='';if(cls)e.className=cls;e.width=256;e.height=256;return e;};
 const el=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e;};
 // a demo only plays while it is on screen
@@ -335,6 +329,16 @@ const io=new IntersectionObserver(list=>{for(const x of list)visible.set(x.targe
 const watch=node=>{io.observe(node);return node;};
 const onScreen=async node=>{while(!visible.get(node))await sleep(300);};
 const NS='http://www.w3.org/2000/svg';
+
+// ---- the badges section, from the list
+{
+  const box=document.getElementById('ladder');box.replaceChildren();
+  LADDER.forEach((p,i)=>{
+    const card=el('div','pk'+(i===LADDER.length-1?' last':''));card.setAttribute('role','listitem');
+    const no=el('span','no',String(i+1)),im=img(i);im.alt=p[1]+' badge';im.loading='lazy';
+    card.append(no,im,el('b','',p[1]),el('i','',p[2]));box.append(card);
+  });
+}
 
 // ---- the wheel (same look as the stream overlay): 8 segments, win segments show the pumpkin
 function wheelSvg(prizeIndex,winIdx,showPrize){
@@ -372,7 +376,7 @@ const landAt=index=>360*5+(360-index*45)%360;   // segment `index` ends under th
 // ---- single wheel demo
 (async()=>{
   const box=watch(document.getElementById('wheel-demo'));
-  const scenes=[{who:'@Mia',won:true,prize:6},{who:'@Leo',won:false},{who:'@Ava',won:true,prize:1},{who:'@Sky',won:false}];
+  const scenes=[{who:'@Mia',won:true,prize:L(6)},{who:'@Leo',won:false},{who:'@Ava',won:true,prize:L(1)},{who:'@Sky',won:false}];
   let n=0;
   while(true){
     await onScreen(box);
@@ -402,23 +406,23 @@ const landAt=index=>360*5+(360-index*45)%360;   // segment `index` ends under th
   const root=watch(document.getElementById('up-demo')),mine=root.querySelector('.mine'),tries=root.querySelector('.tries'),caption=root.querySelector('.caption');
   const slots=FILES.map((f,i)=>{const s=el('div','slot locked');s.append(img(i));mine.append(s);return s;});
   const paint=(owned,worn)=>slots.forEach((s,i)=>{s.className='slot '+(i<owned?'owned':i===owned?'next':'locked')+(i===worn?' worn':'');});
-  const pattern=[1,0,1,0,0,1,0,0,0,1,0,0,0,0,1,0,0,0,1,0,1,0,1,1];   // 0 = no luck, 1 = got it
-  if(reduce){paint(6,5);caption.textContent='Your next pumpkin is always the one right after your last.';return;}
+  const pattern=[];FILES.forEach((f,i)=>{for(let k=0;k<(i%3===1?1:i<2?0:Math.min(3,1+(i>>2)));k++)pattern.push(0);pattern.push(1);});   // made up: a few misses, then a hit, per pumpkin (0 = no luck, 1 = got it)
+  if(reduce){paint(Math.min(6,FILES.length-1),Math.min(5,FILES.length-2));caption.textContent='Your next pumpkin is always the one right after your last.';return;}
   while(true){
     let owned=0;paint(0,-1);tries.replaceChildren();caption.textContent='Every spin is a try at your next pumpkin.';
     for(const hit of pattern){
       await onScreen(root);
-      if(owned>=9)break;
+      if(owned>=FILES.length)break;
       const t=el('span','try '+(hit?'':'miss'),hit?'GOT IT':'NO LUCK');tries.append(t);
       while(tries.children.length>4)tries.firstChild.remove();
       await sleep(850);
       if(hit){
         t.classList.add('hit');owned++;paint(owned,owned-1);slots[owned-1].classList.add('pop');
-        caption.textContent=NAMES[owned-1]+' unlocked and worn. Next up: '+(owned<9?NAMES[owned]:'nothing, you have them all')+'.';
+        caption.textContent=NAMES[owned-1]+' unlocked and worn. Next up: '+(owned<FILES.length?NAMES[owned]:'nothing, you have them all')+'.';
         await sleep(1500);
       }
     }
-    caption.textContent='All nine. Your collection stays.';await sleep(3500);
+    caption.textContent='All '+FILES.length+'. Your collection stays.';await sleep(3500);
   }
 })();
 
@@ -437,9 +441,9 @@ function chatRow(p,name,pumpkin,text,color,bot){
 (async()=>{
   const box=watch(document.getElementById('chat-demo')),rows=box.querySelector('.chat-rows');
   const lines=[
-    ['youtube','@Mia',6,'that wheel spin was insane','#ff8a8a'],['tiktok','Leo',4,'!spin','#8ad0ff'],['twitch','skyfall',2,'gg that clutch','#b6f08a'],
-    ['kick','nova',8,'finally, the diamond!','#f0d08a'],['tiktok','Ava',0,'first pumpkin lets goooo','#d9a8ff'],['youtube','@Zed',5,'halo club','#ffb3d9'],
-    ['twitch','Jules',3,'love the heart one','#8affd9'],['tiktok','Max',1,'!pumpkins','#ffd08a'],
+    ['youtube','@Mia',L(6),'that wheel spin was insane','#ff8a8a'],['tiktok','Leo',L(4),'!spin','#8ad0ff'],['twitch','skyfall',L(2),'gg that clutch','#b6f08a'],
+    ['kick','nova',L(8),'finally, the diamond!','#f0d08a'],['tiktok','Ava',L(0),'first pumpkin lets goooo','#d9a8ff'],['youtube','@Zed',L(5),'halo club','#ffb3d9'],
+    ['twitch','Jules',L(3),'love the heart one','#8affd9'],['tiktok','Max',L(1),'!pumpkins','#ffd08a'],
   ];
   const draw=()=>{rows.replaceChildren(...lines.map(l=>chatRow(l[0],l[1],l[2],l[3],l[4])));};
   if(reduce){draw();return;}
@@ -452,9 +456,9 @@ function chatRow(p,name,pumpkin,text,color,bot){
 (async()=>{
   const box=watch(document.getElementById('admin-demo')),rows=box.querySelector('.chat-rows');
   const rounds=[
-    [['tiktok','Ava',0,'!spin','#d9a8ff'],['bot','ZnyprBot',null,'@Ava won the Winky pumpkin on the wheel!']],
-    [['youtube','@Zed',5,'!spin','#ffb3d9'],['bot','ZnyprBot',null,'@Zed won the Wizard pumpkin on the wheel!']],
-    [['twitch','Jules',3,'!spin','#8affd9']],
+    [['tiktok','Ava',L(0),'!spin','#d9a8ff'],['bot','ZnyprBot',null,'@Ava won the Winky pumpkin on the wheel!']],
+    [['youtube','@Zed',L(5),'!spin','#ffb3d9'],['bot','ZnyprBot',null,'@Zed won the Wizard pumpkin on the wheel!']],
+    [['twitch','Jules',L(3),'!spin','#8affd9']],
   ];
   const draw=r=>{for(const l of r){rows.append(l[0]==='bot'?chatRow('twitch','ZnyprBot',null,l[3],'#ff8a1f',true):chatRow(l[0],l[1],l[2],l[3],l[4]));}};
   if(reduce){draw(rounds[0]);return;}
@@ -470,7 +474,7 @@ function chatRow(p,name,pumpkin,text,color,bot){
 (async()=>{
   const card=watch(document.getElementById('od-demo')),grid=card.querySelector('.od-grid'),count=card.querySelector('.od-count');
   const people=['Ghoulia','Skully','Batwing','Pumpkin_K','WitchyV','Creeper'];
-  const outcomes=[{w:true,p:1},{w:false},{w:true,p:0},{w:false},{w:false},{w:true,p:2}];
+  const outcomes=[{w:true,p:L(1)},{w:false},{w:true,p:L(0)},{w:false},{w:false},{w:true,p:L(2)}];
   const build=()=>people.map(()=>{const s=el('div','od-slot empty');const nm=el('div','od-name','empty');const w=el('div','od-wheel');const r=el('div','od-res');s.append(nm,w,r);grid.append(s);return s;});
   let slots;
   if(reduce){slots=build();slots.forEach((s,i)=>{s.classList.remove('empty');s.classList.add('locked');s.querySelector('.od-name').textContent=people[i];const w=s.querySelector('.od-wheel');w.append(wheelSvg(outcomes[i].p??0,[0,4],true));});count.textContent='6 / 6';return;}
