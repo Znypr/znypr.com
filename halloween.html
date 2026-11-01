@@ -174,7 +174,7 @@ footer a{color:#e8dcf8;font-weight:800;border-bottom:1px solid rgba(255,255,255,
 
 <section id="badges" aria-labelledby="badges-h">
 <div class="head"><div><span class="eyebrow">THE COLLECTION</span><h2 id="badges-h">THE BADGES.</h2></div><p>One order, no shortcuts. The pumpkin you wear shows next to your name in every chat, and the ones you already won stay in your collection.</p></div>
-<div class="ladder" id="ladder" role="list"><noscript><p>The pumpkins, in the order they are won: Pumpkin, Winky, Cool, Frost, Heart, Pirate, King, Knight, Angel, Toxic, Wizard, Shadow, Galaxy, Devil, Diamond.</p></noscript></div>
+<div class="ladder" id="ladder" role="list"><noscript><p>The pumpkins, in the order they are won: Pumpkin, Winky, Cool, Heart, King, Angel, Wizard, Devil, Frost, Pirate, Knight, Toxic, Shadow, Galaxy, Diamond.</p></noscript></div>
 </section>
 
 <section id="how" aria-labelledby="how-h">
@@ -316,9 +316,9 @@ const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 // THE LADDER, in the order the pumpkins are won: id (picture assets/halloween/<id>.webp), name, line under the name.
 // Adding a pumpkin to the game means adding one line here and its picture.
-const LADDER=[['normal','Pumpkin','THE START'],['wink','Winky','A WINK'],['cool','Cool','SHADES ON'],['frost','Frost','ICE COLD'],['heart','Heart','LOVE IT'],
-  ['pirate','Pirate','ARRR'],['king','King','CROWNED'],['knight','Knight','SHIELD UP'],['angel','Angel','HALO'],['toxic','Toxic','SLIMED'],
-  ['wizard','Wizard','SPELLBOUND'],['shadow','Shadow','DARK FLAME'],['galaxy','Galaxy','STARDUST'],['devil','Devil','MISCHIEF'],['diamond','Diamond','THE LAST ONE']];
+const LADDER=[['normal','Pumpkin','THE START'],['wink','Winky','A WINK'],['cool','Cool','SHADES ON'],['heart','Heart','LOVE IT'],['king','King','CROWNED'],
+  ['angel','Angel','HALO'],['wizard','Wizard','SPELLBOUND'],['devil','Devil','MISCHIEF'],['frost','Frost','ICE COLD'],['pirate','Pirate','ARRR'],
+  ['knight','Knight','SHIELD UP'],['toxic','Toxic','SLIMED'],['shadow','Shadow','DARK FLAME'],['galaxy','Galaxy','STARDUST'],['diamond','Diamond','THE LAST ONE']];
 const FILES=LADDER.map(p=>p[0]),NAMES=LADDER.map(p=>p[1]);
 const L=n=>FILES.indexOf(['normal','wink','cool','heart','king','angel','wizard','devil','diamond'][n]);   // the demos below point at the original nine by number
 const img=(i,cls)=>{const e=document.createElement('img');e.src='assets/halloween/'+FILES[i]+'.webp';e.alt='';if(cls)e.className=cls;e.width=256;e.height=256;return e;};
