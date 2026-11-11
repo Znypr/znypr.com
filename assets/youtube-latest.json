@@ -43,12 +43,24 @@
  ],
  "shorts": [
   {
+   "id": "tsm77CMXwJg",
+   "title": "this is private property",
+   "published": "2026-11-11",
+   "date": "11 Nov 2026",
+   "views": 385,
+   "viewsDisplay": "385",
+   "type": "short",
+   "url": "https://www.youtube.com/shorts/tsm77CMXwJg",
+   "thumb": "assets/thumbs/tsm77CMXwJg.jpg",
+   "summary": null
+  },
+  {
    "id": "Ec8PV-QPcVI",
    "title": "what is your favorite skin in rivals? I'll start: the keyper",
    "published": "2026-11-10",
    "date": "10 Nov 2026",
-   "views": 22143,
-   "viewsDisplay": "22.1K",
+   "views": 31546,
+   "viewsDisplay": "31.5K",
    "type": "short",
    "url": "https://www.youtube.com/shorts/Ec8PV-QPcVI",
    "thumb": "assets/thumbs/Ec8PV-QPcVI.jpg",
@@ -59,8 +71,8 @@
    "title": "the grappler is so broken in rivals 😭🥀",
    "published": "2026-11-10",
    "date": "10 Nov 2026",
-   "views": 43235,
-   "viewsDisplay": "43.2K",
+   "views": 44893,
+   "viewsDisplay": "44.9K",
    "type": "short",
    "url": "https://www.youtube.com/shorts/1722sBfALLQ",
    "thumb": "assets/thumbs/1722sBfALLQ.jpg",
@@ -71,23 +83,11 @@
    "title": "I thought I need to sell my house 💀#gta6",
    "published": "2026-11-09",
    "date": "9 Nov 2026",
-   "views": 4208,
-   "viewsDisplay": "4.2K",
+   "views": 4701,
+   "viewsDisplay": "4.7K",
    "type": "short",
    "url": "https://www.youtube.com/shorts/yAhFeUM0u6A",
    "thumb": "assets/thumbs/yAhFeUM0u6A.jpg",
-   "summary": null
-  },
-  {
-   "id": "SXFN_QhhAG8",
-   "title": "bro has a Christmas tree up already in November 🫩🥀",
-   "published": "2026-11-09",
-   "date": "9 Nov 2026",
-   "views": 15463,
-   "viewsDisplay": "15.5K",
-   "type": "short",
-   "url": "https://www.youtube.com/shorts/SXFN_QhhAG8",
-   "thumb": "assets/thumbs/SXFN_QhhAG8.jpg",
    "summary": null
   }
  ],
@@ -100,5 +100,5 @@
   "AGJV_Oq-CmU": "After the Wildcat buff, Znypr grinds the kills for its Gold wrap in Roblox Rivals and shares the best Wildcat loadout.",
   "HOkYbTqoNHk": "Znypr tests Raul's viral modded copy of Roblox Rivals, where items like the Keyper can be unlocked, though only in the modded copy."
  },
- "updatedAt": "2026-11-11T14:17:08Z"
+ "updatedAt": "2026-11-11T21:55:15Z"
 }
