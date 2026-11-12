@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<!-- placeholder ornament badge: Reindeer. Replace this file with the real art (same name, or .webp and change the page) -->
+<defs>
+<radialGradient id="g" cx="38%" cy="32%" r="75%"><stop offset="0" stop-color="#ffffff" stop-opacity=".55"/><stop offset=".25" stop-color="#9a6a3e"/><stop offset="1" stop-color="#43260f"/></radialGradient>
+<linearGradient id="cap" x1="0" x2="1"><stop offset="0" stop-color="#8a6a1a"/><stop offset=".45" stop-color="#ffe08a"/><stop offset="1" stop-color="#8a6a1a"/></linearGradient>
+<clipPath id="ball"><circle cx="128" cy="146" r="86"/></clipPath>
+</defs>
+<circle cx="128" cy="30" r="14" fill="none" stroke="#d9b45a" stroke-width="6"/>
+<rect x="104" y="40" width="48" height="26" rx="6" fill="url(#cap)" stroke="#6a4e10" stroke-width="2"/>
+<circle cx="128" cy="146" r="86" fill="url(#g)"/>
+<g transform="translate(92 72)"><path d="M0 0 Q-6 -30 -24 -44 M-6 -22 Q-22 -24 -30 -18 M-10 -34 Q-4 -44 2 -48" stroke="#5a2f10" stroke-width="7" fill="none" stroke-linecap="round"/></g><g transform="translate(164 72) scale(-1 1)"><path d="M0 0 Q-6 -30 -24 -44 M-6 -22 Q-22 -24 -30 -18 M-10 -34 Q-4 -44 2 -48" stroke="#5a2f10" stroke-width="7" fill="none" stroke-linecap="round"/></g><circle cx="104" cy="138" r="9" fill="#1a0a06"/><circle cx="152" cy="138" r="9" fill="#1a0a06"/><circle cx="128" cy="166" r="16" fill="#ff2a2a"/><circle cx="123" cy="161" r="5" fill="#ffb0b0"/>
+<ellipse cx="96" cy="104" rx="20" ry="12" fill="#fff" opacity=".35" transform="rotate(-35 96 104)"/>
+</svg>

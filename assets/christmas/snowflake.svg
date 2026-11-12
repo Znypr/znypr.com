@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<!-- placeholder ornament badge: Snowflake. Replace this file with the real art (same name, or .webp and change the page) -->
+<defs>
+<radialGradient id="g" cx="38%" cy="32%" r="75%"><stop offset="0" stop-color="#ffffff" stop-opacity=".55"/><stop offset=".25" stop-color="#5cc8f0"/><stop offset="1" stop-color="#0d4a6e"/></radialGradient>
+<linearGradient id="cap" x1="0" x2="1"><stop offset="0" stop-color="#8a6a1a"/><stop offset=".45" stop-color="#ffe08a"/><stop offset="1" stop-color="#8a6a1a"/></linearGradient>
+<clipPath id="ball"><circle cx="128" cy="146" r="86"/></clipPath>
+</defs>
+<circle cx="128" cy="30" r="14" fill="none" stroke="#d9b45a" stroke-width="6"/>
+<rect x="104" y="40" width="48" height="26" rx="6" fill="url(#cap)" stroke="#6a4e10" stroke-width="2"/>
+<circle cx="128" cy="146" r="86" fill="url(#g)"/>
+<g stroke="#ffffff" stroke-width="7" stroke-linecap="round"><line x1="128" y1="146" x2="174.0" y2="146.0"/><line x1="155.6" y1="146.0" x2="166.2" y2="137.1"/><line x1="155.6" y1="146.0" x2="166.2" y2="154.9"/><line x1="128" y1="146" x2="151.0" y2="185.8"/><line x1="141.8" y1="169.9" x2="154.8" y2="174.6"/><line x1="141.8" y1="169.9" x2="139.4" y2="183.5"/><line x1="128" y1="146" x2="105.0" y2="185.8"/><line x1="114.2" y1="169.9" x2="116.6" y2="183.5"/><line x1="114.2" y1="169.9" x2="101.2" y2="174.6"/><line x1="128" y1="146" x2="82.0" y2="146.0"/><line x1="100.4" y1="146.0" x2="89.8" y2="154.9"/><line x1="100.4" y1="146.0" x2="89.8" y2="137.1"/><line x1="128" y1="146" x2="105.0" y2="106.2"/><line x1="114.2" y1="122.1" x2="101.2" y2="117.4"/><line x1="114.2" y1="122.1" x2="116.6" y2="108.5"/><line x1="128" y1="146" x2="151.0" y2="106.2"/><line x1="141.8" y1="122.1" x2="139.4" y2="108.5"/><line x1="141.8" y1="122.1" x2="154.8" y2="117.4"/></g>
+<ellipse cx="96" cy="104" rx="20" ry="12" fill="#fff" opacity=".35" transform="rotate(-35 96 104)"/>
+</svg>

@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title>Christmas event | ZNYPR</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css"/><link rel="preload" href="assets/fonts/Barlow-900-normal-latin.woff2" as="font" type="font/woff2" crossorigin/><link rel="preload" href="assets/fonts/Barlow-800-italic-latin.woff2" as="font" type="font/woff2" crossorigin/>
+<meta name="description" content="The Znypr Christmas event: collect ornament badges in chat on YouTube, Twitch, TikTok and Kick. How to get them, how upgrading works, the wheel, admin abuse and overdrive."/>
+<meta name="robots" content="noindex"/>
+<link rel="canonical" href="https://znypr.com/christmas"/>
+<link rel="icon" href="assets/img/favicon-48.png"/>
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="ZNYPR"/>
+<meta property="og:title" content="Christmas event | ZNYPR"/>
+<meta property="og:description" content="Collect ornament badges during the stream. Spin the wheel, climb from the plain bauble to the Diamond."/>
+<meta property="og:url" content="https://znypr.com/christmas"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:image" content="https://znypr.com/assets/og.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Christmas event | ZNYPR"/>
+<meta name="twitter:description" content="Collect ornament badges during the stream. Spin the wheel, climb from the plain bauble to the Diamond."/>
+<meta name="twitter:image" content="https://znypr.com/assets/og.jpg"/>
+<style>
+:root{color-scheme:dark;--bg:#050d0a;--text:#f2fbf6;--muted:#a9c4b6;--line:rgba(240,96,100,.22);--orange:#e8383f;--gold:#ffca5f;--violet:#2fbf71;--card:linear-gradient(135deg,rgba(232,56,63,.10),rgba(47,191,113,.07))}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Barlow,Arial,sans-serif;padding:0 clamp(15px,4vw,64px) 48px;position:relative;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(900px 520px at 85% -5%,rgba(214,36,46,.20),transparent 60%),radial-gradient(800px 560px at 5% 30%,rgba(47,191,113,.16),transparent 62%),radial-gradient(700px 500px at 60% 100%,rgba(232,56,63,.10),transparent 60%)}
+a{text-decoration:none;color:inherit}button{font:inherit;cursor:pointer}
+main{max-width:1240px;margin:0 auto}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:8px;background:#fff;color:#000;padding:6px 10px;z-index:9}
+.nav{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:22px 0 8px}
+.brand{font-weight:900;font-style:italic;letter-spacing:-.04em;font-size:26px}
+.nav-links{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+.nav-links a{font-size:11px;font-weight:800;letter-spacing:.14em;padding:9px 11px;border-radius:10px;color:#d3e8dd;white-space:nowrap}
+.nav-links a:hover{background:rgba(255,255,255,.07)}
+.nav-links .nav-cta{border:1px solid var(--line)}
+.eyebrow{font-size:11px;letter-spacing:.22em;font-weight:800;color:#ffd6d6}
+h1,h2,h3{margin:0;font-weight:900;font-style:italic;letter-spacing:-.045em;line-height:.9}
+.hero{position:relative;margin-top:14px;border-radius:28px;border:1px solid var(--line);overflow:hidden;padding:clamp(26px,5vw,64px);background:linear-gradient(135deg,rgba(214,36,46,.13),rgba(6,22,16,.85) 55%),#06120e;isolation:isolate}
+.hero h1{font-size:clamp(50px,8.4vw,118px);margin:14px 0 16px;text-shadow:0 0 40px rgba(214,36,46,.35)}
+.hero h1 span{color:var(--orange)}
+.hero p{max-width:520px;color:#e2f2ea;font-size:clamp(16px,1.6vw,19px);line-height:1.5;margin:0 0 24px}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;gap:12px;align-items:center;border-radius:14px;padding:14px 20px;font-size:12px;font-weight:800;letter-spacing:.06em;background:linear-gradient(135deg,#e8383f,#b3121f);color:#fff6f4;border:1px solid rgba(255,200,200,.5);transition:transform .2s,filter .2s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.btn.ghost{background:rgba(255,255,255,.06);color:var(--text);border-color:rgba(255,255,255,.22)}
+.hero-art{position:absolute;right:clamp(8px,3vw,48px);top:50%;transform:translateY(-50%);width:min(38%,440px);z-index:-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(4px,1.2vw,16px)}
+.hero-art img{width:100%;height:auto;filter:drop-shadow(0 14px 22px rgba(0,0,0,.5));animation:bob 5s ease-in-out infinite}
+.hero-art img:nth-child(2n){animation-delay:-1.4s}.hero-art img:nth-child(3n){animation-delay:-2.6s}.hero-art img:nth-child(5n){animation-delay:-3.7s}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-9px) rotate(2deg)}}
+section{margin-top:clamp(42px,6vw,76px)}
+.head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:20px;flex-wrap:wrap}
+.head h2{font-size:clamp(32px,5vw,58px);margin-top:10px}
+.head p{margin:0;max-width:430px;color:var(--muted);font-size:15px;line-height:1.55}
+.card{border-radius:22px;border:1px solid var(--line);background:var(--card);padding:clamp(16px,2.4vw,26px);backdrop-filter:blur(10px)}
+.card h3{font-size:clamp(22px,2.4vw,30px);margin-bottom:10px}
+.card p{margin:0 0 10px;color:#cfe3d8;line-height:1.55;font-size:15px}
+.card p:last-child{margin-bottom:0}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:stretch}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+code,.cmd{font-family:Consolas,Menlo,monospace;font-size:.92em;background:rgba(232,56,63,.14);border:1px solid rgba(240,96,100,.3);border-radius:7px;padding:1px 7px;color:#ffe0e0}
+/* badges */
+.ladder{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:12px;position:relative}
+.pk{position:relative;text-align:center;padding:14px 6px 12px;border-radius:18px;border:1px solid var(--line);background:rgba(6,22,16,.7);transition:transform .25s,border-color .25s}
+.pk:hover{transform:translateY(-6px) rotate(-1.5deg);border-color:rgba(255,170,170,.6)}
+.pk img{width:78%;max-width:92px;height:auto;filter:drop-shadow(0 8px 12px rgba(0,0,0,.5))}
+.pk b{display:block;font-size:15px;margin-top:6px;letter-spacing:-.01em}
+.pk i{display:block;font-style:normal;font-size:11px;color:var(--muted);margin-top:2px;letter-spacing:.06em}
+.pk .no{position:absolute;left:8px;top:6px;font-size:11px;font-weight:800;color:#ffd6d6}
+.pk.last{border-color:rgba(130,220,255,.5);box-shadow:0 0 28px rgba(110,200,255,.18)}
+/* upgrade demo */
+.demo{display:flex;flex-direction:column;gap:14px}
+.mine{display:grid;grid-template-columns:repeat(auto-fill,minmax(44px,1fr));gap:8px 6px}
+.mine .slot{position:relative;aspect-ratio:1;border-radius:14px;display:grid;place-items:center;background:rgba(4,14,10,.7);border:1px solid rgba(255,255,255,.1);transition:all .4s}
+.mine .slot img{width:80%;height:auto;transition:filter .4s,opacity .4s,transform .4s}
+.mine .slot.locked img{filter:grayscale(1) brightness(.45);opacity:.6}
+.mine .slot.next{border-color:var(--gold);box-shadow:0 0 0 0 rgba(255,202,95,.6);animation:pulse 1.6s ease-out infinite}
+.mine .slot.next img{filter:grayscale(.6) brightness(.8);opacity:.85}
+.mine .slot.owned{border-color:rgba(232,56,63,.5)}
+.mine .slot.pop{animation:pop .6s cubic-bezier(.2,1.6,.4,1)}
+.mine .slot.worn:after{content:"WORN";position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);font-size:9px;font-weight:900;letter-spacing:.12em;background:var(--orange);color:#fff6f4;padding:2px 6px;border-radius:6px}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,202,95,.55)}100%{box-shadow:0 0 0 14px rgba(255,202,95,0)}}
+@keyframes pop{0%{transform:scale(.7)}60%{transform:scale(1.18)}100%{transform:scale(1)}}
+.tries{display:flex;align-items:center;gap:12px;flex-wrap:wrap;min-height:34px}
+.try{font-size:12px;font-weight:800;letter-spacing:.08em;padding:7px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.05);color:var(--muted)}
+.try.miss{animation:shake .4s}.try.hit{background:rgba(232,56,63,.2);border-color:var(--orange);color:#ffe0e0}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.caption{color:var(--muted);font-size:13px;min-height:20px}
+/* chat */
+.chat{border-radius:18px;border:1px solid rgba(255,255,255,.12);background:#08120d;overflow:hidden;font-family:Inter,'Segoe UI',Arial,sans-serif}
+.chat-bar{display:flex;gap:14px;align-items:center;padding:9px 14px;border-bottom:1px solid rgba(255,255,255,.1);font-size:13px;font-weight:700;color:#c6ddd1}
+.chat-bar b{color:#ff6b6b;margin-left:auto}
+.chat-rows{display:flex;flex-direction:column;gap:2px;padding:8px 6px;min-height:318px}
+.row{display:flex;align-items:center;gap:9px;padding:7px 8px;border-radius:9px;font-size:15px;line-height:1.35;animation:rowin .5s ease-out both}
+.row:nth-child(odd){background:rgba(255,255,255,.03)}
+@keyframes rowin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.av{position:relative;flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:15px;color:#fff}
+.plat{position:absolute;right:-5px;bottom:-5px;width:16px;height:16px;border-radius:50%;background:#000;display:grid;place-items:center;overflow:hidden;font-size:9px;font-weight:900;color:#53fc18;border:1px solid #08120d}
+.plat img{width:12px;height:12px;object-fit:contain}
+.badge{width:24px;height:24px;object-fit:contain;flex:none;filter:drop-shadow(0 2px 3px rgba(0,0,0,.5))}
+.nm{font-weight:800}
+.msg{color:#e8f5ee}
+.row.bot{background:rgba(232,56,63,.10)!important}
+.row.bot .nm{color:var(--orange)}
+/* wheel */
+.wheel-card{display:flex;flex-direction:column;align-items:center;gap:10px;width:min(100%,360px);margin:0 auto;padding:14px 18px 16px;border-radius:20px;background:linear-gradient(160deg,#04100bf5,#020006f8);border:2px solid #d62a33;box-shadow:0 0 38px rgba(214,36,46,.55);transition:opacity .6s,transform .6s}
+.wheel-card.leaving{opacity:0;transform:scale(.92)}
+.wheel-title{font-size:19px;font-weight:700;white-space:nowrap}.wheel-title b{color:var(--gold)}
+.wheel-stage{position:relative;width:min(100%,250px);aspect-ratio:1}
+.wheel-disc{width:100%;height:100%;filter:drop-shadow(0 0 12px #000a)}
+.wheel-disc .seg{stroke:#07150f;stroke-width:1.5}.wheel-disc .seg.win{fill:#e8383f}.wheel-disc .seg.lose{fill:#0e2a1c}.wheel-disc .seg.lose.alt{fill:#0a1d14}
+.wheel-disc .x{fill:#7fa592;font-size:20px;font-weight:700}.wheel-disc .hub{fill:#07150f;stroke:var(--gold);stroke-width:3}
+.wheel-pointer{position:absolute;left:50%;top:-7px;width:0;height:0;transform:translateX(-50%);border-left:14px solid transparent;border-right:14px solid transparent;border-top:25px solid var(--gold);filter:drop-shadow(0 2px 3px #000);z-index:2;transform-origin:50% 0}
+.wheel-result{min-height:34px;font-size:25px;font-weight:800;text-align:center;opacity:0;transition:opacity .4s;white-space:nowrap}
+.wheel-result.show{opacity:1}.wheel-result.won{color:var(--gold)}.wheel-result.lost{color:#a6c7b5}
+.feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(18px,3vw,40px);align-items:center}
+.feature.flip>:first-child{order:2}
+.feature h2{font-size:clamp(32px,4.6vw,54px);margin:10px 0 14px}
+.feature p{color:#cfe3d8;line-height:1.6;font-size:16px;margin:0 0 12px;max-width:520px}
+.points{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:9px;max-width:520px}
+.points li{display:flex;gap:11px;align-items:flex-start;color:#e2f2ea;font-size:15px;line-height:1.5}
+.points li:before{content:"";flex:none;width:9px;height:9px;margin-top:7px;border-radius:50%;background:var(--orange);box-shadow:0 0 10px var(--orange)}
+/* overdrive */
+.od-card{width:min(100%,430px);margin:0 auto;padding:16px;border-radius:20px;background:linear-gradient(160deg,#04100bf5,#020006f8);border:2px solid #d62a33;box-shadow:0 0 38px rgba(214,36,46,.45)}
+.od-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-weight:700}
+.od-head b{color:var(--gold)}.od-count{color:#a6c7b5;font-size:14px}
+.od-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.od-slot{position:relative;display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 4px;border-radius:12px;border:2px dashed #3f7a5c;background:#0a1d1480;transition:all .3s}
+.od-slot .od-name{font-size:13px;font-weight:800;color:#5d8a74;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.od-wheel{position:relative;width:100%;max-width:98px;aspect-ratio:1}
+.od-wheel svg{width:100%;height:100%}.od-wheel:before{content:"";position:absolute;left:50%;top:-5px;width:0;height:0;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-top:11px solid var(--gold);z-index:2}
+.od-slot.empty .od-wheel{opacity:.25;border-radius:50%;border:2px dashed #2a5440}.od-slot.empty .od-wheel svg{display:none}.od-slot.empty .od-wheel:before{display:none}
+.od-slot.locked{border-style:solid;border-color:var(--gold);background:#0f2e20cc}.od-slot.locked .od-name{color:var(--gold)}
+.od-slot.locked.fresh{animation:pop .6s cubic-bezier(.2,1.6,.4,1)}
+.od-res{min-height:16px;font-size:12px;font-weight:800;opacity:0;transition:opacity .4s;white-space:nowrap}
+.od-slot.done .od-res{opacity:1}.od-slot.won{box-shadow:0 0 16px var(--orange)}.od-slot.won .od-res{color:var(--gold)}.od-slot.lost{opacity:.8}.od-slot.lost .od-res{color:#a6c7b5}
+/* gifts */
+.sup{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.sup .card{padding:16px}
+.sup h3{font-size:22px}.sup .ico{width:34px;height:34px;object-fit:contain;margin-bottom:10px}
+.sup .kick{display:grid;place-items:center;width:34px;height:34px;border-radius:9px;background:#0b0;color:#000;font-weight:900;margin-bottom:10px}
+.spins{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.spin-chip{width:22px;height:22px;border-radius:50%;border:2px solid var(--gold);background:radial-gradient(circle,#e8383f 0 30%,#0e2a1c 31%);opacity:.25;transform:scale(.7);transition:all .4s}
+.spin-chip.on{opacity:1;transform:scale(1);box-shadow:0 0 10px var(--orange)}
+.cmds{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.cmds .card{padding:16px}.cmds .cmd{display:inline-block;font-size:18px;margin-bottom:10px}
+.fine{color:var(--muted);font-size:13px;line-height:1.6;margin-top:16px;max-width:760px}
+footer{max-width:1240px;margin:clamp(44px,6vw,80px) auto 0;padding:20px 2px 0;border-top:1px solid rgba(255,255,255,.12);color:#8fb0a0;font-size:12px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+footer a{color:#def2e8;font-weight:800;border-bottom:1px solid rgba(255,255,255,.35)}
+@media(max-width:1000px){.sup,.cmds{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.hero-art{opacity:.3;width:70%}}
+@media(max-width:760px){.grid2,.grid3,.feature{grid-template-columns:minmax(0,1fr)}.feature.flip>:first-child{order:0}.hero-art{opacity:.22}.nav-links a{padding:9px 8px}.sup,.cmds{grid-template-columns:minmax(0,1fr)}.wheel-title{font-size:16px}.mine .slot.worn:after{font-size:6px;padding:1px 3px;bottom:-5px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+<script src="/assets/clean-url.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav" aria-label="Primary">
+<a class="brand" href="/" aria-label="Znypr home">ZNYPR</a>
+<div class="nav-links">
+
+<a href="/">GAMING</a><a href="/gear">GEAR</a><a href="/fitness">FITNESS</a><a href="/merch">MERCH</a><a href="/socials">SOCIALS</a><a class="nav-cta" href="/contact">CONTACT</a>
+</div>
+</nav>
+<main id="main">
+
+<header class="hero">
+<span class="eyebrow">ZNYPR / LIVE EVENT</span>
+<h1>CHRISTMAS<span>.</span></h1>
+<p>A whole ladder of ornament badges. Win them in chat on YouTube, Twitch, TikTok and Kick, climb from the plain bauble all the way to the Diamond, and wear it next to your name.</p>
+<div class="btns"><a class="btn" href="#badges">SEE THE BADGES</a><a class="btn ghost" href="#how">HOW IT WORKS</a></div>
+<div class="hero-art" aria-hidden="true">
+<img src="assets/christmas/plain.svg" alt="" width="256" height="256"/><img src="assets/christmas/wink.svg" alt="" width="256" height="256"/><img src="assets/christmas/cool.svg" alt="" width="256" height="256"/><img src="assets/christmas/heart.svg" alt="" width="256" height="256"/><img src="assets/christmas/king.svg" alt="" width="256" height="256"/><img src="assets/christmas/angel.svg" alt="" width="256" height="256"/><img src="assets/christmas/snowflake.svg" alt="" width="256" height="256"/><img src="assets/christmas/santa.svg" alt="" width="256" height="256"/><img src="assets/christmas/diamond.svg" alt="" width="256" height="256"/>
+</div>
+</header>
+
+<section id="badges" aria-labelledby="badges-h">
+<div class="head"><div><span class="eyebrow">THE COLLECTION</span><h2 id="badges-h">THE BADGES.</h2></div><p>One order, no shortcuts. The ornament you wear shows next to your name in every chat, and the ones you already won stay in your collection.</p></div>
+<div class="ladder" id="ladder" role="list"><noscript><p>The ornaments, in the order they are won: Bauble, Winky, Cool, Heart, King, Angel, Snowflake, Candy Cane, Holly, Frost, Gingerbread, Reindeer, Elf, Nutcracker, Mistletoe, Aurora, Star, Santa, Gold, Galaxy, Diamond.</p></noscript></div>
+</section>
+
+<section id="how" aria-labelledby="how-h">
+<div class="head"><div><span class="eyebrow">GETTING THEM</span><h2 id="how-h">HOW IT WORKS.</h2></div><p>Everything is a spin. Support the stream, or catch a free spin when admin abuse is on.</p></div>
+<div class="grid3">
+<div class="card"><h3>SUPPORT = SPINS</h3><p>Subs, gifted subs, memberships, cheers, Super Chats, Jewels, Kicks and TikTok gifts all spin the wheel for you. Bigger support means more spins at once.</p></div>
+<div class="card"><h3>ADMIN ABUSE</h3><p>When I switch it on, type <span class="cmd">!spin</span> in any chat for a free spin. No wallet needed.</p></div>
+<div class="card"><h3>OVERDRIVE</h3><p>Up to six viewers lock into slots and every wheel spins together. Grab a slot with <span class="cmd">!spin</span>.</p></div>
+</div>
+</section>
+
+<section id="upgrade" aria-labelledby="up-h">
+<div class="feature">
+<div>
+<span class="eyebrow">CLIMBING</span>
+<h2 id="up-h">ONE AFTER THE OTHER.</h2>
+<p>You always work on your next ornament. Every spin is a try at it, and when you get it, it becomes the one you wear.</p>
+<ul class="points">
+<li>The order is fixed. You can't skip ahead, so the Diamond needs the Snowflake and the Candy Cane before it.</li>
+<li>Every step is a little harder than the one before. The last ones are the real flex.</li>
+<li>Keep your old ornaments. Switch any time with <span class="cmd">!ornament &lt;name&gt;</span>.</li>
+<li>Win a better one and it is put on automatically.</li>
+</ul>
+</div>
+<div class="card demo" id="up-demo" aria-label="Animation: spins climbing from one ornament to the next">
+<div class="mine" aria-hidden="true"></div>
+<div class="tries" aria-hidden="true"></div>
+<div class="caption" aria-live="off"></div>
+</div>
+</div>
+</section>
+
+<section id="chat" aria-labelledby="chat-h">
+<div class="feature flip">
+<div>
+<span class="eyebrow">IN CHAT</span>
+<h2 id="chat-h">WEAR IT PROUD.</h2>
+<p>Your ornament sits right in front of your name, on YouTube, Twitch, TikTok and Kick, in the combined chat on stream.</p>
+<ul class="points">
+<li><span class="cmd">!ornaments</span> lists your collection.</li>
+<li><span class="cmd">!ornament</span> shows the one you wear now.</li>
+<li><span class="cmd">!getornament</span> explains how to get one.</li>
+</ul>
+</div>
+<div class="chat" id="chat-demo" aria-label="Example of the stream chat with ornament badges">
+<div class="chat-bar"><span>YouTube 6</span><span>Twitch 1</span><span>TikTok 53</span><b>&#9679; 60</b></div>
+<div class="chat-rows"></div>
+</div>
+</div>
+</section>
+
+<section id="wheel" aria-labelledby="wheel-h">
+<div class="feature">
+<div>
+<span class="eyebrow">THE WHEEL</span>
+<h2 id="wheel-h">WATCH IT SPIN.</h2>
+<p>When you win, you see it on stream: your wheel pops up, ticks around for five seconds, slows down and lands. A win shows your new ornament, a miss just says no luck.</p>
+<ul class="points">
+<li>Gifts and subs bring your wheel automatically.</li>
+<li>Free spins and the overdrive wheels show up in the same spot.</li>
+<li>The wheel is for the viewer who spun, everyone sees where it lands.</li>
+</ul>
+</div>
+<div id="wheel-demo" role="img" aria-label="Animation of the wheel spinning and landing on a ornament"></div>
+</div>
+</section>
+
+<section id="gifts" aria-labelledby="gifts-h">
+<div class="head"><div><span class="eyebrow">NORMAL SUPPORT</span><h2 id="gifts-h">GIFTS UNLOCK SPINS.</h2></div><p>No special command. Support the stream like you normally would and the wheel spins for you.</p></div>
+<div class="sup">
+<div class="card"><img class="ico" src="assets/icons/bbee011ef7.png" alt=""/><h3>YOUTUBE</h3><p>Memberships, gifted memberships, Super Chats, Super Stickers and Jewels.</p></div>
+<div class="card"><img class="ico" src="assets/icons/b4699ecd0b.png" alt=""/><h3>TWITCH</h3><p>Subs, resubs, gifted subs and cheers.</p></div>
+<div class="card"><img class="ico" src="assets/icons/7a11e6518c.png" alt=""/><h3>TIKTOK</h3><p>Gifts, and subscriptions.</p></div>
+<div class="card"><div class="kick" aria-hidden="true">K</div><h3>KICK</h3><p>Subs, gifted subs and Kicks.</p></div>
+</div>
+<div class="card" style="margin-top:14px">
+<h3>BIGGER SUPPORT, MORE SPINS</h3>
+<p>One support event is at least one spin. The more it is worth, the more spins you get from it, up to a limit.</p>
+<div class="spins" id="spin-chips" aria-hidden="true"></div>
+<p class="fine" style="margin-bottom:0">The tiniest gifts and fast gift spam from one person don't spin the wheel, so everyone gets a fair go.</p>
+</div>
+</section>
+
+<section id="admin" aria-labelledby="admin-h">
+<div class="feature flip">
+<div>
+<span class="eyebrow">FREE SPINS</span>
+<h2 id="admin-h">ADMIN ABUSE.</h2>
+<p>Every now and then I open admin abuse and the whole chat can spin for free. ZnyprBot tells chat when it is on.</p>
+<ul class="points">
+<li>Type <span class="cmd">!spin</span> in any chat to take a spin.</li>
+<li>Free spins have a short wait before your next one.</li>
+<li>Same ladder as everything else, so it is the same next ornament you are working on.</li>
+</ul>
+</div>
+<div class="chat" id="admin-demo" aria-label="Example of someone typing !spin and the bot answering">
+<div class="chat-bar"><span>ADMIN ABUSE IS ON</span></div>
+<div class="chat-rows" style="min-height:230px"></div>
+</div>
+</div>
+</section>
+
+<section id="overdrive" aria-labelledby="od-h">
+<div class="feature">
+<div>
+<span class="eyebrow">ALL TOGETHER</span>
+<h2 id="od-h">OVERDRIVE.</h2>
+<p>With overdrive on, <span class="cmd">!spin</span> does not spin alone. Viewers lock into slots one by one, and when the slots are full, or the timer runs out, every wheel spins at the same moment.</p>
+<ul class="points">
+<li>Up to six people per round.</li>
+<li>Your name locks in the moment you type it.</li>
+<li>If the wheels are already spinning, you catch the next round.</li>
+</ul>
+</div>
+<div class="od-card" id="od-demo" role="img" aria-label="Animation of six viewers locking into slots and all wheels spinning together">
+<div class="od-head"><b>OVERDRIVE</b><span class="od-count">0 / 6</span></div>
+<div class="od-grid"></div>
+</div>
+</div>
+</section>
+
+<section id="commands" aria-labelledby="cmd-h">
+<div class="head"><div><span class="eyebrow">CHEAT SHEET</span><h2 id="cmd-h">COMMANDS.</h2></div><p>Type them in any chat.</p></div>
+<div class="cmds">
+<div class="card"><span class="cmd">!spin</span><p>A free spin, when admin abuse is on.</p></div>
+<div class="card"><span class="cmd">!ornaments</span><p>Your collection.</p></div>
+<div class="card"><span class="cmd">!ornament &lt;name&gt;</span><p>Wear one you own, by name or number.</p></div>
+<div class="card"><span class="cmd">!getornament</span><p>How to get one.</p></div>
+</div>
+<p class="fine">Watch live on <a href="https://www.twitch.tv/znypr_" target="_blank" rel="noopener" style="border-bottom:1px solid rgba(255,255,255,.4)">Twitch</a>, <a href="https://www.youtube.com/@znypr" target="_blank" rel="noopener" style="border-bottom:1px solid rgba(255,255,255,.4)">YouTube</a> and <a href="https://www.tiktok.com/@znypr" target="_blank" rel="noopener" style="border-bottom:1px solid rgba(255,255,255,.4)">TikTok</a>. The event runs during Christmas streams, and what you win stays in your collection.</p>
+</section>
+
+</main>
+<footer><span>© 2026 Znypr</span><span><a href="/">Home</a> &nbsp; <a href="/contact">Contact</a> &nbsp; <a href="#main">Back to top ↑</a></span></footer>
+
+<script>
+(()=>{
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+// THE LADDER, in the order the ornaments are won: id (picture assets/christmas/<id>.webp), name, line under the name.
+// Adding a ornament to the game means adding one line here and its picture.
+const LADDER=[['plain','Bauble','THE START'],['wink','Winky','A WINK'],['cool','Cool','SHADES ON'],['heart','Heart','LOVE IT'],['king','King','CROWNED'],['angel','Angel','HALO'],['snowflake','Snowflake','LET IT SNOW'],['candy','Candy Cane','SWEET'],['holly','Holly','DECK THE HALLS'],['frost','Frost','ICE COLD'],['gingerbread','Gingerbread','FRESH BAKED'],['reindeer','Reindeer','RED NOSE'],['elf','Elf','WORKSHOP'],['nutcracker','Nutcracker','STAND GUARD'],['mistletoe','Mistletoe','LOOK UP'],['aurora','Aurora','NORTHERN LIGHTS'],['star','Star','TOP OF THE TREE'],['santa','Santa','HO HO HO'],['gold','Gold','GLITTER'],['galaxy','Galaxy','STARDUST'],['diamond','Diamond','THE LAST ONE']];
+const FILES=LADDER.map(p=>p[0]),NAMES=LADDER.map(p=>p[1]);
+const L=n=>FILES.indexOf(['plain','wink','cool','heart','king','angel','snowflake','candy','diamond'][n]);   // the demos below point at the original nine by number
+const img=(i,cls)=>{const e=document.createElement('img');e.src='assets/christmas/'+FILES[i]+'.svg';e.alt='';if(cls)e.className=cls;e.width=256;e.height=256;return e;};
+const el=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e;};
+// a demo only plays while it is on screen
+const visible=new WeakMap();
+const io=new IntersectionObserver(list=>{for(const x of list)visible.set(x.target,x.isIntersecting);},{threshold:.25});
+const watch=node=>{io.observe(node);return node;};
+const onScreen=async node=>{while(!visible.get(node))await sleep(300);};
+const NS='http://www.w3.org/2000/svg';
+
+// ---- the badges section, from the list
+{
+  const box=document.getElementById('ladder');box.replaceChildren();
+  LADDER.forEach((p,i)=>{
+    const card=el('div','pk'+(i===LADDER.length-1?' last':''));card.setAttribute('role','listitem');
+    const no=el('span','no',String(i+1)),im=img(i);im.alt=p[1]+' badge';im.loading='lazy';
+    card.append(no,im,el('b','',p[1]),el('i','',p[2]));box.append(card);
+  });
+}
+
+// ---- the wheel (same look as the stream overlay): 8 segments, win segments show the ornament
+function wheelSvg(prizeIndex,winIdx,showPrize){
+  const N=8,svg=document.createElementNS(NS,'svg');svg.setAttribute('viewBox','-100 -100 200 200');svg.classList.add('wheel-disc');
+  const pt=(a,r)=>[Math.sin(a*Math.PI/180)*r,-Math.cos(a*Math.PI/180)*r];
+  for(let i=0;i<N;i++){
+    const a0=i*45-22.5,a1=i*45+22.5,[x0,y0]=pt(a0,96),[x1,y1]=pt(a1,96);
+    const p=document.createElementNS(NS,'path');p.setAttribute('d',`M0 0L${x0} ${y0}A96 96 0 0 1 ${x1} ${y1}Z`);
+    p.setAttribute('class',winIdx.includes(i)?'seg win':'seg lose'+(i%2?' alt':''));svg.append(p);
+    const [cx,cy]=pt(i*45,62),g=document.createElementNS(NS,'g');g.setAttribute('transform',`translate(${cx} ${cy}) rotate(${i*45})`);
+    if(winIdx.includes(i)){if(showPrize){const im=document.createElementNS(NS,'image');im.setAttribute('href','assets/christmas/'+FILES[prizeIndex]+'.svg');im.setAttribute('x','-17');im.setAttribute('y','-17');im.setAttribute('width','34');im.setAttribute('height','34');g.append(im);}}
+    else{const t=document.createElementNS(NS,'text');t.setAttribute('text-anchor','middle');t.setAttribute('dominant-baseline','central');t.setAttribute('class','x');t.textContent='✕';g.append(t);}
+    svg.append(g);
+  }
+  const hub=document.createElementNS(NS,'circle');hub.setAttribute('r','9');hub.setAttribute('class','hub');svg.append(hub);
+  return svg;
+}
+// one 5 s spin that slows quickly, like on stream; resolves when it has stopped
+function spin(svg,finalDeg,pointer,ms){
+  return new Promise(done=>{
+    if(reduce){svg.style.transform=`rotate(${finalDeg}deg)`;done();return;}
+    const begin=performance.now();let pegs=0;
+    const step=t=>{
+      const p=Math.min(1,(t-begin)/ms),angle=finalDeg*(1-Math.pow(1-p,2.2));
+      svg.style.transform=`rotate(${angle}deg)`;
+      const passed=Math.floor((angle+22.5)/45);
+      if(passed>pegs){pegs=passed;if(pointer)pointer.animate([{transform:'translateX(-50%) rotate(0deg)'},{transform:'translateX(-50%) rotate(-20deg)'},{transform:'translateX(-50%) rotate(0deg)'}],{duration:90});}
+      if(p<1)requestAnimationFrame(step);else done();
+    };
+    requestAnimationFrame(step);
+  });
+}
+const landAt=index=>360*5+(360-index*45)%360;   // segment `index` ends under the pointer
+
+// ---- single wheel demo
+(async()=>{
+  const box=watch(document.getElementById('wheel-demo'));
+  const scenes=[{who:'@Mia',won:true,prize:L(6)},{who:'@Leo',won:false},{who:'@Ava',won:true,prize:L(1)},{who:'@Sky',won:false}];
+  let n=0;
+  while(true){
+    await onScreen(box);
+    const s=scenes[n++%scenes.length];
+    const wins=[0,4];
+    const card=el('div','wheel-card');
+    const title=el('div','wheel-title');title.append(document.createTextNode(s.who+' '),el('b','', 'enters the wheel!'));
+    const stage=el('div','wheel-stage');
+    const svg=wheelSvg(s.prize??0,wins,true);svg.style.willChange='transform';
+    const pointer=el('div','wheel-pointer');stage.append(svg,pointer);
+    const result=el('div','wheel-result');
+    card.append(title,stage,result);box.replaceChildren(card);
+    const target=s.won?wins[0]:1;
+    if(reduce){svg.style.transform=`rotate(${landAt(target)}deg)`;result.textContent=s.won?'Won the '+NAMES[s.prize]+' ornament!':'No luck this time';result.className='wheel-result show '+(s.won?'won':'lost');return;}
+    await sleep(900);
+    await spin(svg,landAt(target),pointer,5000);
+    await sleep(350);
+    result.textContent=s.won?'Won the '+NAMES[s.prize]+' ornament!':'No luck this time';
+    result.className='wheel-result show '+(s.won?'won':'lost');
+    await sleep(3000);
+    card.classList.add('leaving');await sleep(900);
+  }
+})();
+
+// ---- upgrade demo: tries at the next ornament, one after the other (the pattern is made up, no real odds)
+(async()=>{
+  const root=watch(document.getElementById('up-demo')),mine=root.querySelector('.mine'),tries=root.querySelector('.tries'),caption=root.querySelector('.caption');
+  const slots=FILES.map((f,i)=>{const s=el('div','slot locked');s.append(img(i));mine.append(s);return s;});
+  const paint=(owned,worn)=>slots.forEach((s,i)=>{s.className='slot '+(i<owned?'owned':i===owned?'next':'locked')+(i===worn?' worn':'');});
+  const pattern=[];FILES.forEach((f,i)=>{for(let k=0;k<(i%3===1?1:i<2?0:Math.min(3,1+(i>>2)));k++)pattern.push(0);pattern.push(1);});   // made up: a few misses, then a hit, per ornament (0 = no luck, 1 = got it)
+  if(reduce){paint(Math.min(6,FILES.length-1),Math.min(5,FILES.length-2));caption.textContent='Your next ornament is always the one right after your last.';return;}
+  while(true){
+    let owned=0;paint(0,-1);tries.replaceChildren();caption.textContent='Every spin is a try at your next ornament.';
+    for(const hit of pattern){
+      await onScreen(root);
+      if(owned>=FILES.length)break;
+      const t=el('span','try '+(hit?'':'miss'),hit?'GOT IT':'NO LUCK');tries.append(t);
+      while(tries.children.length>4)tries.firstChild.remove();
+      await sleep(850);
+      if(hit){
+        t.classList.add('hit');owned++;paint(owned,owned-1);slots[owned-1].classList.add('pop');
+        caption.textContent=NAMES[owned-1]+' unlocked and worn. Next up: '+(owned<FILES.length?NAMES[owned]:'nothing, you have them all')+'.';
+        await sleep(1500);
+      }
+    }
+    caption.textContent='All '+FILES.length+'. Your collection stays.';await sleep(3500);
+  }
+})();
+
+// ---- chat mock-ups
+const ICON={youtube:'assets/icons/bbee011ef7.png',twitch:'assets/icons/b4699ecd0b.png',tiktok:'assets/icons/7a11e6518c.png'};
+const COLORS=['#2fbf71','#e8383f','#2fb6a8','#d94f8f','#4f86f7','#c79a2a'];
+function chatRow(p,name,ornament,text,color,bot){
+  const row=el('div','row'+(bot?' bot':''));
+  const av=el('div','av',bot?'Z':name[0].toUpperCase());av.style.background=color||COLORS[name.length%COLORS.length];
+  const pl=el('span','plat');if(ICON[p]){const ic=document.createElement('img');ic.src=ICON[p];ic.alt='';pl.append(ic);}else pl.textContent='K';
+  av.append(pl);row.append(av);
+  if(ornament!=null)row.append(img(ornament,'badge'));
+  const nm=el('span','nm',name+': ');if(color&&!bot)nm.style.color=color;
+  row.append(nm,el('span','msg',text));return row;
+}
+(async()=>{
+  const box=watch(document.getElementById('chat-demo')),rows=box.querySelector('.chat-rows');
+  const lines=[
+    ['youtube','@Mia',L(6),'that wheel spin was insane','#ff8a8a'],['tiktok','Leo',L(4),'!spin','#8ad0ff'],['twitch','skyfall',L(2),'gg that clutch','#b6f08a'],
+    ['kick','nova',L(8),'finally, the diamond!','#f0d08a'],['tiktok','Ava',L(0),'first ornament lets goooo','#d9a8ff'],['youtube','@Zed',L(5),'halo club','#ffb3d9'],
+    ['twitch','Jules',L(3),'love the heart one','#8affd9'],['tiktok','Max',L(1),'!ornaments','#ffd08a'],
+  ];
+  const draw=()=>{rows.replaceChildren(...lines.map(l=>chatRow(l[0],l[1],l[2],l[3],l[4])));};
+  if(reduce){draw();return;}
+  while(true){
+    await onScreen(box);rows.replaceChildren();
+    for(const l of lines){await onScreen(box);rows.append(chatRow(l[0],l[1],l[2],l[3],l[4]));await sleep(900);}
+    await sleep(5000);
+  }
+})();
+(async()=>{
+  const box=watch(document.getElementById('admin-demo')),rows=box.querySelector('.chat-rows');
+  const rounds=[
+    [['tiktok','Ava',L(0),'!spin','#d9a8ff'],['bot','ZnyprBot',null,'@Ava won the Winky ornament on the wheel!']],
+    [['youtube','@Zed',L(5),'!spin','#ffb3d9'],['bot','ZnyprBot',null,'@Zed won the Snowflake ornament on the wheel!']],
+    [['twitch','Jules',L(3),'!spin','#8affd9']],
+  ];
+  const draw=r=>{for(const l of r){rows.append(l[0]==='bot'?chatRow('twitch','ZnyprBot',null,l[3],'#e8383f',true):chatRow(l[0],l[1],l[2],l[3],l[4]));}};
+  if(reduce){draw(rounds[0]);return;}
+  while(true){
+    await onScreen(box);rows.replaceChildren();
+    rows.append(chatRow('twitch','ZnyprBot',null,'ADMIN ABUSE IS ON! Type !spin for a free spin at a ornament.','#e8383f',true));await sleep(1200);
+    for(const r of rounds){for(const l of r){await onScreen(box);rows.append(l[0]==='bot'?chatRow('twitch','ZnyprBot',null,l[3],'#e8383f',true):chatRow(l[0],l[1],l[2],l[3],l[4]));await sleep(1300);}await sleep(900);}
+    await sleep(4000);
+  }
+})();
+
+// ---- overdrive demo
+(async()=>{
+  const card=watch(document.getElementById('od-demo')),grid=card.querySelector('.od-grid'),count=card.querySelector('.od-count');
+  const people=['Holly_J','Frosty','Blitzen','Tinsel','JingleV','Sleighz'];
+  const outcomes=[{w:true,p:L(1)},{w:false},{w:true,p:L(0)},{w:false},{w:false},{w:true,p:L(2)}];
+  const build=()=>people.map(()=>{const s=el('div','od-slot empty');const nm=el('div','od-name','empty');const w=el('div','od-wheel');const r=el('div','od-res');s.append(nm,w,r);grid.append(s);return s;});
+  let slots;
+  if(reduce){slots=build();slots.forEach((s,i)=>{s.classList.remove('empty');s.classList.add('locked');s.querySelector('.od-name').textContent=people[i];const w=s.querySelector('.od-wheel');w.append(wheelSvg(outcomes[i].p??0,[0,4],true));});count.textContent='6 / 6';return;}
+  while(true){
+    await onScreen(card);grid.replaceChildren();slots=build();count.textContent='0 / 6';
+    for(let i=0;i<6;i++){
+      await sleep(850);
+      const s=slots[i];s.classList.remove('empty');s.classList.add('locked','fresh');s.querySelector('.od-name').textContent=people[i];
+      const o=outcomes[i],svg=wheelSvg(o.p??0,[0,4],true);s.querySelector('.od-wheel').append(svg);count.textContent=(i+1)+' / 6';
+    }
+    await sleep(900);
+    const pointer=null;
+    await Promise.all(slots.map((s,i)=>{const svg=s.querySelector('svg'),o=outcomes[i];return spin(svg,landAt(o.w?0:1),pointer,5000);}));
+    slots.forEach((s,i)=>{const o=outcomes[i],r=s.querySelector('.od-res');r.textContent=o.w?'Won '+NAMES[o.p]+'!':'No luck';s.classList.add('done',o.w?'won':'lost');});
+    await sleep(4200);
+  }
+})();
+
+// ---- more support, more spins
+(async()=>{
+  const box=watch(document.getElementById('spin-chips'));
+  const chips=Array.from({length:10},()=>{const c=el('span','spin-chip');box.append(c);return c;});
+  if(reduce){chips.slice(0,4).forEach(c=>c.classList.add('on'));return;}
+  const sizes=[1,2,4,7,10];
+  while(true){
+    for(const n of sizes){await onScreen(box);chips.forEach((c,i)=>c.classList.toggle('on',i<n));await sleep(1400);}
+  }
+})();
+})();
+</script>
+</body></html>

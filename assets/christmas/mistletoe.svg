@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<!-- placeholder ornament badge: Mistletoe. Replace this file with the real art (same name, or .webp and change the page) -->
+<defs>
+<radialGradient id="g" cx="38%" cy="32%" r="75%"><stop offset="0" stop-color="#ffffff" stop-opacity=".55"/><stop offset=".25" stop-color="#e9f5ea"/><stop offset="1" stop-color="#7fa088"/></radialGradient>
+<linearGradient id="cap" x1="0" x2="1"><stop offset="0" stop-color="#8a6a1a"/><stop offset=".45" stop-color="#ffe08a"/><stop offset="1" stop-color="#8a6a1a"/></linearGradient>
+<clipPath id="ball"><circle cx="128" cy="146" r="86"/></clipPath>
+</defs>
+<circle cx="128" cy="30" r="14" fill="none" stroke="#d9b45a" stroke-width="6"/>
+<rect x="104" y="40" width="48" height="26" rx="6" fill="url(#cap)" stroke="#6a4e10" stroke-width="2"/>
+<circle cx="128" cy="146" r="86" fill="url(#g)"/>
+<g transform="translate(128 150)"><g transform="rotate(-40)"><ellipse cx="0" cy="-26" rx="12" ry="28" fill="#3a9a52"/></g><g transform="rotate(40)"><ellipse cx="0" cy="-26" rx="12" ry="28" fill="#3a9a52"/></g><g transform="rotate(-110)"><ellipse cx="0" cy="-26" rx="12" ry="28" fill="#3a9a52"/></g><g transform="rotate(110)"><ellipse cx="0" cy="-26" rx="12" ry="28" fill="#3a9a52"/></g></g><circle cx="122" cy="152" r="8" fill="#fff" stroke="#c9d6cc" stroke-width="2"/><circle cx="136" cy="150" r="8" fill="#fff" stroke="#c9d6cc" stroke-width="2"/>
+<ellipse cx="96" cy="104" rx="20" ry="12" fill="#fff" opacity=".35" transform="rotate(-35 96 104)"/>
+</svg>

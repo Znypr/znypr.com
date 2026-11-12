@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<!-- placeholder ornament badge: Nutcracker. Replace this file with the real art (same name, or .webp and change the page) -->
+<defs>
+<radialGradient id="g" cx="38%" cy="32%" r="75%"><stop offset="0" stop-color="#ffffff" stop-opacity=".55"/><stop offset=".25" stop-color="#c4242f"/><stop offset="1" stop-color="#4a0a10"/></radialGradient>
+<linearGradient id="cap" x1="0" x2="1"><stop offset="0" stop-color="#8a6a1a"/><stop offset=".45" stop-color="#ffe08a"/><stop offset="1" stop-color="#8a6a1a"/></linearGradient>
+<clipPath id="ball"><circle cx="128" cy="146" r="86"/></clipPath>
+</defs>
+<circle cx="128" cy="30" r="14" fill="none" stroke="#d9b45a" stroke-width="6"/>
+<rect x="104" y="40" width="48" height="26" rx="6" fill="url(#cap)" stroke="#6a4e10" stroke-width="2"/>
+<circle cx="128" cy="146" r="86" fill="url(#g)"/>
+<g clip-path="url(#ball)"><rect x="0" y="128" width="256" height="40" fill="#1d3fa0"/></g><circle cx="108" cy="148" r="7" fill="#ffd34d"/><circle cx="128" cy="148" r="7" fill="#ffd34d"/><circle cx="148" cy="148" r="7" fill="#ffd34d"/>
+<ellipse cx="96" cy="104" rx="20" ry="12" fill="#fff" opacity=".35" transform="rotate(-35 96 104)"/>
+</svg>
