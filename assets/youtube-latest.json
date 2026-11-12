@@ -43,12 +43,36 @@
  ],
  "shorts": [
   {
+   "id": "yUOR-BtDYAs",
+   "title": "I am the sniper 😝",
+   "published": "2026-11-12",
+   "date": "12 Nov 2026",
+   "views": 4,
+   "viewsDisplay": "4",
+   "type": "short",
+   "url": "https://www.youtube.com/shorts/yUOR-BtDYAs",
+   "thumb": "assets/thumbs/yUOR-BtDYAs.jpg",
+   "summary": null
+  },
+  {
+   "id": "O0em38Toik0",
+   "title": "bro really tried 😭🥀",
+   "published": "2026-11-12",
+   "date": "12 Nov 2026",
+   "views": 39846,
+   "viewsDisplay": "39.8K",
+   "type": "short",
+   "url": "https://www.youtube.com/shorts/O0em38Toik0",
+   "thumb": "assets/thumbs/O0em38Toik0.jpg",
+   "summary": null
+  },
+  {
    "id": "tsm77CMXwJg",
    "title": "this is private property",
    "published": "2026-11-11",
    "date": "11 Nov 2026",
-   "views": 385,
-   "viewsDisplay": "385",
+   "views": 1346,
+   "viewsDisplay": "1.3K",
    "type": "short",
    "url": "https://www.youtube.com/shorts/tsm77CMXwJg",
    "thumb": "assets/thumbs/tsm77CMXwJg.jpg",
@@ -59,35 +83,11 @@
    "title": "what is your favorite skin in rivals? I'll start: the keyper",
    "published": "2026-11-10",
    "date": "10 Nov 2026",
-   "views": 31546,
-   "viewsDisplay": "31.5K",
+   "views": 42591,
+   "viewsDisplay": "42.6K",
    "type": "short",
    "url": "https://www.youtube.com/shorts/Ec8PV-QPcVI",
    "thumb": "assets/thumbs/Ec8PV-QPcVI.jpg",
-   "summary": null
-  },
-  {
-   "id": "1722sBfALLQ",
-   "title": "the grappler is so broken in rivals 😭🥀",
-   "published": "2026-11-10",
-   "date": "10 Nov 2026",
-   "views": 44893,
-   "viewsDisplay": "44.9K",
-   "type": "short",
-   "url": "https://www.youtube.com/shorts/1722sBfALLQ",
-   "thumb": "assets/thumbs/1722sBfALLQ.jpg",
-   "summary": null
-  },
-  {
-   "id": "yAhFeUM0u6A",
-   "title": "I thought I need to sell my house 💀#gta6",
-   "published": "2026-11-09",
-   "date": "9 Nov 2026",
-   "views": 4701,
-   "viewsDisplay": "4.7K",
-   "type": "short",
-   "url": "https://www.youtube.com/shorts/yAhFeUM0u6A",
-   "thumb": "assets/thumbs/yAhFeUM0u6A.jpg",
    "summary": null
   }
  ],
@@ -100,5 +100,5 @@
   "AGJV_Oq-CmU": "After the Wildcat buff, Znypr grinds the kills for its Gold wrap in Roblox Rivals and shares the best Wildcat loadout.",
   "HOkYbTqoNHk": "Znypr tests Raul's viral modded copy of Roblox Rivals, where items like the Keyper can be unlocked, though only in the modded copy."
  },
- "updatedAt": "2026-11-11T21:55:15Z"
+ "updatedAt": "2026-11-12T17:34:31Z"
 }
